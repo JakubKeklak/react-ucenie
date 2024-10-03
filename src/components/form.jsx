@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import Button from './button';
 
 import './form.css'; // Add your CSS for styling the modal
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
         name: '',
+        phone: '',
         email: '',
-        message: ''
+        message: '',
+        gdpr: 'Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.'
     });
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -27,16 +30,18 @@ const ContactForm = () => {
         emailjs.init("39ZQDLzz2zQW1ByIg");
         emailjs.sendForm('service_8ejd911', 'template_1qsgma7', e.target)
             .then((result) => {
-                setResultMessage('Message sent successfully!');
+                setResultMessage('Sprava sa uspesne odoslala. Dakujeme, budeme vas kontaktovat.');
                 setModalVisible(true);
             }, (error) => {
-                setResultMessage('Failed to send message, please try again.');
+                setResultMessage('Spravu sa nepodarilo odoslat, skuste to este raz prosim.');
                 setModalVisible(true);
             })
         setFormData({
             name: '',
+            phone: '',
             email: '',
-            message: ''
+            message: '',
+            gdpr: 'Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.'
         });
     };
 
@@ -45,10 +50,10 @@ const ContactForm = () => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Name:</label>
+        <div className="form__wrapper">
+            <form onSubmit={handleSubmit} >
+                <div className='form__item'>
+                    <label>Meno:</label>
                     <input
                         type="text"
                         name="name"
@@ -57,7 +62,18 @@ const ContactForm = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className='form__item'>
+                    <label>Tel. cislo:</label>
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder='+421 9...'
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className='form__item'>
                     <label>Email:</label>
                     <input
                         type="email"
@@ -67,8 +83,8 @@ const ContactForm = () => {
                         required
                     />
                 </div>
-                <div>
-                    <label>Message:</label>
+                <div className='form__item'>
+                    <label>Sprava:</label>
                     <textarea
                         name="message"
                         value={formData.message}
@@ -76,7 +92,13 @@ const ContactForm = () => {
                         required
                     />
                 </div>
-                <button type="submit">Send</button>
+                <div className='form__checkbox'>
+                    <input type="checkbox" name="gdpr" required value={formData.gdpr}
+                        onChange={handleChange}/>
+                    <label>Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.</label>
+                </div>
+                
+                <Button text="Odoslat" variant="secondary" submit={true}/>
             </form>
 
             {modalVisible && (
