@@ -3,23 +3,25 @@ import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowRight } from '../svg/rightArrow.svg';
 
-const Button = ({ text, url, variant, icon }) => {
+const Button = ({ text, url, variant, icon, submit }) => {
   const classVariant = variant || 'primary';
   const buttonIcon = icon || false;
-
+  const isSubmit = submit || false;
+  
   const isHashLink = url && url.includes('#');
-
   const LinkComponent = isHashLink ? HashLink : Link;
+  const Tag = url ? LinkComponent : 'button';
+  
 
   return (
-    <LinkComponent to={url} className={`button button--${classVariant}`} smooth={isHashLink ? true : undefined}>
+    <Tag to={url} type={isSubmit ? "submit" : undefined} className={`button button--${classVariant}`} smooth={isHashLink ? true : undefined}>
       <span>{text}</span>
       {buttonIcon && 
         <span className="button__icon">
           <ArrowRight />
         </span>
         }
-    </LinkComponent>
+    </Tag>
   );
 };
 
