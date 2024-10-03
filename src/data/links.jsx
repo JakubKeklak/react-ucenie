@@ -22,6 +22,12 @@ export const links = [
         navlink: true,
     },
     {
+        name: "Cennik",
+        url: "/cennik",
+        exact: true,
+        navlink: true,
+    },
+    {
         name: "Contact",
         url: "/contact",
         exact: true,
