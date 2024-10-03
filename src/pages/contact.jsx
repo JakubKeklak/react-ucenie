@@ -1,8 +1,31 @@
+import './contact.css';
+import Form from '../components/form';
+import { ReactComponent as Facebook } from '../svg/facebook.svg'
 
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact</h1>
+    <div className="container">
+      <h1>Kontakt</h1>
+      <div className="contact__wrapper">
+        <div className="contact__info">
+          <h2 className='contact__title'>Informácie</h2>
+          <ul className='contact__list'>
+            <li><span>Ladislav Cajko</span></li>
+            <li><span>ICO:</span><span>45852 3547</span></li>
+            <li><span>DIC:</span><span>4569 3254</span></li>
+            <li><span>Tel. kontakt:</span><span>+421 908 801 906</span></li>
+            <li><span>Mail:</span><span>info@www.drevoasluzby.sk</span></li>
+            <Facebook className="contact__icon"/>
+          </ul>
+          <div className='contact__map'>
+          <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d162.608281556795!2d20.62298077433552!3d49.30041015433986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e12659a5a6597%3A0xeaf3193e336b05c1!2sHniezdne%20269%2C%20065%2001%20Hniezdne!5e0!3m2!1ssk!2ssk!4v1727945628770!5m2!1ssk!2ssk"  ></iframe>
+          </div>
+        </div>
+        <div className="contact__form">
+          <h2 className='contact__title'>Kontaktný formulár</h2>
+          <Form />
+        </div>
+      </div>
     </div>
   );
 }
