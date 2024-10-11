@@ -1,8 +1,12 @@
 .colored-wrapper{
     width: 100%;
-    padding: 40px 0;
+    position: sticky;
+    top: 10vh;
+    background-color: white;
+    scroll-snap-align: start;
+  scroll-margin-top: 20px;
 }
 
 .colored-wrapper--gray {
-    background-color: rgb(61, 61, 61);
+    background-color: rgb(228, 225, 220)
 }
