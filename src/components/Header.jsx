@@ -1,33 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './header.css';
 import { NavLink } from 'react-router-dom';
 import { links } from '../data/links';
 
 const Header = () => {
   const [showNavbar, setShowNavbar] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
+ 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const handleScroll = () => {
-    if (window.scrollY > 30) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
-    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
+    <header className="header">
       <div className="header__container container">
         <div className="navigation__logo">
           <span>Drevo</span>
