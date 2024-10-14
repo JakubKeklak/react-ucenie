@@ -1,8 +1,8 @@
 import './coloredWrapper.css';
 
-const ColoredWrapper = ({children, color}) => {
+const ColoredWrapper = ({children, color,id}) => {
     return (
-        <div className={`colored-wrapper colored-wrapper--${color}`} >
+        <div className={`colored-wrapper colored-wrapper--${color}`} id={id}>
             {children}
         </div>
     );
