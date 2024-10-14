@@ -1,6 +1,10 @@
 import './about.css'
 import ColoredWrapper from '../components/coloredWrapper'
 import Button from '../components/button'
+import Gallery from '../components/gallery'
+import { slides } from '../data/slider'
+
+
 const about = () => {
   return (
     <div className="about">
@@ -21,11 +25,9 @@ const about = () => {
             <Button text="Zistit viac" variant="secondary" url="/contact"/>
           </div>
           <div className="detail__image">
-            <div className="detail__image-wrapper" >
-              <div className="detail__image__content">1</div>
-              <div className="detail__image__content">2</div>
-              <div className="detail__image__content">3</div>
-            </div>
+           
+              <Gallery data={slides}/>
+            
         </div>
         </div>
       </ColoredWrapper>
@@ -47,15 +49,13 @@ const about = () => {
             <Button text="Zistit viac" variant="secondary" url="/contact"/>
           </div>
           <div className="detail__image">
-          <div className="detail__image__content">1</div>
-            <div className="detail__image__content">2</div>
-            <div className="detail__image__content">3</div>
+            <Gallery data={slides}/>
           </div>
         </div>
       </ColoredWrapper>
 
-      <ColoredWrapper >
-        <div className="detail container" id="vyroba-a-dovoz-stiepane-drevo">
+      <ColoredWrapper color="gray" id="vyroba-a-dovoz-stiepane-drevo">
+        <div className="detail container" >
           <div className="detail__content">
             <h1>Drevo</h1>
             <p>
@@ -71,14 +71,12 @@ const about = () => {
             <Button text="Zistit viac" variant="secondary" url="/contact"/>
           </div>
           <div className="detail__image">
-          <div className="detail__image__content">1</div>
-            <div className="detail__image__content">2</div>
-            <div className="detail__image__content">3</div>
+            <Gallery data={slides}/>
           </div>
         </div>
       </ColoredWrapper>
 
-      <ColoredWrapper color="gray">
+      <ColoredWrapper>
         <div className="detail detail--twist container">
           <div className="detail__content">
             <h1>Agro sluzby</h1>
@@ -95,9 +93,7 @@ const about = () => {
             <Button text="Zistit viac" variant="secondary" url="/contact"/>
           </div>
           <div className="detail__image">
-            <div className="detail__image__content">1</div>
-            <div className="detail__image__content">2</div>
-            <div className="detail__image__content">3</div>
+            <Gallery data={slides}/>
           </div>
         </div>
       </ColoredWrapper>
