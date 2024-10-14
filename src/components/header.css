@@ -1,13 +1,13 @@
 .header {
-    position:sticky;
+    position:fixed;
     top: 0px;
     display: flex;
     justify-content: center;
     width: 100%;
     max-width: 100%;
-    background-color: rgba(0, 0, 0,1);
     z-index: 99;
-    height: 10vh;
+    height:60px;
+    background-color: rgba(0, 0, 0,0.5);
 }
 
 .header__container{
@@ -47,12 +47,12 @@
 }
 
 .menuItem:hover{
-    color: rgb(58, 124, 83);
+    color: rgb(165, 156, 107);
     transition: all 0.5s ease;
 }
 
 .menuItem--active{
-    color: rgb(43, 92, 62);
+    color: rgb(165, 156, 107);
 }
 
 .navigation__toggleLines{
