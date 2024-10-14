@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './gallery.css';
 
 const Gallery = ({ data }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+    const [visibleCards, setVisibleCards] = useState(new Array(data.length).fill(false));
+    const cardRefs = useRef([]);
 
     const handleImageClick = (index) => {
         setSelectedImageIndex(index);
@@ -25,11 +27,44 @@ const Gallery = ({ data }) => {
         setSelectedImageIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
     };
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const index = cardRefs.current.indexOf(entry.target);
+                        setVisibleCards((prevVisibleCards) => {
+                            const newVisibleCards = [...prevVisibleCards];
+                            newVisibleCards[index] = true;
+                            return newVisibleCards;
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        cardRefs.current.forEach((card) => {
+            if (card) {
+                observer.observe(card);
+            }
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [data.length]);
+
     return (
         <div className='gallery'>
-            {data.slice(0, 4).map((image, index) => (
-                <div key={index} className='gallery__card'>
-                    <img src={image.image} alt={`gallery image ${index}`}  onClick={() => handleImageClick(index)}/>
+            {data.map((image, index) => (
+                <div
+                    key={index}
+                    className={`gallery__card ${visibleCards[index] ? 'visible' : ''}`}
+                    ref={(el) => (cardRefs.current[index] = el)}
+                >
+                    <img src={image.image} alt={`gallery image ${index}`} onClick={() => handleImageClick(index)} />
                 </div>
             ))}
 
