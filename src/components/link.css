@@ -8,11 +8,11 @@
 }
 
 .menuItem:hover{
-    color: rgb(43, 92, 62);
+    color: rgb(165, 156, 107);
     transform: translateY(-5px);
     transition: all 0.5s ease;
 }
 
 .menuItem:active{
-    color: rgb(43, 92, 62);
+    color: rgb(165, 156, 107);
 }
