@@ -1,28 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './home.css';
-import Hero from '../components/Hero';
-import { slides } from "../data/slider";
 import ColoredWrapper from '../components/coloredWrapper';
 import Text from '../components/text';
-
+import { slides } from '../data/slider';
+import Hero from '../components/Hero';
+import AnimatedHero from '../components/AnimatedHero';
 const Home = () => {
-    useEffect(() => {
-        const handleScroll = () => {
-            const hero = document.querySelector('.hero-container .hero');
-            const scrollPosition = window.pageYOffset;
-            hero.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    
 
     return (
         <div className="hero-container" >
-            <Hero data={slides.homepage} icon={true} />
+            <AnimatedHero data={slides} />
+                
+            
             <div className="overlay-container">
                 <div className="container">
                     <h2>Naše služby</h2>
