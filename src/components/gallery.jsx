@@ -27,7 +27,7 @@ const Gallery = ({ data }) => {
 
     return (
         <div className='gallery'>
-            {data.slice(0, 2).map((image, index) => (
+            {data.slice(0, 4).map((image, index) => (
                 <div key={index} className='gallery__card'>
                     <img src={image.image} alt={`gallery image ${index}`}  onClick={() => handleImageClick(index)}/>
                 </div>
@@ -37,7 +37,7 @@ const Gallery = ({ data }) => {
                 <div className="modal" onClick={closeModal}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <span className="close" onClick={closeModal}>&times;</span>
-                        <img src={data[selectedImageIndex].image} alt={`gallery image ${selectedImageIndex}`} />
+                        <img src={data[selectedImageIndex].image} alt={selectedImageIndex} />
                         <div className="modal-navigation">
                             <button onClick={showPrevImage}>Prev</button>
                             <button onClick={showNextImage}>Next</button>
