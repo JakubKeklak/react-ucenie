@@ -2,6 +2,7 @@ import './cennik.css'
 import { productData } from '../data/productData'
 import ProductCard from '../components/productCard'
 import Text from '../components/text'
+import Button from '../components/button'
 import { useState } from 'react'
 
 const Cennik = () => {
@@ -20,11 +21,23 @@ const Cennik = () => {
         setProductSummaries(newProductSummaries);
     }
 
-    const updateQuantity = (id, newQuantity) => {
-        setProductSummaries(productSummaries.map(product =>
-          product.id === id ? { ...product, quantity: newQuantity } : product
-        ));
-      };
+    const incrementProduct = function(product) {
+        const newProductSummaries = [...productSummaries];
+        const index = newProductSummaries.indexOf(product);
+        newProductSummaries[index].quantity++;
+        setProductSummaries(newProductSummaries);
+    }
+
+    const decrementProduct = function(product) {
+        const newProductSummaries = [...productSummaries];
+        const index = newProductSummaries.indexOf(product);
+        if (newProductSummaries[index].quantity > 1) {
+            newProductSummaries[index].quantity--;
+            setProductSummaries(newProductSummaries);
+        }
+    }
+
+    const sum = productSummaries.reduce((acc, product) => acc + product.price * product.quantity, 0);
 
     return (
         <div className="cennik__wrapper container">
@@ -37,6 +50,7 @@ const Cennik = () => {
                     </p>
                     {productData.map((product, index) => {
                         return <ProductCard key={index} product={product} pushProduct={pushProduct}/>
+                        
                     })}
                     <hr />
                     <Text >
@@ -54,21 +68,25 @@ mimo okresu Stará Ľubovňa: dohodou
                     <p>
                         V prípade odberu väčšieho množstva Vám vieme poskytnúť zaujímavé zľavy, preto nas nevahajte <a href="/contact" >kontaktovat</a>. 
                     </p>
-                    <p>
+                    <ul className='cennik__products-list'>
                         {productSummaries.map((product, index) => {
-                            return <div key={index}>{product.name} - {product.price}€ <span onClick={() => removeProduct(product)}>Odobrat</span>
-                            <input
-            type="number"
-            value={product.quantity}
-            onChange={(e) => updateQuantity(product.id, parseInt(e.target.value))}
-            min="1"
-          />
-                            </div> 
+                            return <li className="product__card" key={index}>
+                                <div>
+                                    <span>{product.name}</span>
+                                    <span>{product.description}</span>
+                                </div>
+                                <Button text="+" variant="secondary" buttonFunction={() => incrementProduct(product)} /> 
+                                <span >{product.quantity}</span>
+                                <Button text="-" variant="secondary" buttonFunction={() => decrementProduct(product)} />
+                                <span>{product.price * product.quantity}€</span>
+                                <span onClick={() => removeProduct(product)}>Odobrat</span>
+                            </li> 
                         }
                         )}
-                        
-                        <input type="text"  value={productSummaries.reduce((acc, product) => acc + product.price * product.quantity, 0)}></input><span>€</span>
-                    </p>
+                        <div className="cennik__sumary">
+                        <span>Sucet: </span><span>{sum}</span><span>€</span>
+                        </div>
+                    </ul>
                 </div>
             </div>
         </div>

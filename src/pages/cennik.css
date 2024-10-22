@@ -3,6 +3,8 @@
     flex-direction: column;
     gap: 20px;
     position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .cennik__content{
@@ -27,4 +29,20 @@
     flex-direction: column;
     gap: 20px;
     padding-left: 20px;
+}
+
+.cennik__products-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cennik__sumary  {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--quaternary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5em;
+    width: max-content;
 }
