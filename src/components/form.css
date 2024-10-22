@@ -73,3 +73,14 @@ form {
     text-decoration: none;
     cursor: pointer;
 }
+
+.form__checkbox{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+      

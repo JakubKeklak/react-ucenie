@@ -93,9 +93,9 @@ const ContactForm = () => {
                     />
                 </div>
                 <div className='form__checkbox'>
-                    <input type="checkbox" name="gdpr" required value={formData.gdpr}
+                    <input type="checkbox" name="gdpr" id="gdpr" required value={formData.gdpr}
                         onChange={handleChange}/>
-                    <label>Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.</label>
+                    <label for="gdpr">Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.</label>
                 </div>
                 
                 <Button text="Odoslat" variant="secondary" submit={true}/>
