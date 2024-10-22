@@ -8,96 +8,73 @@ import { slides } from '../data/slider'
 const about = () => {
   return (
     <div className="about">
-      <ColoredWrapper color="gray">
-        <div className="detail container" >
+      
+        <div className="detail container">
           <div className="detail__content">
-            <h1>Agro sluzby</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              elementum, odio nec tincidunt malesuada, enim purus bibendum nunc, nec
-              tincidunt lacus felis nec nunc. Nullam nec ex nec purus sollicitudin
-              fermentum. Sed auctor, odio
-            </p>
-            <ul className="detail__list">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Donec elementum, odio</li>
-            </ul>
-            <Button text="Zistit viac" variant="secondary" url="/contact"/>
-          </div>
-          <div className="detail__image">
-           
-              <Gallery data={slides}/>
+            <h1>VÝROBA A DOVOZ ŠTIEPANÉHO DREVA</h1>
             
+            <ul className="detail__list">
+              <li>mäkké štiepané palivové drevo</li>
+              <li>tvrdé štiepané palivové drevo</li>
+              <li>dovoz štiepaného palivového dreva</li>
+            </ul>
+            <Button text="Zistit viac" variant="tertiary" url="/contact"/>
+            <Button text="Cennik" variant="tertiary" url="/cennik"/>
+          </div>
+          <div className="detail__image">
+              <Gallery data={slides}/>
+          </div>
         </div>
-        </div>
-      </ColoredWrapper>
 
-      <ColoredWrapper >
+        <ColoredWrapper color="gray" />
+
         <div className="detail detail--twist container">
           <div className="detail__content">
-            <h1>Agro sluzby</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              elementum, odio nec tincidunt malesuada, enim purus bibendum nunc, nec
-              tincidunt lacus felis nec nunc. Nullam nec ex nec purus sollicitudin
-              fermentum. Sed auctor, odio
-            </p>
+            <h1>KOMUNÁLNE SLUŽBY</h1>
             <ul className="detail__list">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Donec elementum, odio</li>
+              <li>kosenie trávnatých plôch (parky, dvory, záhrady a iné plochy v trvalej údržbe)</li>
+              <li>mulčovanie trvalo trávnatých plôch</li>
+              <li>ošetrovanie okrasných krovín a stromov</li>
             </ul>
-            <Button text="Zistit viac" variant="secondary" url="/contact"/>
+            <Button text="Zistit viac" variant="tertiary" url="/contact"/>
           </div>
           <div className="detail__image">
             <Gallery data={slides}/>
           </div>
         </div>
-      </ColoredWrapper>
 
-      <ColoredWrapper color="gray" id="vyroba-a-dovoz-stiepane-drevo">
-        <div className="detail container" >
+        <ColoredWrapper color="gray" />
+
+        <div className="detail container" id="vyroba-a-dovoz-stiepane-drevo">
           <div className="detail__content">
-            <h1>Drevo</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              elementum, odio nec tincidunt malesuada, enim purus bibendum nunc, nec
-              tincidunt lacus felis nec nunc. Nullam nec ex nec purus sollicitudin
-              fermentum. Sed auctor, odio
-            </p>
+            <h1>AGRO SLUŽBY</h1>
             <ul className="detail__list">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Donec elementum, odio</li>
+              <li>príprava ornej pôdy</li>
+              <li>osev obilnín</li>
+              <li>výroba a spracovanie sena</li>
+              <li>výroba a zber zemiakov</li>
             </ul>
-            <Button text="Zistit viac" variant="secondary" url="/contact"/>
+            <Button text="Zistit viac" variant="tertiary" url="/contact"/>
           </div>
           <div className="detail__image">
             <Gallery data={slides}/>
           </div>
         </div>
-      </ColoredWrapper>
-
-      <ColoredWrapper>
+        
+        <ColoredWrapper color="gray" />
+        
         <div className="detail detail--twist container">
           <div className="detail__content">
-            <h1>Agro sluzby</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              elementum, odio nec tincidunt malesuada, enim purus bibendum nunc, nec
-              tincidunt lacus felis nec nunc. Nullam nec ex nec purus sollicitudin
-              fermentum. Sed auctor, odio
-            </p>
+            <h1>DOVOZ MATERIALU</h1>
             <ul className="detail__list">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Donec elementum, odio</li>
+              <li>dovoz stavebného materiálu</li>
             </ul>
-            <Button text="Zistit viac" variant="secondary" url="/contact"/>
+            <Button text="Zistit viac" variant="tertiary" url="/contact"/>
           </div>
           <div className="detail__image">
             <Gallery data={slides}/>
           </div>
         </div>
-      </ColoredWrapper>
-
     </div>
   );
 }
