@@ -42,7 +42,7 @@ const Gallery = ({ data }) => {
                     }
                 });
             },
-            { threshold: 0.1 }
+            { threshold: 0 }
         );
 
         cardRefs.current.forEach((card) => {
@@ -74,8 +74,8 @@ const Gallery = ({ data }) => {
                         <span className="close" onClick={closeModal}>&times;</span>
                         <img src={data[selectedImageIndex].image} alt={selectedImageIndex} />
                         <div className="modal-navigation">
-                            <button onClick={showPrevImage}>Prev</button>
-                            <button onClick={showNextImage}>Next</button>
+                            <button onClick={showPrevImage}></button>
+                            <button onClick={showNextImage}></button>
                         </div>
                     </div>
                 </div>
