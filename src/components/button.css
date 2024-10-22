@@ -1,22 +1,24 @@
 .button {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 0 1em;
-  border: solid 1px;
-  border-radius: 0.4em;
+  padding: 0.5em 1em;
   font-size: 1em;
   cursor: pointer;
   text-decoration: none;
-  color: white;
-  height: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.button__icon{
+.button__icon {
   position: relative;
   left: 0;
-  top:2px;
+  top: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,28 +27,40 @@
   fill: white;
   transition: all 0.5s ease;
 }
-.button:hover .button__icon{
-  left:5px;
-  transition: all 0.5s ease;
-}
-.button--primary {
-  border-color: rgba(256,256,256,0.5);
+
+.button:hover .button__icon {
+  left: 5px;
   transition: all 0.5s ease;
 }
 
-.hero__card--active .button--primary {
-  background-color: #8b8f6b;
-  border-color: #8b8f6b;
+.button--primary {
+  color: var(--tertiary-color);
+  background-color: var(--quaternary-color);
+  border-color: var(--secondary-color);
   transition: all 0.5s ease;
+}
+
+.button--primary:hover {
+  background-color: var(--secondary-color);
+
 }
 
 .button--secondary {
-  background-color: white;
-  color:black;
-  font-weight: 900;
+  background-color: var(--quaternary-color);
+  color: var(--primary-color);
+  transition: all 0.5s ease;
 }
 
 .button--secondary:hover {
-  background-color: rgb(0, 0, 0);
-  color:rgb(255, 255, 255);
+  background-color: var(--tertiary-color);
+}
+
+.button--tertiary {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-color);
+  transition: all 0.5s ease;
+}
+
+.button--tertiary:hover {
+  background-color: var(--tertiary-color);
 }
