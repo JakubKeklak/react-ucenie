@@ -1,5 +1,5 @@
 .header {
-    position:fixed;
+    position:sticky;
     top: 0px;
     display: flex;
     justify-content: center;
@@ -7,7 +7,8 @@
     max-width: 100%;
     z-index: 99;
     height:60px;
-    background-color: rgba(0, 0, 0,0.5);
+    background-color:var(--primary-color);
+  /*  box-shadow: 0 1px 2px var(--primary-color);*/
 }
 
 .header__container{
@@ -39,7 +40,7 @@
 }
 .menuItem{
     display: inline-block;
-    color: rgb(255, 255, 255);
+    color:var(--tertiary-color);
     text-decoration: none;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -47,12 +48,12 @@
 }
 
 .menuItem:hover{
-    color: rgb(165, 156, 107);
+    color:var(--quaternary-color);
     transition: all 0.5s ease;
 }
 
 .menuItem--active{
-    color: rgb(165, 156, 107);
+    color:var(--quaternary-color);
 }
 
 .navigation__toggleLines{
@@ -69,7 +70,7 @@
     background-color: white;
 }
 
-@media (max-width: 768px){
+@media (max-width: 600px){
     .navigation__menuItems{
         display: none;
     }
@@ -81,7 +82,7 @@
         top: 40px;
         left: 0;
         right: 0;
-        background-color: rgb(0, 0, 0);
+        background-color: var(--primary-color);
         padding: 20px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -99,7 +100,7 @@
     .navigation__toggleLine{
         width: 30px;
         height: 2px;
-        background-color: white;
+        background-color:var(--tertiary-color);
     }
     .navigation__toggleLines--close .navigation__toggleLine:nth-child(1){
         transform: rotate(45deg) translate(5px, 5px);

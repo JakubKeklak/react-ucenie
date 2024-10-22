@@ -3,12 +3,19 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --primary-color: #294B29;
+  --secondary-color: #50623A;
+  --tertiary-color: #789461;
+  --quaternary-color: #DBE7C9;
+}
 
 body {
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+ /* background-color: #DBE7C9;*/
 }
 
 ul {
