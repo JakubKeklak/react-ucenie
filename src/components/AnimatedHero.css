@@ -1,8 +1,9 @@
 .animated-hero{
     position: relative;
     width: 100%;
-    height: 750px;
+    height: 800px;
     max-height: 90vh;
+    
 }
 .animated-hero__card{
     position: absolute;
@@ -10,7 +11,8 @@
     height: 100%;
     top: 0;
     left: 0;
-    display:block;
+    display:flex;
+    justify-content: center;
     transition: all 2s ease;
     opacity:1;
 }
@@ -21,13 +23,13 @@
     z-index: 1;
 }
 .animated-hero__card-image{
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     position: absolute;
     top: 0;
-    left:100%;
+    right:0%;
     transition: all 0.2s ease;
     transition-delay: 1s;
     opacity: 1;
@@ -36,10 +38,10 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter:  blur(1px) grayscale(0.5);
+    backdrop-filter:  blur(3px) grayscale(0.5);
 }
 .animated-hero__card-image img {
     width: 100%;
@@ -49,21 +51,23 @@
 }
 
 .animated-hero__card--active .animated-hero__card-image{
-    left: 0;
+    right: 0;
     transition: all 0.5s ease;
 }
 
 .animated-hero__card-wrapper{
     display: grid;
-    grid-template-columns:minmax(40px, 1fr)  minmax(300px, 1120px) minmax(40px, 1fr);
+    grid-template-columns:1fr 1fr;
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
     width: 100%;
+    max-width: 2000px;
     height: 100%;
+    margin: 0 auto;
 }
 
-.animated-hero__card-content:nth-child(2) {
+.animated-hero__card-content {
     position: relative;
     width: 100%;
     height: 100%;
@@ -78,13 +82,13 @@
     justify-content:center;
     align-items: flex-start;
     gap: 30px;
-    width:60%;
+    background-color: var(--tertiary-color);
+    border-right: solid 8px var(--primary-color);
     height: 100%;
-    padding: 0 40px;
-    backdrop-filter: saturate(10%) blur(10px) grayscale(0.8);
-    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 0 80px;
     position: relative;
-    left:-100%;
+    left:0%;
     transition: left 0.2s ease;
     transition-delay: 1s;
 }
@@ -93,15 +97,35 @@
     left: 0px;
     transition: left 0.5s ease;
 }
-
+.animated-hero__content-left-image{
+    position: absolute;
+    top:15%;
+    bottom: 15%;
+    right: 0;
+    border: solid 8px var(--primary-color);
+    transform: translate(70%);
+    aspect-ratio: 1.5/1;
+}
+.animated-hero__content-left-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.animated-hero__card--active .animated-hero__content-left-image{
+    z-index: 2;
+    opacity: 1;
+   
+}
 .animated-hero__content-title{
-    font-size:80px;
+    font-size:60px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 1.2;
     position: relative; 
-    width: inherit;
+    width: 50%;
+    color:var(--primary-color);
 }
 .animated-hero__dots{
     display: flex;
@@ -113,11 +137,12 @@
     display: flex;
     gap: 20px;
     z-index: 2;
+ 
 }
 .animated-hero__dot{
     width: 50px;
-    height: 2px;
-    background-color: rgb(202, 198, 198);
+    height: 3px;
+    background-color:var(--quaternary-color);
     border-radius: 20px;
     opacity: 0.5;
     cursor: pointer;
@@ -125,7 +150,6 @@
 
 .animated-hero__dot:hover,
 .animated-hero__dot--active{
-    background-color: rgb(240, 240, 240);
-    height: 4px;
+    height: 5px;
     opacity: 1;
 }

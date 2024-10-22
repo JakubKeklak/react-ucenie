@@ -34,15 +34,17 @@ const AnimatedHero = ({ data, buttonVariant, icon }) => {
                             <img  src={slide.image} alt="" />
                         </div>
                         <div className='animated-hero__card-wrapper'>
-                            <div className='animated-hero__card-content'></div>
+                            
                             <div className='animated-hero__card-content'>
                                 <div className='animated-hero__content-left'>
+                                    <div className="animated-hero__content-left-image">
+                                        <img  src={slide.image} alt="" />
+                                    </div>
                                     <h2 className='animated-hero__content-title'>{slide.title}</h2>
-                                    <p className='animated-hero__content-text'>{slide.text}</p>
                                     <Button text='Viac informacii' url={slide.buttonLink} variant={buttonVariant} icon={icon} />
                                 </div>
                             </div>
-                            <div className='animated-hero__card-content'></div>
+                            
                         </div>
                     </div>
                 );
