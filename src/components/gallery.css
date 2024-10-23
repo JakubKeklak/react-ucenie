@@ -71,6 +71,7 @@ max-width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap:5px;
     justify-content: center;
     /*position: relative;*/
     width: 100%;
@@ -121,3 +122,4 @@ max-width: 90%;
     transform: scale(1.1);
     transition: all 0.5s ease;
 }
+
