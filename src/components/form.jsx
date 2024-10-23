@@ -70,7 +70,7 @@ const ContactForm = () => {
                         placeholder='+421 9...'
                         value={formData.phone}
                         onChange={handleChange}
-                        required
+                        
                     />
                 </div>
                 <div className='form__item'>
