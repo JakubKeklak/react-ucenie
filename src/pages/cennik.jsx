@@ -89,7 +89,7 @@ mimo okresu Stará Ľubovňa: dohodou
                         <span>Sucet: </span><span>{sum}</span><span>€</span>
                         </div>
                     </ul>
-                    {productSummaries.length > 0 && <Form />}
+                    {productSummaries.length > 0 && <Form productSummaries={productSummaries} sum={sum} type="product"/>}
                     
                 </div>
             </div>
