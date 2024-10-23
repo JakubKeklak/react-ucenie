@@ -4,7 +4,8 @@ import Button from './button';
 
 import './form.css'; // Add your CSS for styling the modal
 
-const ContactForm = () => {
+const ContactForm = ({ productSummaries, sum, type }) => {
+    const template = type === 'product' ? 'template_1qsgma7' : 'template_pxd5m49';
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -26,16 +27,35 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        let templateParams = {
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            message: formData.message,
+            gdpr: formData.gdpr,
+        };
 
+        if (type === 'product') {
+            const emailBody = productSummaries.map(product => 
+                `Polozka: ${product.name} - ${product.description}, Mnozstvo: ${product.quantity}, Cena za polozku: ${product.price * product.quantity}€`
+            ).join('\n') + `\n\n Celkova suma: ${sum}€`;
+
+            templateParams = {
+                ...templateParams,
+                products: emailBody
+            };
+        }
+        
         emailjs.init("39ZQDLzz2zQW1ByIg");
-        emailjs.sendForm('service_8ejd911', 'template_1qsgma7', e.target)
+        emailjs.send('service_8ejd911', template, templateParams)
             .then((result) => {
-                setResultMessage('Sprava sa uspesne odoslala. Dakujeme, budeme vas kontaktovat.');
-                setModalVisible(true);
+            setResultMessage('Sprava sa uspesne odoslala. Dakujeme, budeme vas kontaktovat.');
+            setModalVisible(true);
             }, (error) => {
-                setResultMessage('Spravu sa nepodarilo odoslat, skuste to este raz prosim.');
-                setModalVisible(true);
-            })
+            setResultMessage('Spravu sa nepodarilo odoslat, skuste to este raz prosim.');
+            setModalVisible(true);
+            });
         setFormData({
             name: '',
             phone: '',
