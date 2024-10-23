@@ -1,5 +1,4 @@
-export const slides = {
-    homepage: [
+export const slides =  [
     {
         image: "https://www.wrp.pl/wp-content/uploads/2021/08/plug-orka-1068x707.jpg.webp",
         title: "AGRO SLUŽBY",
@@ -22,11 +21,10 @@ export const slides = {
         color: "136, 124, 19, 0.5"
     },
     {
-        image: "https://img.unitedclassifieds.sk/foto/Zml0LWluLzEwMjR4NzY4L2ZpbHRlcnM6cXVhbGl0eSg5MCkvYmF6/COzgf9DfK_fss?st=4IEEq97AvVmkGAPLYxa8Pk2QjWQlClx301kcVzma1_w&ts=1647533702&e=0",
+        image: "https://img.autobazar.sk/foto/Zml0LWluLzEwMjR4NzY4L2ZpbHRlcnM6cXVhbGl0eSg5MCkvYXNr/oXKydVGzf_fss?st=73bRqiygCZf2DzAoGx2NJpx-lneGlkCTpFFnsTuXrJI&ts=1696872345&e=0",
         title: "DOVOZ MATERIALU",
         text: "You can reach us a",
         buttonLink: "/about#vyroba-a-dovoz-stiepane-drevo",
         color: "40, 40, 40, 0.5"
-    },
+    }
 ]
-}
