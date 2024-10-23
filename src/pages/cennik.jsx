@@ -3,6 +3,7 @@ import { productData } from '../data/productData'
 import ProductCard from '../components/productCard'
 import Text from '../components/text'
 import Button from '../components/button'
+import Form from '../components/form'
 import { useState } from 'react'
 
 const Cennik = () => {
@@ -73,13 +74,14 @@ mimo okresu Stará Ľubovňa: dohodou
                             return <li className="product__card" key={index}>
                                 <div>
                                     <span>{product.name}</span>
+                                    <br/>
                                     <span>{product.description}</span>
                                 </div>
-                                <Button text="+" variant="secondary" buttonFunction={() => incrementProduct(product)} /> 
-                                <span >{product.quantity}</span>
                                 <Button text="-" variant="secondary" buttonFunction={() => decrementProduct(product)} />
+                                <span >{product.quantity}</span>
+                                <Button text="+" variant="secondary" buttonFunction={() => incrementProduct(product)} /> 
                                 <span>{product.price * product.quantity}€</span>
-                                <span onClick={() => removeProduct(product)}>Odobrat</span>
+                                <Button text="X" variant="primary" buttonFunction={() => removeProduct(product)} /> 
                             </li> 
                         }
                         )}
@@ -87,6 +89,8 @@ mimo okresu Stará Ľubovňa: dohodou
                         <span>Sucet: </span><span>{sum}</span><span>€</span>
                         </div>
                     </ul>
+                    {productSummaries.length > 0 && <Form />}
+                    
                 </div>
             </div>
         </div>
