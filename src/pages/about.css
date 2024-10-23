@@ -19,7 +19,7 @@
     /* grid-template-columns:minmax(40px, 1fr)  minmax(25%, 560px) minmax(25%, 560px) minmax(40px, 1fr);*/
     grid-template-columns: 1fr 10% 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-
+    scroll-margin-top: 80px;
 }
 
 .detail::before {
@@ -81,4 +81,22 @@
 .detail--twist .detail__image {
     grid-column: 2/4;
 
+}
+
+.about__navigation{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    position: fixed;
+    top:50px;
+    z-index: 10;
+}
+
+.about__navigation ul{
+    display: flex;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
 }

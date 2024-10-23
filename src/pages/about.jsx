@@ -8,7 +8,14 @@ import { slides } from '../data/slider'
 const about = () => {
   return (
     <div className="about">
-      
+        <div className="about__navigation container">
+          <ul>
+            <li><a href="#vyroba-a-dovoz-stiepane-drevo">Výroba a dovoz štiepaného dreva</a></li>
+            <li><a href="#komunalne-sluzby">Komunálne služby</a></li>
+            <li><a href="#agro-sluzby">Agro služby</a></li>
+            <li><a href="#dovoz-materialu">Dovoz materiálu</a></li>
+          </ul>        
+        </div>
         <div className="detail container">
           <div className="detail__content">
             <h1>VÝROBA A DOVOZ ŠTIEPANÉHO DREVA</h1>
