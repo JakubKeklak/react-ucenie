@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './header.css';
 import { NavLink } from 'react-router-dom';
 import { links } from '../data/links';
@@ -10,7 +10,6 @@ const Header = () => {
     setShowNavbar(!showNavbar);
   };
 
-
   return (
     <header className="header">
       <div className="header__container container">
@@ -21,9 +20,9 @@ const Header = () => {
         </div>
         <nav className="navigation">
           <ul className={`navigation__menuItems ${showNavbar ? 'navigation__menuItems--show' : ''}`}>
-            {links.filter(link => link.navlink).map((link) => {
+            {links.filter(link => link.navlink).map((link, index) => {
               return (
-                <li key={link.id}>
+                <li key={index}>
                   <NavLink
                     className="menuItem"
                     to={link.url}
