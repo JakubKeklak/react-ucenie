@@ -1,6 +1,7 @@
 export const links = [
     {
-        name: "Home",
+        name: "O nas",
+        page: "Home",
         url: "/",
         exact: true,
         navlink: true,
@@ -16,25 +17,29 @@ export const links = [
         ]
     },
     {
-        name: "About",
-        url: "/about",
+        name: "Nase sluzby",
+        page: "Services",
+        url: "/services",
         exact: true,
         navlink: true,
     },
     {
         name: "Cennik",
+        page: "Cennik",
         url: "/cennik",
         exact: true,
         navlink: true,
     },
     {
-        name: "Contact",
+        name: "Kontact",
+        page: "Contact",
         url: "/contact",
         exact: true,
         navlink: true
     },
     {
         name: "Blog",
+        page: "Blog",
         url: "/blog",
         exact: true,
         navlink: true
