@@ -1,0 +1,102 @@
+.services-detail-block{
+    position: relative;
+    width: 100%;
+    scroll-margin-top: 80px;
+}
+
+.services-detail-block__wrapper {
+    position: relative;
+    width: 100%;
+    /* max-width: 2000px;*/
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* grid-template-columns:minmax(40px, 1fr)  minmax(25%, 560px) minmax(25%, 560px) minmax(40px, 1fr);*/
+    grid-template-columns: 1fr 10% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+}
+
+.services-detail-block__wrapper::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    left:25%;
+    aspect-ratio: 1/1;
+    background-color: var(--tertiary-color);
+    z-index: -1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-detail-block__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px;
+    grid-column: 2/4;
+    grid-row: 2/4;
+    order: 2;
+    color: var(--primary-color);
+    background-color: white;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-detail-block ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.services-detail-block li {
+    list-style: disc;
+    padding: 0;
+    margin: 0;
+}
+
+.services-detail-block__buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.services-detail-block__gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* grid-column: 2/5;*/
+    /*background-color:var(--secondary-color);*/
+    grid-row: 1/3;
+    grid-column: 1/3;
+    order: 1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-detail-block:nth-child(odd) .services-detail-block__content {
+    grid-column: 1/3;
+
+}
+
+.services-detail-block:nth-child(odd) .services-detail-block__gallery {
+    grid-column: 2/4;
+
+}
+
+.services-detail-block__divider{
+    position: absolute;
+    width: 100%;
+    height: 35%;
+    left: 0;
+    bottom: 5%;
+    background-color: var(--quaternary-color);
+    opacity: 0.5;
+    z-index: -2;
+}
