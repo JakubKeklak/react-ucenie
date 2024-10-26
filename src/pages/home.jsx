@@ -1,19 +1,20 @@
 import React from 'react';
 import './home.css';
-import ColoredWrapper from '../components/coloredWrapper';
 import Text from '../components/text';
 import { slides } from '../data/slider';
-import Hero from '../components/Hero';
 import AnimatedHero from '../components/AnimatedHero';
+import { blogs } from '../data/blogs';
+import BlogWrapper from '../components/BlogWrapper';
+import BlogCard from '../components/BlogCard';
+import ColoredWrapper from '../components/coloredWrapper';
+import Gallery from '../components/gallery'; 
+
 const Home = () => {
-    
 
     return (
         <div className="hero-container" >
             <AnimatedHero data={slides} />
-                
-            
-            <div className="overlay-container">
+            <ColoredWrapper>
                 <div className="container">
                     <h2>Naše služby</h2>
                     <Text>
@@ -29,11 +30,24 @@ const Home = () => {
                         Moderné kasína tak využívajú nové technológie a zároveň sa orientujú na udržateľnosť v oblasti prevádzky a digitálnej
                         zábavy.
                     </Text>
-                    
                 </div>
-                <ColoredWrapper color='gray'>
-                </ColoredWrapper>
-            </div>
+            </ColoredWrapper>
+            <ColoredWrapper color='gray'>
+                <Gallery variant="row" data={slides} />
+            </ColoredWrapper>
+            <ColoredWrapper>
+                <div className="container">
+                    <BlogWrapper
+                        title="Zaujimavosti"
+                        buttonText="Všetky články"
+                        buttonUrl="/blog"
+                    >
+                        {blogs.slice(0, 4).map((blog, index) => (
+                            <BlogCard key={index} blog={blog} />
+                        ))}
+                    </BlogWrapper>
+                </div>
+            </ColoredWrapper>
         </div>
     );
 };
