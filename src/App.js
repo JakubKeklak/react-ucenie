@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -14,11 +15,12 @@ function App() {
   return (
     <div className='App'>
       <Router>
+        <ScrollToTop />
         <Header />
         <React.Suspense>
             <Switch>
               {links.map((link, index) => {
-                const Page = loadPages(link.name);
+                const Page = loadPages(link.page);
                 return (
                   <Route key={index} path={link.url} exact={link.exact} 
                   render={(props) => <Page {...props} />}
