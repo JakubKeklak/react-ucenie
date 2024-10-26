@@ -30,11 +30,10 @@ const AnimatedHero = ({ data, buttonVariant, icon }) => {
             {data.map((slide, index) => {
                 return (
                     <div key={index} className={`animated-hero__card ${activeIndex === index ? 'animated-hero__card--active' : ''}`}>
-                        <div className="animated-hero__card-image">
-                            <img  src={slide.image} alt="" />
-                        </div>
                         <div className='animated-hero__card-wrapper'>
-                            
+                            <div className="animated-hero__card-image">
+                                <img  src={slide.image} alt="" />
+                            </div>
                             <div className='animated-hero__card-content'>
                                 <div className='animated-hero__content-left'>
                                     <div className="animated-hero__content-left-image">
@@ -44,7 +43,6 @@ const AnimatedHero = ({ data, buttonVariant, icon }) => {
                                     <Button text='Viac informacii' url={slide.buttonLink} variant={buttonVariant} icon={icon} />
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 );
