@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './gallery.css';
 
-const Gallery = ({ data }) => {
+const Gallery = ({ data, variant }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(null);
     const [visibleCards, setVisibleCards] = useState(new Array(data.length).fill(false));
@@ -57,7 +57,7 @@ const Gallery = ({ data }) => {
     }, [data.length]);
 
     return (
-        <div className='gallery'>
+        <div className={`gallery ${variant ? 'gallery--row' : 'gallery--grid'}`} >
             {data.map((image, index) => (
                 <div
                     key={index}
