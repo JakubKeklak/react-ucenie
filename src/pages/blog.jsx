@@ -1,32 +1,31 @@
+import './blog.css'
 import {useState} from 'react';
 import { blogs } from '../data/blogs';
+import Heading from '../components/typography/Heading';
+import BlogWrapper from '../components/BlogWrapper';
 import BlogCard from '../components/BlogCard';
+import Button from '../components/button';
 
 const Blog = () => {
   
   const uniqueCategories = [...new Set(blogs.map(blog => blog.category))];
   const [selectedCategory, setSelectedCategory] = useState('All');
   const filteredBlogs = selectedCategory === 'All' ? blogs : blogs.filter(blog => blog.category === selectedCategory);
-
+  
   return (
-    <div className='container'>
-      <h1>Blog</h1>
-      <div className='blogs__category'>
-        <div className='category' onClick={() => setSelectedCategory('All')}>
-          Vsetky
-        </div>
+    <div className='blog container'>
+      <Heading>Zaujimavosti</Heading>
+      <div className='blog__category'>
+        <Button text="Vsetky" buttonFunction={() => setSelectedCategory('All')}  variant="secondary" activeButton={selectedCategory === 'All' ? 'active' : ''}/>
         {uniqueCategories.map((category, index) => (
-          <div key={index} className='category' onClick={() => setSelectedCategory(category)}>
-            {category}
-          </div>
+          <Button text={category} buttonFunction={() => setSelectedCategory(category)} variant="secondary" key={index} activeButton={selectedCategory === category ? 'active' : ''}/>
         ))}
       </div>
-      <div className='blogs'>
+      <BlogWrapper>
         {filteredBlogs.map((blog, index) => (
-        
           <BlogCard key={index} blog={blog} />
         ))}
-      </div>
+      </BlogWrapper>
     </div>
   );
 }

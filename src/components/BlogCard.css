@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -10,14 +11,18 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
-    background-color: var(--primary-color);
+}
+
+.blogcard:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .blogcard h3,
 .blogcard p{
     background-color: white;
     width: 100%;
-    padding: 0 10px;
+    padding: 0px 5px;
 }
 
 .blogcard p{
@@ -27,7 +32,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     border-radius:0 0 10px 10px;
-    padding: 20px 10px;
+    padding-bottom: 20px;
 }
 
 .blogcard img{
@@ -39,17 +44,10 @@
 }
 
 .blogcard span {
-    
+    background-color: var(--primary-color);
     color: white;
-    padding: 5px 10px;
+    padding: 15px 0px;
     width: 100%;
     text-align: center;
    
-}
-
-.blogs{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-    width: 100%;
 }

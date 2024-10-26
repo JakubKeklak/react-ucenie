@@ -1,0 +1,9 @@
+.blog{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.blog__category{
+    display: flex;
+    gap: 20px;
+}
