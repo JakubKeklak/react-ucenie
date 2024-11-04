@@ -1,0 +1,33 @@
+.faqs-block{
+    width: 100%;
+    padding: 80px 0;
+    background-color: var(--primary-color);
+}
+
+.faqs-block__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    width: 100%;
+}
+
+.faqs__card{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    flex: 1;
+    color: var(--tertiary-color);
+}
+
+.faqs__title{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.faqs__text{
+    font-size: 1.1rem;
+    text-align: center;
+}
