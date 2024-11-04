@@ -1,8 +1,9 @@
 import './AnimatedHero.css'
 import { useState, useEffect, useRef } from 'react'
 import Button from './button'
+import Image from './parts/Image'
 
-const AnimatedHero = ({ data, buttonVariant, icon }) => {
+const AnimatedHero = ({ data, buttonVariant, icon, size, image }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const intervalRef = useRef(null);
 
@@ -17,7 +18,7 @@ const AnimatedHero = ({ data, buttonVariant, icon }) => {
         }
         intervalRef.current = setInterval(() => {
             setActiveIndex((prevIndex) => (prevIndex + 1) % data.length);
-        }, 6000); // 6 seconds
+        }, 9000);
     }
 
     useEffect(() => {
@@ -25,28 +26,40 @@ const AnimatedHero = ({ data, buttonVariant, icon }) => {
         return () => clearInterval(intervalRef.current); // Cleanup interval on component unmount
     }, [data.length]);
 
+    const heroSize = size ? 'animated-hero--small' : 'animated-hero--large';
     return (
-        <div className='animated-hero'>
-            {data.map((slide, index) => {
-                return (
-                    <div key={index} className={`animated-hero__card ${activeIndex === index ? 'animated-hero__card--active' : ''}`}>
+        <div className={`animated-hero ${heroSize}`}>
+                    <div  className="animated-hero__card">
                         <div className='animated-hero__card-wrapper'>
-                            <div className="animated-hero__card-image">
+                        {/*data.slice(0, 2).map((slide, index) => {
+                            return (
+                            <div key={index} className={`animated-hero__card-image ${activeIndex === index ? 'animated-hero__card-image--active' : ''}`}>
                                 <img  src={slide.image} alt="" />
                             </div>
-                            <div className='animated-hero__card-content'>
-                                <div className='animated-hero__content-left'>
-                                    <div className="animated-hero__content-left-image">
-                                        <img  src={slide.image} alt="" />
-                                    </div>
-                                    <h2 className='animated-hero__content-title'>{slide.title}</h2>
-                                    <Button text='Viac informacii' url={slide.buttonLink} variant={buttonVariant} icon={icon} />
+                             );
+                            })
+                             */}
+                             <div className="animated-hero__card-image animated-hero__card-image--active ">
+                                
+                                <Image src={image} alt="" />
+                            </div>
+                            
+                            <div className='animated-hero__card-content container'>
+                                <div className='animated-hero__content'>
+                                    <h2 className='animated-hero__content-title'>Title</h2>
+                                    <p className='animated-hero__content-text'>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Nulla convallis libero nec metus convallis, auctor tincidunt
+                                        nunc fermentum. Nullam nec nunc nec nunc fermentum.
+                                        
+                                    </p>
+                                    <Button text='Viac informacii' url="/services" variant={buttonVariant} icon={icon} />
                                 </div>
                             </div>
                         </div>
                     </div>
-                );
-            })}
+               
+           { /*
             <div className='animated-hero__dots'>
                 {data.map((_, index) => {
                     return (
@@ -54,6 +67,7 @@ const AnimatedHero = ({ data, buttonVariant, icon }) => {
                     );
                 })}
             </div>
+            */}
         </div>
     );
 }
