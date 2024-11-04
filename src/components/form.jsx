@@ -73,40 +73,49 @@ const ContactForm = ({ productSummaries, sum, type }) => {
         <div className="form__wrapper">
             <form onSubmit={handleSubmit} >
                 <div className='form__item'>
-                    <label>Meno:</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
+                    <label>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder=""
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            />
+                            <span>Meno</span>
+                    </label>
                 </div>
                 <div className='form__item'>
-                    <label>Tel. cislo:</label>
-                    <input
-                        type="tel"
-                        name="phone"
-                        placeholder='+421 9...'
-                        value={formData.phone}
-                        onChange={handleChange}
-                        
-                    />
+                    <label>
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder=""
+                            value={formData.phone}
+                            onChange={handleChange}
+                            
+                        />
+                        <span>Tel. cislo</span>
+                    </label>
                 </div>
                 <div className='form__item'>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
+                    <label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder=""
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                        <span>Email</span>
+                    </label>
                 </div>
                 <div className='form__item'>
                     <label>Sprava:</label>
                     <textarea
                         name="message"
+                        placeholder=""
                         value={formData.message}
                         onChange={handleChange}
                         required
