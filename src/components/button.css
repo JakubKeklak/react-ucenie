@@ -11,7 +11,7 @@
   letter-spacing: 1.2px;
   text-transform: uppercase;
   border: none;
-  border-radius: 5px;
+ /* border-radius: 5px;*/
   overflow: hidden;
 }
 
@@ -34,14 +34,15 @@
 }
 
 .button--primary {
-  color: var(--tertiary-color);
-  background-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+  background-color: var(--primary-color);
   border-color: var(--secondary-color);
-  transition: all 0.5s ease;
+  transition: all 0.s ease;
 }
 .button--primary .active,
 .button--primary:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--quaternary-color);
+  color: var(--primary-color);
 
 }
 
