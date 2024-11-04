@@ -1,19 +1,25 @@
 import './services.css'
 import ServicesDetailBlock from '../components/ServicesDetailBlock'
+import { HashLink } from 'react-router-hash-link';
 import Button from '../components/button'
 import Gallery from '../components/gallery'
 import { slides } from '../data/slider'
+import AnimatedHero from '../components/AnimatedHero';
 
 
 const services = () => {
   return (
     <main className="services">
-        <div className="services__navigation container">
-          <ul>
-            <li><a className="menuItem" href="#vyroba-a-dovoz-stiepane-drevo">Palivove drevo</a></li>
-            <li><a className="menuItem" href="#komunalne-sluzby">Komunálne služby</a></li>
-            <li><a className="menuItem" href="#agro-sluzby">Agro služby</a></li>
-            <li><a className="menuItem" href="#dovoz-materialu">Dovoz materiálu</a></li>
+      <AnimatedHero 
+        data={slides} 
+        size="small"
+        image="https://www.illinoisbank.com/sites/default/files/0010_22_Farm_Labor4_Story_600X300.jpg"/>
+        <div className="services__navigation ">
+          <ul className="container">
+            <li><HashLink className="menuItem" to="#vyroba-a-dovoz-stiepane-drevo" >Palivove drevo</HashLink></li>
+            <li><HashLink className="menuItem" to="#komunalne-sluzby" >Komunálne služby</HashLink></li>
+            <li><HashLink className="menuItem" to="#agro-sluzby" >Agro služby</HashLink></li>
+            <li><HashLink className="menuItem" to="#dovoz-materialu" >Dovoz materiálu</HashLink></li>
           </ul>        
         </div>
 
