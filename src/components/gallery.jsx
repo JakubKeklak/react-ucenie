@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './gallery.css';
+import Image from './parts/Image';
 
 const Gallery = ({ data, variant }) => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -63,17 +64,19 @@ const Gallery = ({ data, variant }) => {
                     key={index}
                     className={`gallery__card ${visibleCards[index] ? 'visible' : ''}`}
                     ref={(el) => (cardRefs.current[index] = el)}
+                    onClick={() => handleImageClick(index)}
                 >
-                    <img src={image.image} alt={`gallery image ${index}`} onClick={() => handleImageClick(index)} />
+                   
+                    <Image src={image.image} alt={`gallery image ${index}`}  />
                 </div>
             ))}
 
             {modalVisible && (
-                <div className="modal" onClick={closeModal}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <span className="close" onClick={closeModal}>&times;</span>
-                        <img src={data[selectedImageIndex].image} alt={selectedImageIndex} />
-                        <div className="modal-navigation">
+                <div className="gallery__modal" onClick={closeModal}>
+                    <div className="gallery__modal-content" onClick={(e) => e.stopPropagation()}>
+                        <span className="gallery__modal-close" onClick={closeModal}>&times;</span>
+                        <Image src={data[selectedImageIndex].image} alt={selectedImageIndex} />
+                        <div className="gallery__modal-navigation">
                             <button onClick={showPrevImage}></button>
                             <button onClick={showNextImage}></button>
                         </div>
