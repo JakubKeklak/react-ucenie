@@ -27,7 +27,7 @@ footer {
 .footer__divider {
     height: 1px;
     width: 100%;
-    background-color:#DBE7C9;
+    background-color:var(--quaternary-color);
     border: none;
     margin: 0;
     padding: 0;
