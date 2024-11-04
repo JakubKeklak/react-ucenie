@@ -5,13 +5,30 @@ import { links } from '../data/links';
 
 const Header = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
  
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="header__container container">
         <div className="navigation__logo">
           <span>Drevo</span>
