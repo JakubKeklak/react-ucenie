@@ -1,24 +1,26 @@
 .services-detail-block{
-    position: sticky;
+    position:static;
     top: 60px;
     width: 100%;
     scroll-margin-top: 60px;
-    height: 100vh;
+   /* height: 100vh;*/
     display: flex;
     justify-content: center;
-    background-color: var(--quaternary-color);
+   /* background-color: var(--quaternary-color);*/
+    padding: 100px 0;
+}
+.services-detail-block:nth-child(even){
+    background-color: var(--quaternary-color)
 }
 
-.services-detail-block:nth-child(even){
-    background-color: var(--tertiary-color);
-}
 .services-detail-block__wrapper {
     position: relative;
     width: 100%;
+    height: 100%;
     /* max-width: 2000px;*/
     display: grid;
-    justify-content: center;
-    align-items: center;
+   /* justify-content: center;
+    align-items: center;*/
     /* grid-template-columns:minmax(40px, 1fr)  minmax(25%, 560px) minmax(25%, 560px) minmax(40px, 1fr);*/
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -33,7 +35,7 @@
     right:35px;
     bottom: -5px;
     background-color:var(--secondary-color);
-    z-index: -1;
+    z-index: 0;
     /*border-radius: 10px;*/
     overflow: hidden;
 }
@@ -79,6 +81,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /*max-height:600px;*/
     /* grid-column: 2/5;*/
     /*background-color:var(--secondary-color);*/
     
@@ -110,4 +113,41 @@
     /*background-color: var(--secondary-color);*/
     opacity: 1;
     z-index: -2;
+}
+
+@media screen and (max-width: 900px){
+    .services-detail-block__wrapper {
+        grid-template-columns: 1fr;
+       /* grid-template-rows: 1fr 1fr;*/
+    }
+
+    .services-detail-block__wrapper::before {
+        width: 100%;
+        height: 25%;
+        top: -20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+
+    .services-detail-block__gallery {
+        max-height: 600px;
+        margin: 0 -40px;
+    }
+
+    .services-detail-block__content,
+    .services-detail-block:nth-child(odd) .services-detail-block__content {
+        order:1;
+    }
+
+    .services-detail-block__gallery,
+    .services-detail-block:nth-child(odd) .services-detail-block__gallery {
+        order: 2;
+    
+    }
+
+    .services-detail-block:nth-child(odd) .services-detail-block__wrapper::before {
+        left:0px;
+    }
 }
