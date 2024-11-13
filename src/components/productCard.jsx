@@ -2,7 +2,7 @@ import './productCard.css'
 
 import Button from './button'
 
-const ProductCard = ({ product, pushProduct }) => {
+const ProductCard = ({ product, pushProduct, disabled }) => {
     return (
         <div className="product__card">
             <div className="product__card__description">
@@ -11,7 +11,7 @@ const ProductCard = ({ product, pushProduct }) => {
             </div>
             <p>Cena: {product.price}€</p>
             <img src={product.image} alt="product" />
-            <Button text="+" variant="secondary" buttonFunction={() => pushProduct(product)}/>
+            <Button text="+" variant="secondary" buttonFunction={() => pushProduct(product)} disabledButton={disabled}/>
         </div>
     )
 }
