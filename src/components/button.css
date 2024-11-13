@@ -67,3 +67,7 @@
 .button--tertiary:hover {
   background-color: var(--tertiary-color);
 }
+
+button:disabled{
+  opacity:0.5;
+}
