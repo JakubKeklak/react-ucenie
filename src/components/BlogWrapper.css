@@ -12,6 +12,19 @@
 .blog-wrapper__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+   
+    gap: 20px;
     padding: 40px 0;
+}
+
+@media screen and (max-width: 900px){
+    .blog-wrapper__cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px){
+    .blog-wrapper__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
