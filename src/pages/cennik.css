@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: relative;
+   /* position: relative;*/
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -36,6 +36,19 @@
     flex-direction: column;
     gap: 10px;
 }
+.cennik__products-list .product__card{
+    transform: translateX(100%);
+    opacity: 0;
+    animation: card 0.5s forwards;
+
+}
+
+@keyframes card {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 .cennik__sumary  {
     display: flex;
     gap: 10px;
@@ -45,4 +58,40 @@
     font-weight: 700;
     font-size: 1.5em;
     width: max-content;
+}
+.show-calc{
+    position: fixed;
+    right: 20px;
+    top: 90vh;
+    display: none;
+}
+
+@media screen and ( max-width: 1000px){
+    .cennik__products{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-right: 0;
+        border-right: none;
+    }
+    .cennik__kalk{
+        position: fixed;
+        width: 100%;
+        height:100%;
+        top: 0px;
+        right: -100%;
+        background-color: var(--quaternary-color);
+        padding: 80px 20px 40px 20px;
+        transition: right 0.5s ease ;
+        z-index: 9;
+    }
+    .cennik__kalk--open{
+        right: 0;
+        transition: right 0.5s ease ;
+        overflow: scroll;
+    }
+    .show-calc{
+        display: block;
+        z-index: 9999999;
+    }
 }
