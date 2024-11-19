@@ -2,7 +2,7 @@ import React from 'react';
 import './ServicesDetailBlock.css';
 import Heading from './typography/Heading';
 
-const ServicesDetailBlock = ({ id, title, text, buttons, gallery }) => {
+const ServicesDetailBlock = ({ id, index, title, text, buttons, gallery }) => {
 
     return (
         <section className="services-detail-block" id={id}>
