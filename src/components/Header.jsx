@@ -2,8 +2,13 @@ import { useState, useEffect } from 'react';
 import './header.css';
 import { NavLink } from 'react-router-dom';
 import { links } from '../data/links';
+import { useContext } from 'react'
+import { ProductContext } from '../context/dataContext'
+import { ReactComponent as Kosik } from '../svg/kosik.svg';
+
 
 const Header = () => {
+  const {productSummaries, handleShowCalc, closeCalc} = useContext(ProductContext);
   const [showNavbar, setShowNavbar] = useState(false);
   const [scrolled, setScrolled] = useState(false);
  
@@ -11,9 +16,15 @@ const Header = () => {
     setShowNavbar(!showNavbar);
   };
 
+  const closeNavbar = () => {
+    if (window.innerWidth <= 750) {
+      setShowNavbar(false);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -45,17 +56,24 @@ const Header = () => {
                     to={link.url}
                     exact
                     activeClassName="menuItem--active"
+                    onClick={ () => {closeNavbar(); closeCalc( ); }}
                   >
-                    {link.name}
+                    <span>{link.name}</span>
                   </NavLink>
                 </li>
               )
             })}
           </ul>
+          <div className={`shop__icon ${productSummaries.length > 0 ? 'shop__icon--view' : ''}`} onClick={handleShowCalc}>
+            <NavLink to="/cennik" className='kosik'>
+                <Kosik />
+            </NavLink>
+            <span className='shop__count'>{productSummaries.length}</span>
+          </div>
           <div className="navigation__toggle">
             <div
               className={`navigation__toggleLines ${showNavbar ? 'navigation__toggleLines--close' : ''}`}
-              onClick={handleShowNavbar}
+              onClick={() => { handleShowNavbar(); }}
             >
               <div className="navigation__toggleLine"></div>
               <div className="navigation__toggleLine"></div>
