@@ -39,14 +39,18 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image }) => {
                              );
                             })
                              */}
-                             <div className="animated-hero__card-image animated-hero__card-image--active ">
+                             <div className="animated-hero__card-image">
                                 
                                 <Image src={image} alt="" />
                             </div>
                             
                             <div className='animated-hero__card-content container'>
                                 <div className='animated-hero__content'>
-                                    <h2 className='animated-hero__content-title'>Title</h2>
+                                    <h2 className='animated-hero__content-title'>
+                                        <span>Drevo</span>
+                                        <span>&</span>
+                                        <span>Sluzby</span>
+                                    </h2>
                                     <p className='animated-hero__content-text'>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Nulla convallis libero nec metus convallis, auctor tincidunt
