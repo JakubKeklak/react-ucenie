@@ -1,11 +1,11 @@
 import './cennik.css'
-import { productData } from '../data/productData'
+
+import { useContext } from 'react'
+import { ProductContext } from '../context/dataContext'
 import ProductCard from '../components/productCard'
-import {productSummaries} from '../data/productSummaries'
+import OrderBlock from '../components/OrderBlock'
 import Text from '../components/text'
-import Button from '../components/button'
-import Form from '../components/form'
-import { useState } from 'react'
+
 import React, { useEffect } from 'react';
 
 const Cennik = () => {
@@ -24,49 +24,8 @@ const Cennik = () => {
         };
     }, []);
 
-    const [productSummaries, setProductSummaries] = useState([]);
-    
-     
-    const pushProduct = function(product) {
-        const newProductSummaries = [...productSummaries];
-        newProductSummaries.push(product);
-        setProductSummaries(newProductSummaries);
-    }
-
-    const removeProduct = function(product) {
-        const newProductSummaries = [...productSummaries];
-        const index = newProductSummaries.indexOf(product);
-        newProductSummaries.splice(index, 1);
-        setProductSummaries(newProductSummaries);
-    }
-
-    const incrementProduct = function(product) {
-        const newProductSummaries = [...productSummaries];
-        const index = newProductSummaries.indexOf(product);
-        newProductSummaries[index].quantity++;
-        setProductSummaries(newProductSummaries);
-    }
-
-    const decrementProduct = function(product) {
-        const newProductSummaries = [...productSummaries];
-        const index = newProductSummaries.indexOf(product);
-        if (newProductSummaries[index].quantity > 1) {
-            newProductSummaries[index].quantity--;
-            setProductSummaries(newProductSummaries);
-        }
-    }
-
-    const sum = productSummaries.reduce((acc, product) => acc + product.price * product.quantity, 0);
-
-    const [showCalc, setShowCalc] = useState(false);
-    const handleShowCalc = () => {
-        setShowCalc(!showCalc);
-      };
+    const {productData, pushProduct, disabledButton } = useContext(ProductContext);
    
-    const disabledButton = (product) => {
-        const exists = productSummaries.some(p => p.id === product.id);
-        return exists ? true : false;
-    };
     return (
         <div className="cennik__wrapper container">
             <h1>Cennik</h1>
@@ -85,43 +44,10 @@ const Cennik = () => {
                         Doprava v rámci okresu Stará Ľubovňa: 0,65€ mimo okresu Stará Ľubovňa: dohodou
                     </Text>
                 </div>
-                <div className={`cennik__kalk ${showCalc ?  'cennik__kalk--open' : '' }`} >
-                    <h2 className='cennik__kalk__title'>Kalkulačka</h2>
-                    <p>
-                        Vyuzite nasu orientacnu kalkulacku a zistite cenu vasho tepla. 
-                    </p>
-                    <p>
-                        V prípade odberu väčšieho množstva Vám vieme poskytnúť zaujímavé zľavy, preto nas nevahajte <a href="/contact" >kontaktovat</a>. 
-                    </p>
-                    <ul className='cennik__products-list'>
-                        {productSummaries.map((product, index) => {
-                            return <li className="product__card product__card--show" key={index}>
-                                <div>
-                                    <span>{product.name}</span>
-                                    <br/>
-                                    <span>{product.description}</span>
-                                </div>
-                                <Button text="-" variant="secondary" buttonFunction={() => decrementProduct(product)} />
-                                <span >{product.quantity}</span>
-                                <Button text="+" variant="secondary" buttonFunction={() => incrementProduct(product)} /> 
-                                <span>{product.price * product.quantity}€</span>
-                                <Button text="X" variant="primary" buttonFunction={() => removeProduct(product)} /> 
-                            </li> 
-                        }
-                        )}
-                        <div className="cennik__sumary">
-                        <span>Sucet: </span><span>{sum}</span><span>€</span>
-                        </div>
-                    </ul>
-                    {productSummaries.length > 0 && <Form productSummaries={productSummaries} sum={sum} type="product"/>}
-                    
+                <div className="cenik__order-block">
+                    <OrderBlock />    
                 </div>
             </div>
-            {productSummaries.length > 0 &&
-                <div className='show-calc'>
-                    <Button text="Otvorit kalkulacku" buttonFunction={handleShowCalc} />
-                </div>
-            }
         </div>
     )
 }

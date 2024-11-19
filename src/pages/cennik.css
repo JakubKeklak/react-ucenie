@@ -12,7 +12,7 @@
 }
 
 .cennik__products, 
-.cennik__kalk {
+.cenik__order-block {
     flex: 1;
 }
 
@@ -40,8 +40,8 @@
     transform: translateX(100%);
     opacity: 0;
     animation: card 0.5s forwards;
-
 }
+
 
 @keyframes card {
     to {
@@ -74,6 +74,9 @@
         padding-right: 0;
         border-right: none;
     }
+    .cenik__order-block{
+        display: none;
+    }
     .cennik__kalk{
         position: fixed;
         width: 100%;
@@ -83,15 +86,12 @@
         background-color: var(--quaternary-color);
         padding: 80px 20px 40px 20px;
         transition: right 0.5s ease ;
-        z-index: 9;
+        z-index: 11;
     }
     .cennik__kalk--open{
         right: 0;
         transition: right 0.5s ease ;
         overflow: scroll;
     }
-    .show-calc{
-        display: block;
-        z-index: 9999999;
-    }
+   
 }
