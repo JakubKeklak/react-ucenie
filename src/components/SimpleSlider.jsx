@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Children } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./SimpleSlider.css";
-import { slides } from "../data/slider";
-import Hero from "./Hero";
+import { slides } from '../data/slider';
+
 
 
 function AutoPlay() {
@@ -14,25 +14,30 @@ function AutoPlay() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 10000,
+    speed:2000,
+    autoplaySpeed: 5000,
     cssEase: "linear"
   };
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        {slides.map((slide) => {
-          return (
-            <Hero
-              key={slide.id}
-              image={slide.image}
-              title={slide.title}
-              text={slide.text}
-              url={slide.url}
-            />
-          );
-        })}
-
+      {slides.map((slide, index) => (
+        <div>
+          <div className='grid' key={index} style={{backgroundImage: `url(${slide.image})`}}>
+            <div className='grid__item'></div>
+            <div className='grid__item grid__item--center'>
+              <div className='grid__item-left'>
+                  <div className='grid__item--inner__content'>
+                      <h1>{slide.title}</h1>
+                      <p>{slide.text}</p>
+                  </div>
+              </div>
+            <div className='grid__item-right'></div>
+          </div>
+          <div className='grid__item'></div>
+        </div>
+      </div>
+                ))}
       </Slider>
     </div>
   );
