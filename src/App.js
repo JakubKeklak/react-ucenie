@@ -4,7 +4,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import OrderBlock from './components/OrderBlock';
 import { links } from './data/links';
 
 const loadPages = (pageName) => {
@@ -12,6 +12,7 @@ const loadPages = (pageName) => {
 };
 
 function App() {
+
   return (
     <div className='App'>
       <Router>
@@ -30,6 +31,9 @@ function App() {
               })}
               
             </Switch>
+            <div className='app__order-block'>
+              <OrderBlock />
+            </div>
         </React.Suspense>
         <Footer />
       </Router>
