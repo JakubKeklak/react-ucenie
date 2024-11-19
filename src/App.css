@@ -7,28 +7,37 @@
   
   --primary-color: rgb(52, 52, 52);
   --primary-color-09: rgba(52, 52, 52, 0.9);
+  --primary-color-05: rgba(52, 52, 52, 0.5);
   --primary-color-02: rgba(52, 52, 52, 0.2);
   --secondary-color:rgb(142, 139, 130);
   --tertiary-color:rgb(233, 220, 190);
+  --tertiary-color-01:rgba(233, 220, 190,0.1);
+  --tertiary-color-07:rgba(233, 220, 190,0.5);
   --quaternary-color:rgb(243, 243, 243);
-  --quaternary-color-05:rgba(243, 243, 243,0.1);
+  --quaternary-color-05:rgba(243, 243, 243,0.5);
   /*
-  --primary-color: rgb(26, 26, 25);
-  --primary-color-05: rgba(26, 26, 25, 0.2);
-  --secondary-color:rgb(49, 81, 30);
-  --tertiary-color:rgb(133, 159, 61);
-  --quaternary-color:rgb(246, 252, 223);
-  --quaternary-color-05:rgba(246, 252, 223,0.1);
+  --primary-color:rgb(133, 96, 63);
+  --primary-color-09: rgba(133, 96, 63, 0.9);
+  --primary-color-05: rgba(133, 96, 63, 0.5);
+  --primary-color-02: rgba(133, 96, 63, 0.2);
+  --secondary-color:rgb(158, 117, 64);
+  --tertiary-color:rgb(189, 147, 84);
+  --quaternary-color:rgb(227, 209, 138);
+  --quaternary-color-05:rgba(227, 209, 138,0.5);
   */
   --font-size-1:clamp(0.8rem, 2vw, 1rem);
 }
 
 body {
   position: relative;
-  overflow-x: hidden;
- /* background-color: #DBE7C9;*/
- background-color: var(--quaternary-color);
+  overflow-x:clip;
+ /* background-color: #DBE7C9;
+ background-color: var(--tertiary-color-05);
+*/
+  font-family: 'Poppins', sans-serif;
+
 }
+
 
 ul {
   display: flex;
@@ -45,7 +54,16 @@ li {
   margin: 0 auto;
   padding: 0 40px;
 }
+.app__order-block {
+  display: none;
+}
 
+@media screen and (max-width: 1000px){
+  .app__order-block {
+    
+    display: block;
+  }
+}
 @media screen and (max-width: 840px){
   .container {
     padding: 0 20px;
