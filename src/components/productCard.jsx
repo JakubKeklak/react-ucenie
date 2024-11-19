@@ -11,7 +11,12 @@ const ProductCard = ({ product, pushProduct, disabled }) => {
             </div>
             <p>Cena: {product.price}€</p>
             <img src={product.image} alt="product" />
-            <Button text="+" variant="secondary" buttonFunction={() => pushProduct(product)} disabledButton={disabled}/>
+            <Button text="+" variant="secondary" buttonFunction={() => pushProduct( product)} disabledButton={disabled}/> 
+                <div className={`product__add ${disabled ?  'product__add--anim' : ''}`}>
+                    <span>Produkt pridany</span>
+                </div>
+        
+            
         </div>
     )
 }
