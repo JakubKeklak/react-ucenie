@@ -5,6 +5,7 @@ import Button from '../components/button'
 import Gallery from '../components/gallery'
 import { slides } from '../data/slider'
 import AnimatedHero from '../components/AnimatedHero';
+import Text from '../components/text'
 
 
 const services = () => {
@@ -25,13 +26,27 @@ const services = () => {
 
         <ServicesDetailBlock
           id="vyroba-a-dovoz-stiepane-drevo"
+          index={1}
           title="VÝROBA A DOVOZ ŠTIEPANÉHO DREVA"
           text={
-            <ul>
-              <li>mäkké štiepané palivové drevo</li>
-              <li>tvrdé štiepané palivové drevo</li>
-              <li>dovoz štiepaného palivového dreva</li>
-            </ul>
+            <>
+              <Text>
+                lorem ipsum dolor is a dumy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              </Text>
+              
+              <ul>
+                <li>mäkké štiepané palivové drevo</li>
+                <li>tvrdé štiepané palivové drevo</li>
+                <li>dovoz štiepaného palivového dreva</li>
+              </ul>
+              <Text>
+                lorem ipsum dolor is a dumy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              </Text>
+            </>
           }
           buttons={
             <>
@@ -44,6 +59,7 @@ const services = () => {
 
         <ServicesDetailBlock
           id="komunalne-sluzby"
+          index={2}
           title="KOMUNÁLNE SLUŽBY"
           text={
             <ul>
@@ -63,6 +79,7 @@ const services = () => {
 
         <ServicesDetailBlock
           id="agro-sluzby"
+          index={3}
           title="AGRO SLUŽBY"
           text={
             <ul>
@@ -83,6 +100,7 @@ const services = () => {
 
         <ServicesDetailBlock
           id="dovoz-materialu"
+          index={4}
           title="DOVOZ MATERIALU"
           text={
             <ul>
