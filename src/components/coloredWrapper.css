@@ -8,7 +8,7 @@
     padding: 40px 0;
 }
 
-.colored-wrapper--gray{
+.colored-wrapper--quaternary{
     background-color: var(--quaternary-color);
     opacity: 1;
 }
