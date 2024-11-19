@@ -13,7 +13,6 @@ import FaqsBlock from '../components/FaqsBlock';
 import ServicesBlock from '../components/ServicesBlock';
 
 const Home = () => {
-
     return (
         <div className="home" >
             <AnimatedHero data={slides} image="https://freedomfirewood.com/wp-content/uploads/packaged-firewood.jpg"/>
@@ -25,13 +24,10 @@ const Home = () => {
             <FaqsBlock />
 
             <ContentBlock  imageRight={true}/>
+            
+            <Gallery variant="row" data={slides} />
 
-            <ColoredWrapper color='gray'>
-                <Gallery variant="row" data={slides} />
-            </ColoredWrapper>
-
-
-            <ColoredWrapper>
+            <ColoredWrapper color="quaternary">
                 <div className="container">
                     <BlogWrapper
                         title="Zaujimavosti"
