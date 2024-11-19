@@ -20,8 +20,8 @@ const ServicesBlock = () => {
                                 <p className='services__text'>
                                     {service.text}
                                 </p>
-                                */}
                                 <span className='services__bottom' > Viac info</span>
+                                */}
                             </div>
                         </HashLink>
                     ))}
