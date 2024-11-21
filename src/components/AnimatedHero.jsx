@@ -47,7 +47,7 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image }) => {
                             <div className='animated-hero__card-content container'>
                                 <div className='animated-hero__content'>
                                     <h2 className='animated-hero__content-title'>
-                                        <span>Drevo</span>
+                                        <span>revo</span>
                                         <span>a</span>
                                         <span>Sluzby</span>
                                     </h2>
