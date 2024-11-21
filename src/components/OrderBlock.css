@@ -1,0 +1,46 @@
+.cennik__kalk{
+    position: fixed;
+    width: 100%;
+    height:100%;
+    top: 0px;
+    right: -100%;
+    background-color: var(--quaternary-color);
+    padding: 80px 20px 40px 20px;
+    transition: right 0.5s ease ;
+    z-index: 11;
+}
+
+.cennik__kalk--open{
+    right: 0;
+    transition: right 0.5s ease ;
+    overflow: scroll;
+}
+
+.cennik__products-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cennik__products-list .product__card{
+    transform: translateX(100%);
+    opacity: 0;
+    animation: card 0.5s forwards;
+}
+
+@keyframes card {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.cennik__sumary  {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    font-weight: 700;
+    font-size: 1.5em;
+    width: max-content;
+}

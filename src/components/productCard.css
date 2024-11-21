@@ -26,14 +26,13 @@
 
 .product__add{
     position: absolute;
-    top: 5px;
     left: -11px;
-    background-color: var(--primary-color);
+    /*background-color: var(--primary-color);
     color: var(--quaternary-color);
     padding: 10px;
     border: none;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 600;*/
     opacity: 0;
     transition: transform 0.3s ease-in-out,
         opacity 0.2s 0.1s ease-in-out;
@@ -42,12 +41,12 @@
     transform-style: preserve-3d;
 }
 .product__add--anim{
-    top:5px;
+    top:10px;
     opacity: 1;
     transform: rotateY(0deg);
     transition:transform 0.3s ease-in-out;
 }
-
+/*
 .product__add::before{
     content: '';
     position: absolute;
@@ -60,3 +59,4 @@
     border-right: 10px solid var(--primary-color-05);
 
 }
+    */

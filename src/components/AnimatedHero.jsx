@@ -48,13 +48,13 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image }) => {
                                 <div className='animated-hero__content'>
                                     <h2 className='animated-hero__content-title'>
                                         <span>Drevo</span>
-                                        <span>&</span>
+                                        <span>a</span>
                                         <span>Sluzby</span>
                                     </h2>
                                     <p className='animated-hero__content-text'>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Nulla convallis libero nec metus convallis, auctor tincidunt
-                                        nunc fermentum. Nullam nec nunc nec nunc fermentum.
+                                    Kvalitné palivové drevo, spoľahlivé agro a komunálne služby. <br></br>
+                                    Postaráme sa o vaše teplo, pozemky aj okolie s dôrazom na kvalitu a spoľahlivosť. <br></br>
+                                    <br></br><b>Vaša spokojnosť je našou prioritou.</b>
                                         
                                     </p>
                                     <Button text='Viac informacii' url="/services" variant={buttonVariant} icon={icon} />

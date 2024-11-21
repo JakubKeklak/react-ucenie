@@ -1,0 +1,20 @@
+.label{
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+    padding: 10px;
+    border: none;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.label::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: -20px;
+    width: 20px;
+    height: 16px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--primary-color-05);
+}

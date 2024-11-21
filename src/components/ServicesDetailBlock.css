@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     scroll-margin-top: 60px;
-   height: 100vh;
+  /* height: 100vh;*/
     display: flex;
     justify-content: center;
     /* background-color: var(--quaternary-color);*/

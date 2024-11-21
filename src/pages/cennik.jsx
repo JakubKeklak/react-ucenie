@@ -35,17 +35,15 @@ const Cennik = () => {
                     <p>
                         Uvedené ceny sú s DPH a platia pre jeden, voľne uložený priestorový meter. 
                     </p>
+                    <div className="cennik__products-list"> 
                     {productData.map((product, index) => {
                         return <ProductCard key={index} product={product} pushProduct={pushProduct} disabled={disabledButton(product)}/>
                         
                     })}
-                    
+                    </div>
                     <Text >
                         Doprava v rámci okresu Stará Ľubovňa: 0,65€ mimo okresu Stará Ľubovňa: dohodou
                     </Text>
-                </div>
-                <div className="cenik__order-block">
-                    <OrderBlock />    
                 </div>
             </div>
         </div>

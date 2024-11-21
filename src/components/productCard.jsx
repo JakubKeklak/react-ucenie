@@ -1,5 +1,5 @@
 import './productCard.css'
-
+import Label from './parts/Label'
 import Button from './button'
 
 const ProductCard = ({ product, pushProduct, disabled }) => {
@@ -13,7 +13,7 @@ const ProductCard = ({ product, pushProduct, disabled }) => {
             <img src={product.image} alt="product" />
             <Button text="+" variant="secondary" buttonFunction={() => pushProduct( product)} disabledButton={disabled}/> 
                 <div className={`product__add ${disabled ?  'product__add--anim' : ''}`}>
-                    <span>Produkt pridany</span>
+                    <Label>Produkt pridany</Label>
                 </div>
         
             

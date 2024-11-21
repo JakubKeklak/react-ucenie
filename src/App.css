@@ -55,15 +55,16 @@ li {
   padding: 0 40px;
 }
 .app__order-block {
-  display: none;
+  display: block;
 }
-
+/*
 @media screen and (max-width: 1000px){
   .app__order-block {
     
     display: block;
   }
 }
+  */
 @media screen and (max-width: 840px){
   .container {
     padding: 0 20px;
