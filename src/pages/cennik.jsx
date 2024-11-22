@@ -33,7 +33,7 @@ const Cennik = () => {
                 <div className='cennik__products'>
                     <h2 className='cennik__kalk__title'>Aktualna ponuka palivoveho dreva</h2>
                     <p>
-                        Uvedené ceny sú s DPH a platia pre jeden, voľne uložený priestorový meter. 
+                        Uvedené ceny sú s DPH a platia pre jeden, voľne uložený priestorový meter (prm). 
                     </p>
                     <div className="cennik__products-list"> 
                     {productData.map((product, index) => {

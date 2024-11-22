@@ -14,7 +14,8 @@ const services = () => {
       <AnimatedHero 
         data={slides} 
         size="small"
-        image="https://www.illinoisbank.com/sites/default/files/0010_22_Farm_Labor4_Story_600X300.jpg"/>
+        image="https://www.illinoisbank.com/sites/default/files/0010_22_Farm_Labor4_Story_600X300.jpg"
+        />
         <div className="services__navigation ">
           <ul className="container">
             <li><HashLink className="menuItem" to="#vyroba-a-dovoz-stiepane-drevo" >Palivove drevo</HashLink></li>

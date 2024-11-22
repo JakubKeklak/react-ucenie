@@ -2,11 +2,11 @@
     position: relative;
     width: 100%;
     scroll-margin-top: 60px;
-  /* height: 100vh;*/
+    /* height: 100vh;*/
     display: flex;
     justify-content: center;
     /* background-color: var(--quaternary-color);*/
-    
+
     transform-origin: center left;
 }
 
@@ -40,22 +40,26 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     padding: 100px 0;
-    
+
 
 }
+
 @keyframes rotate {
     0% {
-      transform: rotate(-270deg);
+        transform: rotate(-270deg);
     }
+
     10% {
         transform: rotate(-360deg);
-      }
-    
-      90%, 100% {
+    }
+
+    90%,
+    100% {
         transform: rotate(-450deg);
-      
-      }
-  }
+
+    }
+}
+
 .services-detail-block__wrapper::before {
     content: "";
     position: absolute;
@@ -66,12 +70,13 @@
     z-index: 0;
     overflow: hidden;
 }
+
 .services-detail-block__wrapper::after {
     content: "";
     position: absolute;
     display: flex;
     justify-content: center;
-    height:60px;
+    height: 60px;
     bottom: -30px;
     left: 20%;
     right: 20%;
@@ -79,9 +84,11 @@
     z-index: 0;
     overflow: hidden;
 }
-.services-detail-block:last-child .services-detail-block__wrapper::after{
+
+.services-detail-block:last-child .services-detail-block__wrapper::after {
     display: none;
 }
+
 .services-detail-block:nth-child(even) .services-detail-block__wrapper::before {
     left: 20%;
 }
@@ -180,6 +187,7 @@
     .services-detail-block__wrapper {
         grid-template-columns: 1fr;
         /* grid-template-rows: 1fr 1fr;*/
+        padding: 50px 0;
     }
 
     .services-detail-block__wrapper::before {
@@ -191,10 +199,13 @@
         right: 0;
     }
 
+    .services-detail-block__content {
+        padding: 20px;
+    }
 
     .services-detail-block__gallery {
         max-height: 600px;
-        margin: 0 -40px;
+        margin: 0;
     }
 
     .services-detail-block__content,
@@ -210,5 +221,23 @@
 
     .services-detail-block:nth-child(odd) .services-detail-block__wrapper::before {
         left: 0px;
+    }
+
+    .services-detail-block__wrapper::before {
+        display: none;
+    }
+
+    .services-detail-block__wrapper::after {
+        content: "";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    bottom:0px;
+    left: 0%;
+    right: 0%;
+    background-color: var(--primary-color);
+    z-index: 0;
+    overflow: hidden;
     }
 }

@@ -1,17 +1,17 @@
-.cennik__wrapper{
+.cennik__wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
-   /* position: relative;*/
+    /* position: relative;*/
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
-.cennik__content{
+.cennik__content {
     display: flex;
 }
 
-.cennik__products{
+.cennik__products {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -19,26 +19,53 @@
     width: 100%;
 }
 
-.cennik__products-list{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.cennik__products-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
     width: 100%;
+    padding: 60px 0px;
 }
-.show-calc{
+
+.show-calc {
     position: fixed;
     right: 20px;
     top: 90vh;
     display: none;
 }
 
-@media screen and ( max-width: 1000px){
-    .cennik__products{
+@media screen and (max-width: 1000px) {
+    .cennik__products-list {
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 80px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .cennik__products {
         display: flex;
         flex-direction: column;
         gap: 20px;
         padding-right: 0;
         border-right: none;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .cennik__products-list {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 80px;
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {
+    .cennik__products-list {
+        grid-template-columns: 1fr;
+        row-gap: 80px;
     }
 
 }
