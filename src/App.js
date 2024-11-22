@@ -3,7 +3,7 @@ import './App.css';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import OrderBlock from './components/OrderBlock';
 import { links } from './data/links';
 
