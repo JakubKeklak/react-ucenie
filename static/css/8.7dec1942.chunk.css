@@ -1,2 +1,0 @@
-.cennik__wrapper{display:flex;flex-direction:column;gap:20px;padding-bottom:40px;padding-top:40px}.cennik__content{display:flex}.cennik__products{display:flex;flex-direction:column;gap:20px;width:100%}.cennik__products-list{grid-gap:20px;display:grid;gap:20px;grid-template-columns:1fr 1fr;width:100%}.show-calc{display:none;position:fixed;right:20px;top:90vh}@media screen and (max-width:1000px){.cennik__products{border-right:none;display:flex;flex-direction:column;gap:20px;padding-right:0}}
-/*# sourceMappingURL=8.7dec1942.chunk.css.map*/
