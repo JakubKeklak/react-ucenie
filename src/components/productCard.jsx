@@ -24,7 +24,7 @@ const ProductCard = ({ product, pushProduct, disabled }) => {
                 <span className="product__card__price">{product.price}€</span>
                 <span >/prm</span>  
             </p>
-            <Button text="Pridat " variant="secondary" buttonFunction={() => pushProduct(product)} disabledButton={disabled} />
+            <Button text="Pridat " variant="tertiary" buttonFunction={() => pushProduct(product)} disabledButton={disabled} />
             <div className={`product__add ${disabled ? 'product__add--anim' : ''}`}>
                 <Label>Produkt pridany</Label>
             </div>

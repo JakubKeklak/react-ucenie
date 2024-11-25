@@ -80,7 +80,7 @@ const Header = () => {
           <a href="https://www.facebook.com/jakub.keklak?locale=sk_SK" target='blank' className="shop__icon">
            <Instagram />
           </a>
-          <NavLink to="/contact" className="shop__icon shop__icon-mail">
+          <NavLink to="/contact" className="shop__icon shop__icon-mail" onClick={closeCalc}>
             <Mail />
           </NavLink>
           <div className="navigation__toggle">

@@ -127,7 +127,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                     <label for="gdpr">Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.</label>
                 </div>
                 
-                <Button text="Odoslat" variant="secondary" submit={true}/>
+                <Button text="Odoslat" variant="tertiary" submit={true}/>
             </form>
 
             {modalVisible && (

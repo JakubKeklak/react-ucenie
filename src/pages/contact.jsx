@@ -4,7 +4,7 @@ import { ReactComponent as Facebook } from '../svg/facebook.svg'
 
 const Contact = () => {
   return (
-    <div className="container">
+    <div className="contact container">
       <h1>Kontakt</h1>
       <div className="contact__wrapper">
         <div className="contact__info">

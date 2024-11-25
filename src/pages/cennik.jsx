@@ -3,8 +3,11 @@ import './cennik.css'
 import { useContext } from 'react'
 import { ProductContext } from '../context/dataContext'
 import ProductCard from '../components/productCard'
-import OrderBlock from '../components/OrderBlock'
 import Text from '../components/text'
+import { blogs } from '../data/blogs';
+import BlogWrapper from '../components/BlogWrapper';
+import BlogCard from '../components/BlogCard';
+import ColoredWrapper from '../components/coloredWrapper';
 
 import React, { useEffect } from 'react';
 
@@ -27,6 +30,7 @@ const Cennik = () => {
     const {productData, pushProduct, disabledButton } = useContext(ProductContext);
    
     return (
+        <>
         <div className="cennik__wrapper container">
             <h1>Cennik</h1>
             <div className="cennik__content">
@@ -47,6 +51,20 @@ const Cennik = () => {
                 </div>
             </div>
         </div>
+            <ColoredWrapper color="quaternary">
+                <div className="container">
+                    <BlogWrapper
+                                title="Zaujimavosti"
+                                buttonText="Všetky články"
+                                buttonUrl="/blog"
+                            >
+                                {blogs.filter(blog => blog.category === 'Drevo').slice(0, 4).map((blog, index) => (
+                                    <BlogCard key={index} blog={blog} />
+                                ))}
+                    </BlogWrapper>
+                </div>
+            </ColoredWrapper>
+        </>
     )
 }
 

@@ -59,13 +59,14 @@
 }
 
 .button--tertiary {
-  background-color: var(--quaternary-color);
-  color: var(--secondary-color);
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
   transition: all 0.5s ease;
 }
 
 .button--tertiary:hover {
-  background-color: var(--tertiary-color);
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
 }
 
 button:disabled{

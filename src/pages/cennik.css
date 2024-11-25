@@ -14,7 +14,7 @@
 .cennik__products {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     /*padding-right: 20px;*/
     width: 100%;
 }
@@ -22,9 +22,9 @@
 .cennik__products-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
-    padding: 60px 0px;
+    
 }
 
 .show-calc {

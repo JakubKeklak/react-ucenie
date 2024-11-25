@@ -77,8 +77,8 @@ const Gallery = ({ data, variant }) => {
                         <span className="gallery__modal-close" onClick={closeModal}>&times;</span>
                         <Image src={data[selectedImageIndex].image} alt={selectedImageIndex} />
                         <div className="gallery__modal-navigation">
-                            <button onClick={showPrevImage}></button>
-                            <button onClick={showNextImage}></button>
+                            <button onClick={showPrevImage}>PREV</button>
+                            <button onClick={showNextImage}>NEXT</button>
                         </div>
                     </div>
                 </div>
