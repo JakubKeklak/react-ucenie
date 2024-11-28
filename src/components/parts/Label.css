@@ -3,7 +3,7 @@
     color: var(--quaternary-color);
     padding: 10px;
     border: none;
-    font-size: 10px;
+    font-size: clamp(8px, 2vw, 10px);
     font-weight: 600;
 }
 

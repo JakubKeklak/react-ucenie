@@ -10,7 +10,7 @@ const ProductCard = ({ product, pushProduct, disabled }) => {
                 <Image src={product.image} alt="product" />
             </div>
             <div className="product__card__description">
-                <h2>{product.name}</h2>
+                <h2 className="product__card__name">{product.name}</h2>
                 <p className="product__card__box">
                     <span className="product__card__left">Typ:</span>
                     <span className="product__card__pright">{product.description}</span>
@@ -24,7 +24,9 @@ const ProductCard = ({ product, pushProduct, disabled }) => {
                 <span className="product__card__price">{product.price}€</span>
                 <span >/prm</span>  
             </p>
-            <Button text="Pridat " variant="tertiary" buttonFunction={() => pushProduct(product)} disabledButton={disabled} />
+            <div className='product__card__button'>
+                <Button text="Pridat " variant="tertiary" buttonFunction={() => pushProduct(product)} disabledButton={disabled} />
+            </div>
             <div className={`product__add ${disabled ? 'product__add--anim' : ''}`}>
                 <Label>Produkt pridany</Label>
             </div>

@@ -24,7 +24,7 @@ const OrderBlock = () => {
                         return <li className={`order-block__card ${disabled ? 'order-block__card--show' : ''}`} key={index}>
                             <div className='order-block__card-description'>
                                 <span className='order-block__card-name'>{product.name}</span>
-                                <br />
+                             
                                 <span >{product.description}</span>
                             </div>
                             <div className='order-block__card-buttons'>

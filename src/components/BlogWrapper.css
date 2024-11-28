@@ -28,3 +28,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media screen and (max-width: 400px){
+    .blog-wrapper__cards {
+        grid-template-columns:1fr;
+        padding: 20px 0;
+    }
+}

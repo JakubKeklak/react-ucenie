@@ -1,33 +1,36 @@
-.order-block{
+.order-block {
     position: fixed;
-    
+
     width: 100%;
-    height:100%;
+    height: 100%;
     top: 0px;
     right: -100%;
     background-color: var(--quaternary-color);
-    padding: 100px 20px 40px 20px;
-    transition: right 0.5s ease ;
+    padding: 100px 0 40px 0;
+    transition: right 0.5s ease;
     z-index: 11;
 }
-.order-block__wrapper{
+
+.order-block__wrapper {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
-.order-block--open{
+
+.order-block--open {
     right: 0;
-    transition: right 0.5s ease ;
+    transition: right 0.5s ease;
     overflow: scroll;
 }
 
-.order-block__list{
+.order-block__list {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
 }
-.order-block__card{
+
+.order-block__card {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -35,32 +38,63 @@
     padding: 40px;
     border: solid 1px var(--tertiary-color);
 }
-.order-block__card-description{
+
+.order-block__card-description {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 20px;
     color: var(--primary-color);
 }
-.order-block__card-name{
+
+.order-block__card-name {
     width: 170px;
 }
+
 .order-block__card-name,
-.order-block__card-price{
+.order-block__card-price {
     font-weight: 600;
     font-size: 1.2rem;
 }
-.order-block__card-buttons{
+
+.order-block__card-buttons {
     display: flex;
     gap: 30px;
     align-items: center;
 }
-.cennik__sumary  {
+
+.cennik__sumary {
     display: flex;
     gap: 10px;
     padding: 10px;
     background-color: var(--primary-color);
     color: var(--tertiary-color);
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     width: max-content;
+}
+
+@media screen and (max-width: 600px) {
+    .order-block__card {
+        flex-wrap: wrap;
+        padding: 20px;
+        row-gap: 20px;
+    }
+
+    .order-block__card-buttons {
+
+        gap: 20px;
+
+    }
+
+    .order-block__card-name,
+    .order-block__card-price {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .order-block__card-description {
+
+        gap: 5px;
+
+    }
 }
