@@ -5,7 +5,7 @@ import Label from './parts/Label'
 const BlogCard = ({ blog, index }) => {
     return (
         <div className='blogcard' key={index}>
-            <div className='blogcard__image'>
+            <div className='P'>
                 <Image src={blog.image} alt={blog.title} />
             </div>
             <div className='blogcard__content'>

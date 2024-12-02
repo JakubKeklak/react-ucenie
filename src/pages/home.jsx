@@ -15,7 +15,24 @@ import ServicesBlock from '../components/ServicesBlock';
 const Home = () => {
     return (
         <div className="home" >
-            <AnimatedHero data={slides} image="https://freedomfirewood.com/wp-content/uploads/packaged-firewood.jpg"/>
+            <AnimatedHero data={slides} image="https://freedomfirewood.com/wp-content/uploads/packaged-firewood.jpg"
+            title={
+                <>
+                <span>Drevo</span>
+                                        <span>a</span>
+                                        <span>Sluzby</span>
+                    
+                </>
+            }
+            text={
+                <>
+                    Kvalitné palivové drevo, spoľahlivé agro a komunálne služby. <br></br>
+                    Postaráme sa o vaše teplo, pozemky aj okolie s dôrazom na kvalitu a spoľahlivosť. <br></br>
+                    <br></br><b>Vaša spokojnosť je našou prioritou.</b>
+                </>
+            }
+            buttonUrl="/services"
+            />
 
             <ServicesBlock />
             

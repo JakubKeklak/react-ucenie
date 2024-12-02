@@ -14,11 +14,16 @@ const services = () => {
       <AnimatedHero
         data={slides}
         size="small"
-        image="https://www.illinoisbank.com/sites/default/files/0010_22_Farm_Labor4_Story_600X300.jpg"
+        image="https://www.akershustraktor.no/wp-content/uploads/2021/03/Plog_servo_45_04-scaled.jpg"
+        title={
+          <>
+          Váš partner pre <br></br> teplo, pozemky aj okolie.
+          </>
+        }
       />
       <div className="services__navigation ">
         <ul className="container">
-          <li><HashLink className="menuItem" to="#vyroba-a-dovoz-stiepane-drevo" >Palivove drevo</HashLink></li>
+          <li><HashLink className="menuItem" to="#vyroba-a-dovoz-stiepane-drevo" activeClassName="menuItem--active">Palivove drevo</HashLink></li>
           <li><HashLink className="menuItem" to="#komunalne-sluzby" >Komunálne služby</HashLink></li>
           <li><HashLink className="menuItem" to="#agro-sluzby" >Agro služby</HashLink></li>
           <li><HashLink className="menuItem" to="#dovoz-materialu" >Dovoz materiálu</HashLink></li>

@@ -44,6 +44,7 @@
     flex-direction: column;
     gap: 20px;
     color: var(--primary-color);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 .order-block__card-name {
@@ -53,7 +54,7 @@
 .order-block__card-name,
 .order-block__card-price {
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .order-block__card-buttons {
@@ -69,7 +70,7 @@
     background-color: var(--primary-color);
     color: var(--tertiary-color);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2vw ,1.5rem);
     width: max-content;
 }
 
@@ -89,12 +90,17 @@
     .order-block__card-name,
     .order-block__card-price {
         font-weight: 600;
-        font-size: 1rem;
     }
 
     .order-block__card-description {
 
         gap: 5px;
 
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .order-block__card-description{
+        width: 100%;
     }
 }

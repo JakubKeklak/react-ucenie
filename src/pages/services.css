@@ -43,10 +43,18 @@
     flex-wrap: wrap;
     padding:0 20px;
     font-size: 5px;
-    border-radius: 0 0 10px 10px;
-    
 }
 
 .services__navigation ul li{
     font-size: 10px!important;
+    padding: 5px 0;
 }
+
+.services__navigation .menuItem{
+    font-size: clamp(0.75rem, 0.7045rem + 0.2273vw, 0.875rem);
+}
+
+.ervices__navigation .menuItem::before,
+.services__navigation .menuItem:hover::before{
+    display: none;
+} 

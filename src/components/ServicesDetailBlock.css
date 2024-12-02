@@ -1,7 +1,7 @@
 .services-detail-block {
     position: relative;
     width: 100%;
-    scroll-margin-top: 60px;
+    scroll-margin-top: 70px;
     /* height: 100vh;*/
     display: flex;
     justify-content: center;
@@ -239,5 +239,11 @@
     background-color: var(--primary-color);
     z-index: 0;
     overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .services-detail-block{
+        scroll-margin-top: 100px;
     }
 }

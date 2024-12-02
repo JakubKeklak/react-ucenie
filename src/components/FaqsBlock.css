@@ -8,8 +8,9 @@
 
 .faqs-block__wrapper{
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 40px;
     width: 100%;
 }
 
@@ -25,11 +26,18 @@
 }
 
 .faqs__title{
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 0.9545rem + 2.7273vw, 3rem);
     font-weight: 700;
 }
 
 .faqs__text{
-    font-size: 1.1rem;
+    font-size: clamp(0.8rem, 0.6545rem + 0.7273vw, 1.2rem);
     text-align: center;
+}
+
+@media screen and (max-width: 500px){
+    .faqs-block__wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }

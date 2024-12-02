@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import Button from './button';
+import Text from './text';
 
 import './form.css'; // Add your CSS for styling the modal
 
@@ -27,7 +28,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         let templateParams = {
             name: formData.name,
             phone: formData.phone,
@@ -37,7 +38,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
         };
 
         if (type === 'product') {
-            const emailBody = productSummaries.map(product => 
+            const emailBody = productSummaries.map(product =>
                 `Polozka: ${product.name} - ${product.description}, Mnozstvo: ${product.quantity}, Cena za polozku: ${product.price * product.quantity}€`
             ).join('\n') + `\n\n Celkova suma: ${sum}€`;
 
@@ -46,15 +47,15 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                 products: emailBody
             };
         }
-        
+
         emailjs.init("39ZQDLzz2zQW1ByIg");
         emailjs.send('service_8ejd911', template, templateParams)
             .then((result) => {
-            setResultMessage('Sprava sa uspesne odoslala. Dakujeme, budeme vas kontaktovat.');
-            setModalVisible(true);
+                setResultMessage('Sprava sa uspesne odoslala. Dakujeme, budeme vas kontaktovat.');
+                setModalVisible(true);
             }, (error) => {
-            setResultMessage('Spravu sa nepodarilo odoslat, skuste to este raz prosim.');
-            setModalVisible(true);
+                setResultMessage('Spravu sa nepodarilo odoslat, skuste to este raz prosim.');
+                setModalVisible(true);
             });
         setFormData({
             name: '',
@@ -81,8 +82,8 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            />
-                            <span>Meno</span>
+                        />
+                        <span>Meno</span>
                     </label>
                 </div>
                 <div className='form__item'>
@@ -93,7 +94,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                             placeholder=""
                             value={formData.phone}
                             onChange={handleChange}
-                            
+
                         />
                         <span>Tel. cislo</span>
                     </label>
@@ -111,6 +112,68 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                         <span>Email</span>
                     </label>
                 </div>
+                    {type &&
+                        <div className='form__address'>
+                            <span>Palivove drevo si mozete objednat aj s dopravou.</span> <br></br>
+                            <span> Doprava v rámci okresu Stará Ľubovňa: 0,65€ mimo okresu Stará Ľubovňa: dohodou</span>
+                            
+    
+                            <div className='form__address-wrapper'>
+                                <div className='form__item'>
+                                    <label>
+                                        <input
+                                            type="text"
+                                            name="city"
+                                            placeholder=""
+                                            value={formData.city}
+                                            onChange={handleChange}
+                                           
+                                        />
+                                        <span>Mesto</span>
+                                    </label>
+                                </div>
+                                <div className='form__item'>
+                                    <label>
+                                        <input
+                                            type="text"
+                                            name="street"
+                                            placeholder=""
+                                            value={formData.street}
+                                            onChange={handleChange}
+                                           
+                                        />
+                                        <span>Ulica</span>
+                                    </label>
+                                </div>
+                                <div className='form__item'>
+                                    <label>
+                                        <input
+                                            type="text"
+                                            name="number"
+                                            placeholder=""
+                                            value={formData.number}
+                                            onChange={handleChange}
+                                            
+                                        />
+                                        <span>Cislo domu</span>
+                                    </label>
+                                </div>
+                                <div className='form__item'>
+                                    <label>
+                                        <input
+                                            type="text"
+                                            name="psc"
+                                            placeholder=""
+                                            value={formData.psc}
+                                            onChange={handleChange}
+                                            
+                                        />
+                                        <span>PSC</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 <div className='form__item'>
                     <label>Sprava:</label>
                     <textarea
@@ -123,11 +186,11 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                 </div>
                 <div className='form__checkbox'>
                     <input type="checkbox" name="gdpr" id="gdpr" required value={formData.gdpr}
-                        onChange={handleChange}/>
+                        onChange={handleChange} />
                     <label for="gdpr">Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.</label>
                 </div>
-                
-                <Button text="Odoslat" variant="tertiary" submit={true}/>
+
+                <Button text="Odoslat" variant="tertiary" submit={true} />
             </form>
 
             {modalVisible && (

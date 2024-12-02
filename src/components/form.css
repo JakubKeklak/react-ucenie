@@ -19,8 +19,8 @@ form {
     justify-content: end;
     gap: 5px;
     width: 100%;
-    
-    
+
+
 }
 
 .form__item label {
@@ -33,7 +33,7 @@ form {
     font-weight: 700;
     width: 100%;
     height: 4rem;
-    
+
 }
 
 .form__item label span {
@@ -41,11 +41,11 @@ form {
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.3s ease;
+    font-size: clamp(0.75rem, 0.7045rem + 0.2273vw, 0.875rem);
 }
 
-.form__item input:not(:placeholder-shown) + span,
-.form__item label:focus-within span
-{
+.form__item input:not(:placeholder-shown)+span,
+.form__item label:focus-within span {
     top: 0;
     transform: translateY(0%);
     transition: all 0.3s ease;
@@ -62,8 +62,37 @@ form {
 .form__item input:focus {
     border-bottom: 2px solid var(--primary-color);
 }
-.form__item input:focus-within label{
+
+.form__item input:focus-within label {
     top: 0;
+}
+
+.form__address {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px 0 0 0;
+
+}
+
+.form__address-wrapper {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    row-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 20px;
+}
+
+.form__address span {
+    font-size: 12px;
+}
+
+.form__address-wrapper .form__item input {
+    width: 80%;
+    font-size: 14px;
 }
 
 .form__item input,
@@ -74,7 +103,7 @@ form {
 
 .form__item textarea {
     width: 100%;
-    height:6rem!important;
+    height: 6rem !important;
     border: none;
     outline: none;
     border-bottom: 1px solid var(--secondary-color);
@@ -96,7 +125,7 @@ form {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color:var(--primary-color-05);
+    background-color: var(--primary-color-05);
     z-index: 9999;
 }
 
@@ -110,7 +139,7 @@ form {
     color: var(--primary-color);
 }
 
-.modal-content p{
+.modal-content p {
     font-weight: 500;
     color: var(--primary-color);
 }
@@ -136,4 +165,25 @@ form {
     justify-content: center;
     gap: 10px;
     position: relative;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    .form__item input,
+    .form__item textarea {
+        width: 100%;
+    }
+
+    .form__address-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .form__address-wrapper .form__item input {
+        width: 100%;
+    }
 }
