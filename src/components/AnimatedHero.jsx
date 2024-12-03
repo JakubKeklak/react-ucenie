@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import Button from './button'
 import Image from './parts/Image'
 
-const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl, title }) => {
+const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl, title, video }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const intervalRef = useRef(null);
 
@@ -39,10 +39,14 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
                              );
                             })
                              */}
-                             <div className="animated-hero__card-image">
-                                
-                                <Image src={image} alt="" />
-                            </div>
+                             
+            {video ? (
+                <video className="animated-hero__card-image" autoPlay muted loop src={video} />
+            ) : (
+                <div className="animated-hero__card-image">
+                    <Image src={image} alt="" />
+                </div>
+            )}
                             
                             <div className='animated-hero__card-content container'>
                                 <div className='animated-hero__content'>

@@ -14,7 +14,7 @@
 }
 
 .animated-hero--small {
-    height: calc(100vh - 60px);
+    height: 80vh;
     max-height: 1000px;
     max-width: 2000px;
 }
