@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-ucenie/static/css/main.5fb029a6.css",
-    "main.js": "/react-ucenie/static/js/main.c80aa77e.js",
+    "main.js": "/react-ucenie/static/js/main.a97dbfff.js",
     "static/css/957.ffaa90c0.chunk.css": "/react-ucenie/static/css/957.ffaa90c0.chunk.css",
     "static/js/957.d3f46675.chunk.js": "/react-ucenie/static/js/957.d3f46675.chunk.js",
     "static/css/372.f868d2a5.chunk.css": "/react-ucenie/static/css/372.f868d2a5.chunk.css",
@@ -14,15 +14,16 @@
     "static/js/141.77c3d48d.chunk.js": "/react-ucenie/static/js/141.77c3d48d.chunk.js",
     "static/css/122.3133e35c.chunk.css": "/react-ucenie/static/css/122.3133e35c.chunk.css",
     "static/js/122.0fe02550.chunk.js": "/react-ucenie/static/js/122.0fe02550.chunk.js",
-    "static/css/577.e5b38a03.chunk.css": "/react-ucenie/static/css/577.e5b38a03.chunk.css",
-    "static/js/577.701dd07f.chunk.js": "/react-ucenie/static/js/577.701dd07f.chunk.js",
+    "static/css/577.ded58b37.chunk.css": "/react-ucenie/static/css/577.ded58b37.chunk.css",
+    "static/js/577.5ebad62d.chunk.js": "/react-ucenie/static/js/577.5ebad62d.chunk.js",
     "static/css/369.c1a5d18b.chunk.css": "/react-ucenie/static/css/369.c1a5d18b.chunk.css",
     "static/js/369.33419650.chunk.js": "/react-ucenie/static/js/369.33419650.chunk.js",
-    "static/css/990.5c26fd52.chunk.css": "/react-ucenie/static/css/990.5c26fd52.chunk.css",
-    "static/js/990.73e9088a.chunk.js": "/react-ucenie/static/js/990.73e9088a.chunk.js",
+    "static/css/718.df7ee070.chunk.css": "/react-ucenie/static/css/718.df7ee070.chunk.css",
+    "static/js/718.916d7a98.chunk.js": "/react-ucenie/static/js/718.916d7a98.chunk.js",
     "static/css/152.025b5524.chunk.css": "/react-ucenie/static/css/152.025b5524.chunk.css",
     "static/js/152.0c2925b6.chunk.js": "/react-ucenie/static/js/152.0c2925b6.chunk.js",
     "static/js/453.ecbd0785.chunk.js": "/react-ucenie/static/js/453.ecbd0785.chunk.js",
+    "static/media/video1.mp4": "/react-ucenie/static/media/video1.2ff3a117973701923d90.mp4",
     "static/media/kosik.svg": "/react-ucenie/static/media/kosik.a00fd1eafd6d480e9235409452fa74f3.svg",
     "static/media/mail.svg": "/react-ucenie/static/media/mail.9f713f6f4ce4b4acde082941c3982a7b.svg",
     "index.html": "/react-ucenie/index.html",
@@ -30,7 +31,7 @@
     "static/media/facebook.svg": "/react-ucenie/static/media/facebook.1e72883c6f9747ada0727cbf06a6dca6.svg",
     "static/media/rightArrow.svg": "/react-ucenie/static/media/rightArrow.fb26bb8e23e9180f9c7d140cd7ef9fd5.svg",
     "main.5fb029a6.css.map": "/react-ucenie/static/css/main.5fb029a6.css.map",
-    "main.c80aa77e.js.map": "/react-ucenie/static/js/main.c80aa77e.js.map",
+    "main.a97dbfff.js.map": "/react-ucenie/static/js/main.a97dbfff.js.map",
     "957.ffaa90c0.chunk.css.map": "/react-ucenie/static/css/957.ffaa90c0.chunk.css.map",
     "957.d3f46675.chunk.js.map": "/react-ucenie/static/js/957.d3f46675.chunk.js.map",
     "372.f868d2a5.chunk.css.map": "/react-ucenie/static/css/372.f868d2a5.chunk.css.map",
@@ -43,18 +44,18 @@
     "141.77c3d48d.chunk.js.map": "/react-ucenie/static/js/141.77c3d48d.chunk.js.map",
     "122.3133e35c.chunk.css.map": "/react-ucenie/static/css/122.3133e35c.chunk.css.map",
     "122.0fe02550.chunk.js.map": "/react-ucenie/static/js/122.0fe02550.chunk.js.map",
-    "577.e5b38a03.chunk.css.map": "/react-ucenie/static/css/577.e5b38a03.chunk.css.map",
-    "577.701dd07f.chunk.js.map": "/react-ucenie/static/js/577.701dd07f.chunk.js.map",
+    "577.ded58b37.chunk.css.map": "/react-ucenie/static/css/577.ded58b37.chunk.css.map",
+    "577.5ebad62d.chunk.js.map": "/react-ucenie/static/js/577.5ebad62d.chunk.js.map",
     "369.c1a5d18b.chunk.css.map": "/react-ucenie/static/css/369.c1a5d18b.chunk.css.map",
     "369.33419650.chunk.js.map": "/react-ucenie/static/js/369.33419650.chunk.js.map",
-    "990.5c26fd52.chunk.css.map": "/react-ucenie/static/css/990.5c26fd52.chunk.css.map",
-    "990.73e9088a.chunk.js.map": "/react-ucenie/static/js/990.73e9088a.chunk.js.map",
+    "718.df7ee070.chunk.css.map": "/react-ucenie/static/css/718.df7ee070.chunk.css.map",
+    "718.916d7a98.chunk.js.map": "/react-ucenie/static/js/718.916d7a98.chunk.js.map",
     "152.025b5524.chunk.css.map": "/react-ucenie/static/css/152.025b5524.chunk.css.map",
     "152.0c2925b6.chunk.js.map": "/react-ucenie/static/js/152.0c2925b6.chunk.js.map",
     "453.ecbd0785.chunk.js.map": "/react-ucenie/static/js/453.ecbd0785.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5fb029a6.css",
-    "static/js/main.c80aa77e.js"
+    "static/js/main.a97dbfff.js"
   ]
 }
