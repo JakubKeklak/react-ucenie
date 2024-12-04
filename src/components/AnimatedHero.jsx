@@ -6,6 +6,7 @@ import Image from './parts/Image'
 const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl, title, video }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const intervalRef = useRef(null);
+    const videoRef = useRef(null);
 
     const handleActiveIndex = (index) => {
         setActiveIndex(index);
@@ -26,12 +27,18 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
         return () => clearInterval(intervalRef.current); // Cleanup interval on component unmount
     }, [data.length]);
 
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.7;
+        }
+    }, []);
+
     const heroSize = size ? 'animated-hero--small' : 'animated-hero--large';
     return (
         <div className={`animated-hero ${heroSize} `}>
-                    <div  className="animated-hero__card">
-                        <div className='animated-hero__card-wrapper'>
-                        {/*data.slice(0, 2).map((slide, index) => {
+            <div className="animated-hero__card">
+                <div className='animated-hero__card-wrapper'>
+                    {/*data.slice(0, 2).map((slide, index) => {
                             return (
                             <div key={index} className={`animated-hero__card-image ${activeIndex === index ? 'animated-hero__card-image--active' : ''}`}>
                                 <img  src={slide.image} alt="" />
@@ -39,32 +46,32 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
                              );
                             })
                              */}
-                             
-            {video ? (
-                <video className="animated-hero__card-image" autoPlay muted loop src={video} />
-            ) : (
-                <div className="animated-hero__card-image">
-                    <Image src={image} alt="" />
-                </div>
-            )}
-                            
-                            <div className='animated-hero__card-content container'>
-                                <div className='animated-hero__content'>
-                                    <h2 className='animated-hero__content-title'>
-                                        {title}
-                                    </h2>
-                                    <p className='animated-hero__content-text'>
-                                        {text}
-                                    </p>
-                                    {buttonUrl &&
-                                        <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={icon} />
-                                    }
-                                </div>
-                            </div>
+
+                    <div className="animated-hero__card-image">
+                        {video ? (
+                            <video autoPlay muted loop src={video} ref={videoRef} />
+                        ) : (
+                            <Image src={image} alt="" />
+                        )}
+                    </div>
+
+                    <div className='animated-hero__card-content container'>
+                        <div className='animated-hero__content'>
+                            <h2 className='animated-hero__content-title'>
+                                {title}
+                            </h2>
+                            <p className='animated-hero__content-text'>
+                                {text}
+                            </p>
+                            {buttonUrl &&
+                                <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={icon} />
+                            }
                         </div>
                     </div>
-               
-           { /*
+                </div>
+            </div>
+
+            { /*
             <div className='animated-hero__dots'>
                 {data.map((_, index) => {
                     return (

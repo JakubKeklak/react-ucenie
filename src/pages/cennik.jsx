@@ -16,13 +16,13 @@ const Cennik = () => {
         // Add the header--cennik class to the header
         const header = document.querySelector('.header');
         if (header) {
-            header.classList.add('header--scrolled');
+            header.classList.add('header--secondary');
         }
 
         // Cleanup function to remove the class when the component unmounts
         return () => {
             if (header) {
-                header.classList.remove('header--scrolled');
+                header.classList.remove('header--secondary');
             }
         };
     }, []);
