@@ -83,7 +83,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                             onChange={handleChange}
                             required
                         />
-                        <span>Meno</span>
+                        <span className='form__item-text'>Meno</span>
                     </label>
                 </div>
                 <div className='form__item'>
@@ -96,7 +96,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                             onChange={handleChange}
 
                         />
-                        <span>Tel. cislo</span>
+                        <span className='form__item-text' >Tel. cislo</span>
                     </label>
                 </div>
                 <div className='form__item'>
@@ -109,13 +109,13 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                             onChange={handleChange}
                             required
                         />
-                        <span>Email</span>
+                        <span className='form__item-text' >Email</span>
                     </label>
                 </div>
                     {type &&
                         <div className='form__address'>
-                            <span>Palivove drevo si mozete objednat aj s dopravou.</span> <br></br>
-                            <span> Doprava v rámci okresu Stará Ľubovňa: 0,65€ mimo okresu Stará Ľubovňa: dohodou</span>
+                            <Text>Palivove drevo si mozete objednat aj s dopravou.</Text>
+                            <Text> Doprava v rámci okresu Stará Ľubovňa: 0,65€ mimo okresu Stará Ľubovňa: dohodou</Text>
                             
     
                             <div className='form__address-wrapper'>
@@ -129,7 +129,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                                             onChange={handleChange}
                                            
                                         />
-                                        <span>Mesto</span>
+                                        <span className='form__item-text' >Mesto</span>
                                     </label>
                                 </div>
                                 <div className='form__item'>
@@ -142,7 +142,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                                             onChange={handleChange}
                                            
                                         />
-                                        <span>Ulica</span>
+                                        <span className='form__item-text' >Ulica</span>
                                     </label>
                                 </div>
                                 <div className='form__item'>
@@ -155,7 +155,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                                             onChange={handleChange}
                                             
                                         />
-                                        <span>Cislo domu</span>
+                                        <span className='form__item-text' >Cislo domu</span>
                                     </label>
                                 </div>
                                 <div className='form__item'>
@@ -168,14 +168,14 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                                             onChange={handleChange}
                                             
                                         />
-                                        <span>PSC</span>
+                                        <span className='form__item-text' >PSC</span>
                                     </label>
                                 </div>
                             </div>
                         </div>
                     }
-                <div className='form__item'>
-                    <label>Sprava:</label>
+                <div className='form__item form__item--textarea'>
+                    <span className='form__item-text'>Sprava:</span>
                     <textarea
                         name="message"
                         placeholder=""
@@ -187,7 +187,10 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                 <div className='form__checkbox'>
                     <input type="checkbox" name="gdpr" id="gdpr" required value={formData.gdpr}
                         onChange={handleChange} />
-                    <label for="gdpr">Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.</label>
+                    <div className='checkbox'></div>
+                    <label for="gdpr">
+                        <Text margin={false}>Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.</Text>
+                    </label>
                 </div>
 
                 <Button text="Odoslat" variant="tertiary" submit={true} />

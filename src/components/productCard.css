@@ -5,18 +5,18 @@
     flex-direction: column;
     justify-content: space-between;
     /*align-items: center;*/
-    gap: 30px;
+    gap: 20px;
     /* border-radius: 10px;*/
-    /*border: solid 1px var(--tertiary-color);*/
-    background-color: var(--quaternary-color);
+    border: solid 1px var(--tertiary-color);
+    /*background-color: var(--quaternary-color);*/
     perspective: 1000px;
 }
 
 .product__card__image {
-   /* margin-top: -50px;*/
-    padding:10px;
-    height: 12rem;
-    width: 100%;
+   /* margin-top: -50px;
+    padding:10px;*/
+   height: 50%;
+    
 }
 
 .product__card__description {
@@ -25,11 +25,16 @@
     justify-content: space-between;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 10px;
     width: 100%;
     padding: 0 20px;
 }
 
+.product__card__name{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
 
 .product__card__box {
     width: 100%;

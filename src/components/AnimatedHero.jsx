@@ -49,7 +49,7 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
 
                     <div className="animated-hero__card-image">
                         {video ? (
-                            <video autoPlay muted loop src={video} ref={videoRef} />
+                            <video poster="https://images.pexels.com/photos/1136466/pexels-photo-1136466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" autoPlay muted loop src={video} ref={videoRef} />
                         ) : (
                             <Image src={image} alt="" />
                         )}

@@ -8,6 +8,7 @@ import { blogs } from '../data/blogs';
 import BlogWrapper from '../components/BlogWrapper';
 import BlogCard from '../components/BlogCard';
 import ColoredWrapper from '../components/coloredWrapper';
+import Heading from '../components/typography/Heading';
 
 import React, { useEffect } from 'react';
 
@@ -32,10 +33,10 @@ const Cennik = () => {
     return (
         <>
         <div className="cennik__wrapper container">
-            <h1>Cennik</h1>
+            <Heading>Cennik</Heading>
             <div className="cennik__content">
                 <div className='cennik__products'>
-                    <h2 className='cennik__kalk__title'>Aktualna ponuka palivoveho dreva</h2>
+                    <Heading tag="h2" className='cennik__kalk__title'>Aktualna ponuka palivoveho dreva</Heading>
                     <p>
                         Uvedené ceny sú s DPH a platia pre jeden, voľne uložený priestorový meter (prm). 
                     </p>

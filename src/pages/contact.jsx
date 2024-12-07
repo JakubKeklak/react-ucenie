@@ -1,14 +1,16 @@
 import './contact.css';
 import Form from '../components/form';
 import { ReactComponent as Facebook } from '../svg/facebook.svg'
+import Heading from '../components/typography/Heading';
+import Text from '../components/text';
 
 const Contact = () => {
   return (
     <div className="contact container">
-      <h1>Kontakt</h1>
+      <Heading>Kontakt</Heading>
       <div className="contact__wrapper">
         <div className="contact__info">
-          <h2 className='contact__title'>Informácie</h2>
+          <Heading tag="h2" className='contact__title'>Informácie</Heading>
           <ul className='contact__list'>
             <li><span>Ladislav Cajko</span></li>
             <li><span>ICO:</span><span>45852 3547</span></li>
@@ -22,7 +24,12 @@ const Contact = () => {
           </div>
         </div>
         <div className="contact__form">
-          <h2 className='contact__title'>Kontaktný formulár</h2>
+          <Heading tag="h2" className='contact__title'>Kontaktný formulár </ Heading>
+          <Text margin={false}>
+            Ak máte nejaké otázky, neváhajte nás kontaktovať. <br/>
+            Vyplnte nasledujúci formulár a my sa Vám čo najskôr ozveme.
+          </Text>
+          
           <Form />
         </div>
       </div>

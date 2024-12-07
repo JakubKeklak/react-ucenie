@@ -33,9 +33,9 @@ const Home = () => {
             }
             buttonUrl="/services"
             />
-
+            {/*
             <ServicesBlock />
-            
+            */}
             <ContentBlock />
 
             <FaqsBlock />

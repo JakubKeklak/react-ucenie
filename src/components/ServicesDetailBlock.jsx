@@ -1,6 +1,7 @@
 import React from 'react';
 import './ServicesDetailBlock.css';
 import Heading from './typography/Heading';
+import Text from './text'
 
 const ServicesDetailBlock = ({ id, index, title, text, buttons, gallery, name }) => {
 
@@ -9,12 +10,12 @@ const ServicesDetailBlock = ({ id, index, title, text, buttons, gallery, name })
             <div className="services-detail-block__wrapper container" >
                 <div className="services-detail-block__content">
                     <div className="services-detail-block__title">
-                        <Heading tag="h1">
+                        <Heading tag="h2">
                             {title}
                         </Heading>
                     </div>
                     <div className="services-detail-block__text">
-                        {text}
+                        <Text>{text}</Text>
                     </div>
                     <div className="services-detail-block__buttons">
                         {buttons}

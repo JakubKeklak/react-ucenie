@@ -128,18 +128,7 @@
     background-color: var(--primary-color);
 }
 
-.services-detail-block ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-left: 20px;
-}
 
-.services-detail-block li {
-    list-style: disc;
-    padding: 0;
-    margin: 0;
-}
 
 .services-detail-block__buttons {
     display: flex;

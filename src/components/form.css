@@ -7,7 +7,7 @@ form {
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
-    gap: 20px;
+    gap: 40px;
     width: 100%;
 }
 
@@ -29,24 +29,27 @@ form {
     flex-direction: column;
     align-items: flex-start;
     justify-content: end;
+    width: 100%;
+    height: 3rem;
+    
+}
+.form__item-text{
+    font-size: clamp(0.75rem, 0.7045rem + 0.2273vw, 0.875rem);
+    margin-left: 10px;
     color: var(--primary-color);
     font-weight: 700;
-    width: 100%;
-    height: 4rem;
-
 }
-
-.form__item label span {
+.form__item  label span {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.3s ease;
-    font-size: clamp(0.75rem, 0.7045rem + 0.2273vw, 0.875rem);
+   
 }
 
 .form__item input:not(:placeholder-shown)+span,
 .form__item label:focus-within span {
-    top: 0;
+    top: -20px;
     transform: translateY(0%);
     transition: all 0.3s ease;
 }
@@ -55,8 +58,9 @@ form {
 .form__item input {
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--secondary-color);
-    background-color: transparent;
+    /*border-bottom: 1px solid var(--secondary-color);*/
+    background-color: var(--secondary-color-02);
+    height: 100%;
 }
 
 .form__item input:focus {
@@ -72,22 +76,16 @@ form {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-    padding: 20px 0 0 0;
-
 }
 
 .form__address-wrapper {
     width: 100%;
     display: grid;
     gap: 10px;
-    row-gap: 20px;
+    row-gap: 40px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     padding-top: 20px;
-}
-
-.form__address span {
-    font-size: 12px;
 }
 
 .form__address-wrapper .form__item input {
@@ -99,6 +97,7 @@ form {
 .form__item textarea {
     width: 50%;
     padding: 10px;
+    background-color: var(--secondary-color-02);
 }
 
 .form__item textarea {
@@ -106,8 +105,8 @@ form {
     height: 6rem !important;
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--secondary-color);
-    background-color: transparent;
+   /* border-bottom: 1px solid var(--secondary-color);*/
+    
 }
 
 .form__item textarea:focus {
@@ -161,14 +160,33 @@ form {
 .form__checkbox {
     display: flex;
     align-items: center;
-    align-content: center;
-    justify-content: center;
     gap: 10px;
     position: relative;
 }
 
 input[type="checkbox"] {
     display: none;
+}
+
+.checkbox{
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked + .checkbox {
+    background-color: var(--tertiary-color);
+    border: 1px solid var(--tertiary-color);
+   
+}
+input[type="checkbox"]:checked + .checkbox::before {
+    content: "\2713";
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--secondary-color);
 }
 
 @media screen and (max-width: 600px) {

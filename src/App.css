@@ -10,11 +10,13 @@
   --primary-color-05: rgba(52, 52, 52, 0.5);
   --primary-color-02: rgba(52, 52, 52, 0.2);
   --secondary-color:rgb(142, 139, 130);
+  --secondary-color-02:rgba(142, 139, 130, 0.2);
   --tertiary-color:rgb(233, 220, 190);
   --tertiary-color-01:rgba(233, 220, 190,0.1);
   --tertiary-color-07:rgba(233, 220, 190,0.5);
   --quaternary-color:rgb(243, 243, 243);
   --quaternary-color-05:rgba(243, 243, 243,0.5);
+  --quaternary-color-08:rgba(243, 243, 243,0.8);
   /*
   --primary-color:rgb(133, 96, 63);
   --primary-color-09: rgba(133, 96, 63, 0.9);
@@ -25,7 +27,8 @@
   --quaternary-color:rgb(227, 209, 138);
   --quaternary-color-05:rgba(227, 209, 138,0.5);
   */
-  --font-size-1:clamp(0.8rem, 2vw, 1rem);
+  --font-size-1: clamp(0.75rem, 0.6591rem + 0.4545vw, 1rem);
+
 }
 
 body {

@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { ProductContext } from '../context/dataContext'
 import Form from './form'
 import Button from './button'
+import Text from './text'
 import { NavLink } from 'react-router-dom'
 
 const OrderBlock = () => {
@@ -13,12 +14,12 @@ const OrderBlock = () => {
         <div className={`order-block ${showCalc ? 'order-block--open' : ''} `} >
             <div className="container order-block__wrapper">
                 <h2 className='order-block__title'>Kalkulačka</h2>
-                <p>
+                <Text margin={false}>
                     Vyuzite nasu orientacnu kalkulacku a zistite cenu vasho tepla.
-                </p>
-                <p>
+                </Text>
+                <Text margin={false}>
                     V prípade odberu väčšieho množstva Vám vieme poskytnúť zaujímavé zľavy, preto nas nevahajte <NavLink to="/contact" >kontaktovat</NavLink>.
-                </p>
+                </Text>
                 <ul className='order-block__list'>
                     {productSummaries.map((product, index) => {
                         return <li className={`order-block__card ${disabled ? 'order-block__card--show' : ''}`} key={index}>
@@ -44,13 +45,14 @@ const OrderBlock = () => {
                         <div className="cennik__sumary">
                             <span>Sucet: </span><span>{sum}</span><span>€</span>
                         </div>
-                        <p>
+                        <Text margin={false}>
                             Pre dokoncenie nezaveznej objednavky vyplnte nasledujuci formular a my sa vam ozveme.
-                        </p>
+                        </Text >
                         <Form productSummaries={productSummaries} sum={sum} type="product" />
                     </> 
                 }
-                <div onClick={handleShowCalc} className="cennik__kalk__close">Zavriet</div>
+                
+                <Button text="Zatvorit" variant="primary" buttonFunction={handleShowCalc} />
             </div>
         </div>
     )
