@@ -10,7 +10,7 @@
 
 .animated-hero--large {
     height: 100vh;
-    max-height: 1000px;
+   /* max-height: 1000px;*/
 }
 
 .animated-hero--small {
@@ -131,7 +131,7 @@
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
-    padding-top: 60px;
+   /* padding-top: 60px;*/
 }
 
 .animated-hero__content {

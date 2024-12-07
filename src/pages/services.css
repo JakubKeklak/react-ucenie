@@ -50,6 +50,10 @@
     padding: 0px;
 }
 
+.menuItem--active-services{
+    color: var(--quaternary-color);
+    font-weight: 700;
+}
 .ervices__navigation .menuItem::before,
 .services__navigation .menuItem:hover::before{
     display: none;

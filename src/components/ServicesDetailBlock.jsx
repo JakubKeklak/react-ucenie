@@ -2,10 +2,10 @@ import React from 'react';
 import './ServicesDetailBlock.css';
 import Heading from './typography/Heading';
 
-const ServicesDetailBlock = ({ id, index, title, text, buttons, gallery }) => {
+const ServicesDetailBlock = ({ id, index, title, text, buttons, gallery, name }) => {
 
     return (
-        <section className="services-detail-block" id={id}>
+        <section className="services-detail-block" id={id} name={name}>
             <div className="services-detail-block__wrapper container" >
                 <div className="services-detail-block__content">
                     <div className="services-detail-block__title">

@@ -1,6 +1,7 @@
+import React from 'react';
 import './services.css'
 import ServicesDetailBlock from '../components/ServicesDetailBlock'
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-scroll';
 import Button from '../components/button'
 import Gallery from '../components/gallery'
 import { slides } from '../data/slider'
@@ -25,15 +26,16 @@ const services = () => {
       />
       <div className="services__navigation ">
         <ul className="container">
-          <li><HashLink className="menuItem" to="#vyroba-a-dovoz-stiepane-drevo" activeClassName="menuItem--active">Palivove drevo</HashLink></li>
-          <li><HashLink className="menuItem" to="#komunalne-sluzby" >Komunálne služby</HashLink></li>
-          <li><HashLink className="menuItem" to="#agro-sluzby" >Agro služby</HashLink></li>
-          <li><HashLink className="menuItem" to="#dovoz-materialu" >Dovoz materiálu</HashLink></li>
+          <li><Link className="menuItem" to="vyroba-a-dovoz-stiepane-drevo" activeClass="menuItem--active-services" spy={true} offset={-70} smooth={true} >Palivove drevo</Link></li>
+          <li><Link className="menuItem" to="komunalne-sluzby" activeClass="menuItem--active-services" spy={true} offset={-70} smooth={true} >Komunálne služby</Link></li>
+          <li><Link className="menuItem" to="agro-sluzby" activeClass="menuItem--active-services" spy={true} offset={-70} smooth={true} >Agro služby</Link></li>
+          <li><Link className="menuItem" to="dovoz-materialu" activeClass="menuItem--active-services" spy={true} offset={-70} smooth={true}>Dovoz materiálu</Link></li>
         </ul>
       </div>
 
       <ServicesDetailBlock
         id="vyroba-a-dovoz-stiepane-drevo"
+        name="vyroba-a-dovoz-stiepane-drevo"
         index={1}
         title="VÝROBA A DOVOZ ŠTIEPANÉHO DREVA"
         text={
@@ -67,6 +69,7 @@ const services = () => {
 
       <ServicesDetailBlock
         id="komunalne-sluzby"
+        name="komunalne-sluzby"
         index={2}
         title="KOMUNÁLNE SLUŽBY"
         text={
@@ -99,6 +102,7 @@ const services = () => {
 
       <ServicesDetailBlock
         id="agro-sluzby"
+        name="agro-sluzby"
         index={3}
         title="AGRO SLUŽBY"
         text={
@@ -126,6 +130,7 @@ const services = () => {
 
       <ServicesDetailBlock
         id="dovoz-materialu"
+        name="dovoz-materialu"
         index={4}
         title="DOVOZ MATERIALU"
         text={
