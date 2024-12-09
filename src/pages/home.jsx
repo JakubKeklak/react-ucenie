@@ -32,10 +32,11 @@ const Home = () => {
                 </>
             }
             buttonUrl="/services"
+            scrollButton={true}
             />
-            {/*
+            
             <ServicesBlock />
-            */}
+            
             <ContentBlock />
 
             <FaqsBlock />

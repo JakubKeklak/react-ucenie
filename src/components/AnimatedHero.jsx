@@ -2,8 +2,10 @@ import './AnimatedHero.css'
 import { useState, useEffect, useRef } from 'react'
 import Button from './button'
 import Image from './parts/Image'
+import { Link } from 'react-scroll';
+import { IoIosArrowDown } from "react-icons/io";
 
-const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl, title, video }) => {
+const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl, title, video, scrollButton }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const intervalRef = useRef(null);
     const videoRef = useRef(null);
@@ -69,6 +71,11 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
                         </div>
                     </div>
                 </div>
+                {scrollButton === true &&
+                    <Link className="animated-hero__scroll-down" to="servicesBlock" activeClass="menuItem--active-services" spy={true} offset={window.innerWidth <= 600 ? -50 : -60} smooth={true} duration={1500}>
+                        <IoIosArrowDown />
+                    </Link>
+                }
             </div>
 
             { /*
