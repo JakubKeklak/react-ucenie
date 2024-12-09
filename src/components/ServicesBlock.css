@@ -3,8 +3,7 @@
     padding: 40px 0;
     background-color: transparent;
     animation: color ease forwards;
-    animation-timeline: scroll(root);
-
+    animation-timeline: scroll();
 }
 
 @keyframes color {
@@ -78,7 +77,7 @@
     font-size: 4rem;
     transition: all 0.5s ease;
     animation: icon ease forwards;
-    animation-timeline: scroll(root);
+    animation-timeline: scroll();
 }
 @keyframes icon {
     
@@ -147,7 +146,7 @@
     right: 0;
     z-index: 0;
     animation: fadeout ease forwards;
-    animation-timeline: scroll(root);
+    animation-timeline: scroll();
 
 }
 
@@ -162,7 +161,7 @@
     8%,
     100% {
         opacity: 0;
-        transform: translateY(-400%);
+        transform: translateY(-100%);
     }
 }
 
