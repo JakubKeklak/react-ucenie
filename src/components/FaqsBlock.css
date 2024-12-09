@@ -26,12 +26,12 @@
 }
 
 .faqs__title{
-    font-size: clamp(1.5rem, 0.9545rem + 2.7273vw, 3rem);
+    font-size: clamp(1.8rem, 0.9545rem + 2.7273vw, 3rem);
     font-weight: 700;
 }
 
 .faqs__text{
-    font-size: clamp(0.8rem, 0.6545rem + 0.7273vw, 1.2rem);
+    font-size: clamp(1rem, 0.6545rem + 0.7273vw, 1.2rem);
     text-align: center;
 }
 

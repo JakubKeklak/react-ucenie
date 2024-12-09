@@ -9,6 +9,7 @@ form {
     align-items: flex-start;
     gap: 40px;
     width: 100%;
+    padding-top: 20px;
 }
 
 .form__item {
@@ -157,10 +158,10 @@ form {
     cursor: pointer;
 }
 
-.form__checkbox {
+.form__checkbox label{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     position: relative;
 }
 
@@ -169,6 +170,7 @@ input[type="checkbox"] {
 }
 
 .checkbox{
+    flex:   0 0 15px;
     width: 15px;
     height: 15px;
     border: 1px solid var(--secondary-color);

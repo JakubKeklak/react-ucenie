@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 0.5em 1em;
-  font-size: clamp(0.7rem, 2vw, 1rem);
+  padding: 0.7rem 1rem;
+  font-size: clamp(0.8rem, 0.6909rem + 0.5455vw, 1.1rem);
   cursor: pointer;
   text-decoration: none;
   font-weight: 700;

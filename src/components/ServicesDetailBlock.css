@@ -122,7 +122,8 @@
     content: '';
     position: absolute;
     width: 50%;
-    height: 5px;
+    height:clamp(0.125rem, 0.0568rem + 0.3409vw, 0.3125rem);
+    
     bottom: -20px;
     left: 0;
     background-color: var(--primary-color);

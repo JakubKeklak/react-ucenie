@@ -186,7 +186,7 @@
 
 .animated-hero__content-text {
     font-size: 1.2rem;
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
     letter-spacing: 1px;
     text-align: left;
     width: 100%;
@@ -230,7 +230,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
     z-index: 2;
     cursor: pointer;
     font-size: 2rem;
