@@ -21,12 +21,12 @@
     position: relative;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.5s ease;
+    transition: all 1s ease;
     width:8rem;
     height: 8rem;
     aspect-ratio: 1/1;
 }
-/*
+
 .services__card:nth-child(1) {
     transform: translateY(-150%);
     animation: moveDoun ease forwards;
@@ -50,7 +50,14 @@
     animation: moveDoun ease forwards;
     animation-timeline: scroll();
 }
-
+.services-block--inView .services__card:nth-child(1),
+.services-block--inView .services__card:nth-child(2),
+.services-block--inView .services__card:nth-child(3),
+.services-block--inView .services__card:nth-child(4) {
+    transform: translateY(0%);
+    transition: all 1s ease;
+}
+/*
 @keyframes moveDoun {
 
     8%,
@@ -62,25 +69,17 @@
 .services__icon {
     flex: 1;
     position:absolute;
-    top:0%;
-    transform: translateY(0%);
+    top:50%;
+    transform: translateY(-50%);
     color: var(--tertiary-color);
     font-size: 4rem;
-    transition: all 0.5s ease;
-   /* animation: icon ease forwards;
-    animation-timeline: scroll();*/
+    transition: all 1s ease;
 }
-/*
-@keyframes icon {
-    
-    20%,
-    100% {
-        top:0;
-        transform: translateY(0%);
-    }
-
+.services-block--inView .services__icon{
+    transform: translateY(0%);
+    top:0%;
+    transition: all 1s ease;
 }
-    */
 .services__title {
     display: flex;
     align-items: center;
@@ -92,16 +91,17 @@
     text-align: center;
     padding: 0;
     text-align: center;
+    opacity: 0;
+    transform: translateY(0%);
+    transition: all 1s ease;
+
+}
+.services-block--inView .services__title {
     opacity: 1;
     transform: translateY(25%);
-    /*animation: title ease forwards;
-    animation-timeline: scroll();*/
-    transition: all 0.5s ease;
+  
 
-    
-    
 }
-/*
 @keyframes title {
     0% {
         opacity: 0;
@@ -143,7 +143,9 @@
     animation-timeline: scroll();
 */
 }
-
+.services-block--inView .services__card-svg{
+    opacity: 0;
+}
 .services__card-svg svg {
     fill: var(--tertiary-color-03);
     stroke: var(--tertiary-color);

@@ -5,9 +5,16 @@ import { HashLink } from 'react-router-hash-link';
 import Image from './parts/Image';
 import { GiWoodPile, GiFarmTractor, GiTowTruck } from "react-icons/gi";
 import { PiFarm } from "react-icons/pi";
+import { useInView } from "react-intersection-observer";
 const ServicesBlock = () => {
+    const { ref, inView } = useInView({
+        /* Optional options */
+        threshold: 1,
+        delay: 1200,
+        triggerOnce: true,
+      });
     return (
-        <div className="services-block" name="servicesBlock">
+        <div className={`services-block ${inView ? 'services-block--inView' : ''} `} name="servicesBlock" ref={ref}>
             <div className="container">
                 <ul className="services-block__wrapper">
                     {slides.map((service, index) => {
