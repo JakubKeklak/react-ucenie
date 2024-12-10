@@ -185,9 +185,9 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                     />
                 </div>
                 <div className='form__checkbox'>
+                    <label for="gdpr">
                     <input type="checkbox" name="gdpr" id="gdpr" required value={formData.gdpr}
                         onChange={handleChange} />
-                    <label for="gdpr">
                         <div className='checkbox'></div>
                         <Text margin={false}>Suhlasim so spracovanim osobnych udajov, na ucel spatneho kontaktu.</Text>
                     </label>

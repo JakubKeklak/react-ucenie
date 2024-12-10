@@ -1,17 +1,8 @@
 .services-block {
     width: 100%;
     padding: 40px 0;
-    background-color: transparent;
-    animation: color ease forwards;
-    animation-timeline: scroll();
-}
-
-@keyframes color {
-
-    1%,
-    100% {
-        background-color: var(--primary-color);
-    }
+    background-color: var(--primary-color);
+   
 }
 
 .services-block__wrapper {
@@ -35,7 +26,7 @@
     height: 8rem;
     aspect-ratio: 1/1;
 }
-
+/*
 .services__card:nth-child(1) {
     transform: translateY(-150%);
     animation: moveDoun ease forwards;
@@ -67,18 +58,19 @@
         transform: translateY(0%);
     }
 }
-
+*/
 .services__icon {
     flex: 1;
     position:absolute;
-    top:50%;
-    transform: translateY(-50%);
+    top:0%;
+    transform: translateY(0%);
     color: var(--tertiary-color);
     font-size: 4rem;
     transition: all 0.5s ease;
-    animation: icon ease forwards;
-    animation-timeline: scroll();
+   /* animation: icon ease forwards;
+    animation-timeline: scroll();*/
 }
+/*
 @keyframes icon {
     
     20%,
@@ -88,6 +80,7 @@
     }
 
 }
+    */
 .services__title {
     display: flex;
     align-items: center;
@@ -99,15 +92,16 @@
     text-align: center;
     padding: 0;
     text-align: center;
-    opacity: 0;
-    animation: title ease forwards;
-    animation-timeline: scroll();
+    opacity: 1;
+    transform: translateY(25%);
+    /*animation: title ease forwards;
+    animation-timeline: scroll();*/
     transition: all 0.5s ease;
 
     
     
 }
-
+/*
 @keyframes title {
     0% {
         opacity: 0;
@@ -120,7 +114,7 @@
     }
 
 }
-
+*/
 .services__card:hover .services__icon,
 .services__card:hover .services__title {
     color: var(--quaternary-color);
@@ -145,9 +139,9 @@
     top: 0;
     right: 0;
     z-index: 0;
-    animation: fadeout ease forwards;
+  /*  animation: fadeout ease forwards;
     animation-timeline: scroll();
-
+*/
 }
 
 .services__card-svg svg {
@@ -155,7 +149,7 @@
     stroke: var(--tertiary-color);
 
 }
-
+/*
 @keyframes fadeout {
 
     8%,
@@ -164,7 +158,7 @@
         transform: translateY(-100%);
     }
 }
-
+*/
 @media screen and (max-width: 850px) {
     .services__card {
         width: 6rem;
