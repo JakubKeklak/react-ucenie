@@ -114,7 +114,7 @@
     }
 
 }
-*/
+
 .services__card:hover .services__icon,
 .services__card:hover .services__title {
     color: var(--quaternary-color);
