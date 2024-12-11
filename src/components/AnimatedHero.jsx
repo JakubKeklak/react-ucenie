@@ -71,7 +71,7 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
                         </div>
                     </div>
                 </div>
-                {scrollButton === true &&
+                {scrollButton &&
                     <Link className="animated-hero__scroll-down" to="servicesBlock" activeClass="menuItem--active-services" spy={true} offset={window.innerWidth <= 600 ? -50 : -60} smooth={true} duration={1500}>
                         <IoIosArrowDown />
                     </Link>

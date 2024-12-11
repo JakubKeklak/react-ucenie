@@ -10,7 +10,7 @@ const ServicesBlock = () => {
     const { ref, inView } = useInView({
         /* Optional options */
         threshold: 1,
-        delay: 1200,
+        delay: 500,
         triggerOnce: true,
       });
     return (
