@@ -66,7 +66,7 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
                                 {text}
                             </p>
                             {buttonUrl &&
-                                <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={icon} />
+                                <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={true} />
                             }
                         </div>
                     </div>

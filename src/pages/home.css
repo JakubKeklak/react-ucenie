@@ -5,8 +5,14 @@
     align-items: center;
     justify-content: center;
     margin-top: -60px;
-   
 }
 
+.home__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--quaternary-color);
+}
 
 

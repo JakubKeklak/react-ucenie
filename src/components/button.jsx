@@ -1,7 +1,7 @@
 import './button.css';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
-import { ReactComponent as ArrowRight } from '../svg/rightArrow.svg';
+import { FaAngleRight } from "react-icons/fa";
 
 const Button = ({ text, url, variant, icon, submit, buttonFunction,activeButton, disabledButton }) => {
   const classVariant = variant || 'primary';
@@ -14,11 +14,11 @@ const Button = ({ text, url, variant, icon, submit, buttonFunction,activeButton,
   
 
   return (
-    <Tag to={url} type={isSubmit ? "submit" : undefined} className={`button button--${classVariant} ${activeButton}`} smooth={isHashLink ? true : undefined} onClick={buttonFunction} disabled={disabled} >
+    <Tag to={url} type={isSubmit ? "submit" : undefined} className={`button button--${classVariant} ${activeButton} ${buttonIcon ? 'button--icon' : ''}`} smooth={isHashLink ? true : undefined} onClick={buttonFunction} disabled={disabled} >
       <span>{text}</span>
       {buttonIcon && 
         <span className="button__icon">
-          <ArrowRight />
+          <FaAngleRight />
         </span>
         }
     </Tag>

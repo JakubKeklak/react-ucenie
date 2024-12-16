@@ -34,7 +34,7 @@ const Home = () => {
             buttonUrl="/services"
             scrollButton={true}
             />
-            
+<div className="home__content">
             <ServicesBlock />
             
             <ContentBlock />
@@ -58,6 +58,7 @@ const Home = () => {
                     </BlogWrapper>
                 </div>
             </ColoredWrapper>
+            </div>
         </div>
     );
 };

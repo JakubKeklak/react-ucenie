@@ -14,6 +14,7 @@ import { ReactComponent as Instagram } from '../svg/instagram.svg';
 const Header = () => {
   const { productSummaries, handleShowCalc, closeCalc } = useContext(ProductContext);
 
+//Navbar
   const [showNavbar, setShowNavbar] = useState(false);
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
@@ -25,18 +26,39 @@ const Header = () => {
     }
   };
 
+// Header color
   const [color, setColor] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   useEffect(() => {
     if (location.pathname === '/' || location.pathname === '/services') {
       setColor(false);
+      
     } else {
       setColor(true);
     }
   }, [location.pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 60) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    if (!color) {
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [color]);
+
   return (
-    <header className={`header ${color ? 'header--dark' : 'header--transparent'}`}>
+    <header className={`header ${color ? 'header--dark' : 'header--transparent'} ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="header__container container">
         <div className="header__logo">
           <span>Drevo</span>

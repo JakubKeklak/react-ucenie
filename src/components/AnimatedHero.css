@@ -11,7 +11,7 @@
 }
 
 .animated-hero--small {
-    height: 60vh;
+    height: 60dvh;
     max-height: 1000px;
     /*max-width: 2000px;*/
 }
@@ -52,9 +52,11 @@
 
     transform-origin: top left;
     scale: 1;
-
+    z-index:-1;
 }
-
+.animated-hero--large .animated-hero__card-image{
+    position: fixed;
+}
 .animated-hero__card-image video {
     width: 100%;
     height: 100%;
@@ -65,20 +67,6 @@
     transition-delay: 1s;
     animation: zoom linear 30s infinite alternate;
 }
-
-@keyframes zoom {
-    0% {
-        transform: translateY(0px);
-
-    }
-
-    100% {
-        transform: translateY(0px);
-        scale: 1.2;
-    }
-
-}
-
 
 .animated-hero__card-image::before {
     content: "";

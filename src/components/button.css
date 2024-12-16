@@ -1,9 +1,10 @@
 .button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 0.7rem 1rem;
+  padding: 0.5rem 0.8rem;
   font-size: clamp(0.8rem, 0.6909rem + 0.5455vw, 1.1rem);
   cursor: pointer;
   text-decoration: none;
@@ -15,22 +16,21 @@
   overflow: hidden;
 }
 
+.button--icon{
+  padding: 0.2rem 0.2rem 0.2rem 0.7rem;
+  background-color:var(--quaternary-color-08)!important;
+  color: var(--secondary-color)!important;
+}
 .button__icon {
   position: relative;
-  left: 0;
-  top: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15px;
-  stroke: white;
-  fill: white;
-  transition: all 0.5s ease;
-}
-
-.button:hover .button__icon {
-  left: 5px;
-  transition: all 0.5s ease;
+  width: 30px;
+  height:30px;
+  color: var(--secondary-color);
+  font-size:25px;
+  background-color: var(--quaternary-color);
 }
 
 .button--primary {
