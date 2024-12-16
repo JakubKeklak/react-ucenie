@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './header.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { links } from '../data/links';
 import { useContext } from 'react'
 import { ProductContext } from '../context/dataContext'
@@ -10,11 +10,11 @@ import { ReactComponent as Mail } from '../svg/mail.svg';
 import { ReactComponent as Instagram } from '../svg/instagram.svg';
 
 
+
 const Header = () => {
   const { productSummaries, handleShowCalc, closeCalc } = useContext(ProductContext);
-  const [showNavbar, setShowNavbar] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
+  const [showNavbar, setShowNavbar] = useState(false);
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
@@ -25,24 +25,18 @@ const Header = () => {
     }
   };
 
+  const [color, setColor] = useState(false);
+  const location = useLocation();
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    if (location.pathname === '/' || location.pathname === '/services') {
+      setColor(false);
+    } else {
+      setColor(true);
+    }
+  }, [location.pathname]);
 
   return (
-    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
+    <header className={`header ${color ? 'header--dark' : 'header--transparent'}`}>
       <div className="header__container container">
         <div className="header__logo">
           <span>Drevo</span>
@@ -55,10 +49,10 @@ const Header = () => {
               return (
                 <li key={index}>
                   <NavLink
-                    className="menuItem"
+                    className={({ isActive }) => `menuItem ${isActive ? "menuItem--active" : ""}`}
                     to={link.url}
                     exact
-                    activeClassName="menuItem--active"
+                    
                     onClick={() => { closeNavbar(); closeCalc(); }}
                   >
                     <span>{link.name}</span>

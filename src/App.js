@@ -3,7 +3,7 @@ import './App.css';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import OrderBlock from './components/OrderBlock';
 import { links } from './data/links';
 
@@ -19,18 +19,18 @@ function App() {
         <ScrollToTop />
         <Header />
         <React.Suspense>
-            <Switch>
+            <Routes>
               {links.map((link, index) => {
                 const Page = loadPages(link.page);
                 return (
-                  <Route key={index} path={link.url} exact={link.exact} 
-                  render={(props) => <Page {...props} />}
+                  <Route key={index} path={link.url} 
+                  element={ <Page  />}
                   />
                    
                 )
               })}
               
-            </Switch>
+            </Routes>
             <div className='app__order-block'>
               <OrderBlock />
             </div>
