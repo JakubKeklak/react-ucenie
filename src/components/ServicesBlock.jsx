@@ -11,7 +11,7 @@ const ServicesBlock = () => {
         /* Optional options */
         threshold: 1,
         delay: 500,
-       /* triggerOnce: true,*/
+        triggerOnce: true,
       });
     return (
         <div className={`services-block ${inView ? 'services-block--inView' : ''} `} name="servicesBlock" ref={ref}>
