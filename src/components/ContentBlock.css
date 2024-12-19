@@ -46,7 +46,7 @@
     left: 10%;
    /* background-color: var(--primary-color);*/
     border: solid clamp(0.3125rem, 0.1989rem + 0.5682vw, 0.625rem) var(--primary-color);
-    z-index: 0;
+    z-index: -1;
 }
 
 .content-block--image-right .content-block__content {
