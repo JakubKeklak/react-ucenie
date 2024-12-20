@@ -7,7 +7,7 @@ import Gallery from '../components/gallery'
 import { slides } from '../data/slider'
 import AnimatedHero from '../components/AnimatedHero';
 import Text from '../components/text'
-import Video from '../assets/video1.mp4'
+import Video from '../assets/video.mp4'
 
 
 const services = () => {
