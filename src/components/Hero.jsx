@@ -1,56 +1,65 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './Hero.css';
+import './Hero.css'
+import { useState, useEffect, useRef } from 'react'
+import Button from './button'
+import Image from './parts/Image'
+import { Link } from 'react-scroll';
+import { IoIosArrowDown } from "react-icons/io";
+import { GrPlayFill, GrStopFill } from "react-icons/gr";
 
-import Button from './button';
-
-const Hero = ({data, buttonVariant, icon}) => {
-    const [hoveredIndex, setHoveredIndex] = useState(0);
-    const intervalRef = useRef(null);
+const Hero = ({ buttonVariant, icon, image, text, buttonUrl, title, video, scrollButton }) => {
+    const videoRef = useRef(null);
+    const [play, setPlay] = useState(false);
 
     useEffect(() => {
-        const startInterval = () => {
-            intervalRef.current = setInterval(() => {
-                setHoveredIndex(prevIndex => (prevIndex + 1) % data.length);
-            }, 5000);
-        };
-
-        startInterval();
-
-        return () => clearInterval(intervalRef.current);
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 1;
+        }
     }, []);
 
-    const handleMouseEnter = (index) => {
-        clearInterval(intervalRef.current);
-        setHoveredIndex(index);
-    };
-
-    const handleMouseLeave = () => {
-        setHoveredIndex(prevIndex => (prevIndex + 1) % data.length);
-        intervalRef.current = setInterval(() => {
-            setHoveredIndex(prevIndex => (prevIndex + 1) % data.length);
-        }, 8000);
-    };
-
     return (
-        <div className='hero'>
-            <div className="hero__content">
-                {data.map((slide, index) => {
-                    return (
-                        <div
-                            key={index}
-                            className={`hero__card ${hoveredIndex === index ? 'hero__card--active' : ''}`}
-                            style={{ backgroundImage: `url(${slide.image})` }}
-                            onMouseEnter={() => handleMouseEnter(index)}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <div className="hero__card-content" style={{ backgroundColor: `rgba(${slide.color})` }}>
-                                <h2 className="hero__content-title">{slide.title}</h2>
-                                <p className="hero__content-text">{slide.text}</p>
-                                <Button text="Viac informacii" url={slide.buttonLink} variant={buttonVariant} icon={icon}/>
+        <div className={`hero  `}>
+            <div className="hero__card">
+                <div className='hero__card-wrapper'>
+                    {play === false ?
+                        (
+                            <div className="hero__card-image">
+                                <Image src={image} alt="" />
+                            </div>
+                        )
+                        :
+                        (
+                            <div className="hero__card-image ">
+                                <video poster="https://images.pexels.com/photos/1136466/pexels-photo-1136466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" autoPlay muted loop src={video} ref={videoRef} />
+                            </div>
+                        )
+                    }
+                    <div className='hero__card-content container'>
+                        <div className='hero__content'>
+
+                            <h2 className='hero__content-title'>
+                                {title}
+                            </h2>
+                            <p className='hero__content-text'>
+                                {text}
+                            </p>
+                            <div className='hero__content-buttons'>
+                                {buttonUrl &&
+                                    <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={true} />
+                                }
+                                <div className="play-button" onClick={() => setPlay(!play)}>
+                                    <span className='play-icon'>{play === false ? <GrPlayFill /> : <GrStopFill />}</span>
+                                    {/*<span className='play-text'>{play === false ? "Pozriet video" : "Zastavit video"}</span>*/}
+                                </div>
                             </div>
                         </div>
-                    );
-                })}
+
+                    </div>
+                </div>
+                {scrollButton &&
+                    <Link className="hero__scroll-down" to="servicesBlock" activeClass="menuItem--active-services" spy={true} offset={window.innerWidth <= 600 ? -50 : -60} smooth={true} duration={1500}>
+                        <IoIosArrowDown />
+                    </Link>
+                }
             </div>
         </div>
     );

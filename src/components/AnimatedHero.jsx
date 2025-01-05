@@ -4,24 +4,25 @@ import Button from './button'
 import Image from './parts/Image'
 import { Link } from 'react-scroll';
 import { IoIosArrowDown } from "react-icons/io";
+import { GrPlayFill, GrStopFill } from "react-icons/gr";
 
 const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl, title, video, scrollButton }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const intervalRef = useRef(null);
     const videoRef = useRef(null);
-
+    const [play, setPlay] = useState(false);
     const handleActiveIndex = (index) => {
         setActiveIndex(index);
         resetInterval();
     }
-
+   
     const resetInterval = () => {
         if (intervalRef.current) {
             clearInterval(intervalRef.current);
         }
         intervalRef.current = setInterval(() => {
             setActiveIndex((prevIndex) => (prevIndex + 1) % data.length);
-        }, 9000);
+        }, 2000);
     }
 
     useEffect(() => {
@@ -31,7 +32,7 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
 
     useEffect(() => {
         if (videoRef.current) {
-            videoRef.current.playbackRate = 0.7;
+            videoRef.current.playbackRate = 1;
         }
     }, []);
 
@@ -40,35 +41,72 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
         <div className={`animated-hero ${heroSize} `}>
             <div className="animated-hero__card">
                 <div className='animated-hero__card-wrapper'>
-                    {/*data.slice(0, 2).map((slide, index) => {
-                            return (
-                            <div key={index} className={`animated-hero__card-image ${activeIndex === index ? 'animated-hero__card-image--active' : ''}`}>
-                                <img  src={slide.image} alt="" />
+                    {play === false ?
+                        (
+                            <div className="animated-hero__card-image animated-hero__card-image--active">
+                                <Image src={image} alt="" />
                             </div>
-                             );
-                            })
-                             */}
+                        )
+                        :
+                        (
+                            <div className="animated-hero__card-image animated-hero__card-image--active">
 
+                                <video poster="https://images.pexels.com/photos/1136466/pexels-photo-1136466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" autoPlay muted loop src={video} ref={videoRef} />
+
+
+
+                            </div>
+                        )
+                    }
+                    {/*
                     <div className="animated-hero__card-image">
                         {video ? (
                             <video poster="https://images.pexels.com/photos/1136466/pexels-photo-1136466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" autoPlay muted loop src={video} ref={videoRef} />
                         ) : (
-                            <Image src={image} alt="" />
+                            data.map((slide, index) => {
+                                return (
+                                    <div key={index} className={`animated-hero__card-image ${activeIndex === index ? 'animated-hero__card-image--active' : ''}`}>
+                                        <Image src={slide.image} alt="" />
+                                    </div>
+                                );
+                            })
                         )}
                     </div>
-
+                    */}
                     <div className='animated-hero__card-content container'>
                         <div className='animated-hero__content'>
                             <h2 className='animated-hero__content-title'>
                                 {title}
                             </h2>
                             <p className='animated-hero__content-text'>
+                                {/*data.map((slide, index) => {
+                                    return (
+                                        <span key={index} className={`animated-hero__text ${activeIndex === index ? 'animated-hero__text--active' : ''}`}>
+                                            {slide.text}
+                                        </span>
+                                    );
+                                }
+                                )*/}
                                 {text}
                             </p>
-                            {buttonUrl &&
+
+                            {/*buttonUrl &&
                                 <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={true} />
-                            }
+                            */}
+                        <div className="play-button" onClick={() => setPlay(!play)}>
+                            <span className='play-icon'>{play === false ? <GrPlayFill /> : <GrStopFill />}</span>
+                            {/*<span className='play-text'>{play === false ? "Pozriet video" : "Zastavit video"}</span>*/}
                         </div>
+                        </div>
+                        {/*
+                            <div className='animated-hero__dots'>
+                                {data.map((_, index) => {
+                                    return (
+                                        <div key={index} className={`animated-hero__dot ${activeIndex === index ? 'animated-hero__dot--active' : ''}`} onClick={() => handleActiveIndex(index)}></div>
+                                    );
+                                })}
+                            </div>
+                        */}
                     </div>
                 </div>
                 {scrollButton &&

@@ -1,86 +1,263 @@
 .hero {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
     position: relative;
+    width: 100%;
     overflow: hidden;
-    background-color: black;
-    z-index: 0;
+    height: 100dvh;
+
 }
 
-.hero__content {
-    display: flex;
-    max-width: 1900px;
-    width: 100%;
+
+.hero--small .hero__content {
+    padding: 50px;
 }
 
 .hero__card {
-    background-repeat: no-repeat;
-    background-size: auto 700px;
-    background-position: center;
-    flex: 1;
-    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
     transition: all 2s ease;
-    position: relative;
+    opacity: 1;
+
+}
+
+.hero__card-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0%;
+    opacity: 1;
+    z-index: -1;
+}
+
+.hero__card-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__card-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* backdrop-filter: blur(3px);*/
+    background-color: var(--primary-color-05);
+    z-index: 0;
+}
+
+.hero__card-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom,
+            transparent, var(--primary-color-02), var(--primary-color-02) 99%);
+
+    opacity: 0.3;
+}
+
+.hero__card-wrapper {
+    width: 100%;
+    max-width: 2000px;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .hero__card-content {
+    position: relative;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    gap: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 0 40px;
-    backdrop-filter: saturate(60%) blur(4px);
-    transition: all 2s ease;
+    gap: 40px;
+    /* padding-top: 60px;*/
 }
 
-.hero__content-image {
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    height: max-content;
+    position: relative;
+    width: 70%;
+    padding: 50px 0px;
+}
+.hero__content-border{
     width: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
+}
+.hero__content-border-left,
+.hero__content-border-top,
+.hero__content-border-bottom,
+.hero__content-border-right-bottom,
+.hero__content-border-right-top{
+    position: absolute;
+    background-color: var(--tertiary-color);
 }
 
-.hero__card p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
+.hero__content-border-left{
+    width: 10px;
+    height: 100%;
+    top: 0;
+    left: -50px;
 }
-
+.hero__content-border-top{
+    width: 70%;
+    height:10px;
+    top: 0;
+    left:-50px;
+}
+.hero__content-border-bottom{
+    width: 70%;
+    height:10px;
+    bottom: 0;
+    left:-50px;
+}
+.hero__content-border-right-bottom{
+    width: 10px;
+    height: 25px;
+    bottom: 0;
+    right: calc(30% + 50px);
+}
+.hero__content-border-right-top{
+    width: 10px;
+    height: 25px;
+    top: 0;
+    right: calc(30% + 50px);
+}
 .hero__content-title,
-.hero__content-text {
-    color: rgb(255, 255, 255);
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    transition: all 2s ease;
+.hero__text {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    position: relative;
     width: 100%;
-
+    height: 100%;
+    
 }
 
 .hero__content-title {
-    font-size: 25px;
-    max-width: 300px;
+    font-size: clamp(1.2rem, 0.6329rem + 2.8354vw, 4rem);
+    color: var(--tertiary-color);
 }
 
 .hero__content-text {
-    max-width: 500px;
+    font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
+    letter-spacing: 1px;
+    text-align: left;
+    width: 100%;
+    color: var(--quaternary-color);
 }
 
-.hero__card--active .hero__card-content {
-    background-color: rgba(0, 0, 0, 0.3) !important;
-    backdrop-filter: saturate(100%) blur(1px);
-    transition: all 2s ease;
-    background-size: 100%;
+.hero__content-buttons{
+    display: flex;
+    gap: 20px;
+}
+.hero__scroll-down {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    /*border: 1px solid var(--tertiary-color);*/
+    color: var(--tertiary-color);
+    animation: arrowSrcoll 1.5s infinite;
 }
 
-.hero__card--active {
-    flex: 2.5;
+@keyframes arrowSrcoll {
+    0% {
+        transform: translate(-50%, 0px);
+    }
+
+    50% {
+        transform: translate(-50%, 10px);
+    }
+
+    100% {
+        transform: translate(-50%, 0px);
+    }
+}
+
+.play-button {
+    bottom: 20px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: solid 1px var(--tertiary-color);
+    background-color: var(--tertiary-color-03);
+    color: var(--quaternary-color);
+   
+}
+
+.play-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: var(--tertiary-color);
+    width: 2rem;
+    height: 2rem;
+}
+@media screen and (max-height: 600px) {
+    .hero__card-content {
+        justify-content: flex-start;
+        padding-top: 20px;
+
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .hero__scroll-down {
+        bottom: 7rem;
+
+    }
+}
+@media screen and (max-width: 400px) {
+    .hero__scroll-down {
+        bottom: 5.5rem;
+
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .hero__content,
+    .hero--small .hero__content {
+
+        padding: 100px 0;
+    }
+
 }

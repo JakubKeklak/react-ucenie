@@ -34,7 +34,7 @@
 
 body {
   position: relative;
-  overflow-x:clip;
+  overflow-x: hidden;
  /* background-color: #DBE7C9;
  background-color: var(--tertiary-color-05);
 */

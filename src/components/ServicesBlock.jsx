@@ -11,10 +11,11 @@ const ServicesBlock = () => {
         /* Optional options */
         threshold: 1,
         delay: 500,
-        triggerOnce: true,
+        triggerOnce: false,
+        
       });
     return (
-        <div className={`services-block ${inView ? 'services-block--inView' : ''} `} name="servicesBlock" ref={ref}>
+        <div className={`services-block ${inView ? 'services-block--inView' : ''} `} name="servicesBlock" ref={ref} >
             <div className="container">
                 <ul className="services-block__wrapper">
                     {slides.map((service, index) => {
@@ -30,17 +31,12 @@ const ServicesBlock = () => {
                             }
                         })();
                         return (
-                            <HashLink className='services__card' key={index} href={service.buttonLink} to={service.buttonLink} smooth={true} style={{ '--loop': index }}>
+                            <HashLink className='services__card' key={index} href={service.buttonLink} to={service.buttonLink} smooth={true} style={{ transitionDelay: index * 0.1 + 's' }} >
                                 
                                 <span className='services__icon'>{Tag && <Tag />}</span>
-                                <span className='services__title'>{service.title}</span>
+                                <span className='services__title'>{service.title}{index}</span>
 
-                                {/*}
-                                <p className='services__text'>
-                                    {service.text}
-                                </p>
-                                <span className='services__bottom' > Viac info</span>
-                                */}
+                               
                                 <div className='services__card-svg'>
                                     <svg viewBox="-2 -2 104 104" xmlns="http://www.w3.org/2000/svg">
                                         <polygon points="30 0, 70 0, 100 30, 100 70, 70 100, 30 100, 0 70, 0 30"

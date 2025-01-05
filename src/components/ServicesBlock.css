@@ -25,35 +25,10 @@
     width:8rem;
     height: 8rem;
     aspect-ratio: 1/1;
-}
-
-.services__card:nth-child(1) {
     transform: translateY(-150%);
-    animation: moveDoun ease forwards;
-    animation-timeline: scroll();
 }
 
-.services__card:nth-child(2) {
-    transform: translateY(-220%);
-    animation: moveDoun ease forwards;
-    animation-timeline: scroll();
-}
-
-.services__card:nth-child(3) {
-    transform: translateY(-220%);
-    animation: moveDoun ease forwards;
-    animation-timeline: scroll();
-}
-
-.services__card:nth-child(4) {
-    transform: translateY(-150%);
-    animation: moveDoun ease forwards;
-    animation-timeline: scroll();
-}
-.services-block--inView .services__card:nth-child(1),
-.services-block--inView .services__card:nth-child(2),
-.services-block--inView .services__card:nth-child(3),
-.services-block--inView .services__card:nth-child(4) {
+.services-block--inView .services__card{
     transform: translateY(0%);
     transition: all 1s ease;
 }

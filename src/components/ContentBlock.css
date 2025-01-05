@@ -1,6 +1,7 @@
 .content-block {
     width: 100%;
-    padding: 60px 0;
+    padding: 100px 0;
+    overflow: hidden;
 }
 
 .content-block__wrapper {
@@ -17,7 +18,7 @@
 .content-block__heading{
     position:relative;
 }
-.content-block__heading::before{
+.content-block__heading-line{
     content: '';
     position:absolute;
     width: clamp(0.125rem, 0.0568rem + 0.3409vw, 0.3125rem);
