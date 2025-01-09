@@ -6,6 +6,7 @@ import { Link } from 'react-scroll';
 import { IoIosArrowDown } from "react-icons/io";
 import { GrPlayFill, GrStopFill } from "react-icons/gr";
 
+
 const Hero = ({ buttonVariant, icon, image, text, buttonUrl, title, video, scrollButton }) => {
     const videoRef = useRef(null);
     const [play, setPlay] = useState(false);
@@ -44,12 +45,9 @@ const Hero = ({ buttonVariant, icon, image, text, buttonUrl, title, video, scrol
                             </p>
                             <div className='hero__content-buttons'>
                                 {buttonUrl &&
-                                    <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={true} />
+                                    <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={true} Iconka="FaAngleRight" />
                                 }
-                                <div className="play-button" onClick={() => setPlay(!play)}>
-                                    <span className='play-icon'>{play === false ? <GrPlayFill /> : <GrStopFill />}</span>
-                                    {/*<span className='play-text'>{play === false ? "Pozriet video" : "Zastavit video"}</span>*/}
-                                </div>
+                                <Button variant={buttonVariant} icon={true} Iconka={play === false ? "GrPlayFill" : 'GrStopFill'}  buttonFunction={() => setPlay(!play)}/>
                             </div>
                         </div>
 

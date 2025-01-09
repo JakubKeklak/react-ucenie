@@ -26,9 +26,12 @@ const Home = () => {
                 }
                 text={
                     <>
-                        <span>Ponúkame širokú ponuku palivového dreva, ktoré vám zabezpečí teplo v každom ročnom období.
-                            Okrem toho poskytujeme aj agro a komunálne služby, ako aj dovoz materiálov, aby sme pokryli všetky vaše potreby.
-                            Spoľahnite sa na našu odbornosť a spoľahlivosť.</span>
+                        <span>
+                            Ponúkame široký výber palivového dreva, ktoré vám zabezpečíme počas celého roka. 
+                            K tomu poskytujeme agro a komunálne služby, ako aj dovoz materiálov, čím pokryjeme všetky vaše potreby.
+                            <br />
+                            Spoľahnite sa na našu odbornú a spoľahlivú pomoc.
+                        </span>
 
                     </>
                 }

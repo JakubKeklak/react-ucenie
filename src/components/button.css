@@ -3,46 +3,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 0.5rem 0.8rem;
-  font-size: clamp(0.8rem, 0.6909rem + 0.5455vw, 1.1rem);
   cursor: pointer;
   text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
   border: none;
- /* border-radius: 5px;*/
   overflow: hidden;
+  text-transform: uppercase;
 }
 
-.button--icon{
-  padding: 0.2rem 0.2rem 0.2rem 0.7rem;
-  background-color:var(--quaternary-color-08)!important;
-  color: var(--secondary-color)!important;
+.button__text{
+  padding: 7px 10px;
 }
 .button__icon {
-  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height:30px;
-  color: var(--secondary-color);
-  font-size:25px;
-  background-color: var(--quaternary-color);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: var(--tertiary-color);
+    height: 100%;
+    aspect-ratio: 1/1;
 }
 
 .button--primary {
+  border: solid 1px var(--tertiary-color);
+  background-color: var(--tertiary-color-03);
   color: var(--quaternary-color);
-  background-color: var(--primary-color);
-  border-color: var(--secondary-color);
   transition: all 0.s ease;
 }
+
 .button--primary .active,
-.button--primary:hover {
-  background-color: var(--quaternary-color);
-  color: var(--primary-color);
+.button--primary:hover .button__text{
+  color: var(--tertiary-color);
 
 }
 
