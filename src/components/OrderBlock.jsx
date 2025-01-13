@@ -34,7 +34,7 @@ const OrderBlock = () => {
                                 <Button text="+" variant="tertiary" buttonFunction={() => incrementProduct(product)} />
                             </div>
                             <span className='order-block__card-price'>{product.price * product.quantity}€</span>
-                            <Button text="X" variant="primary" buttonFunction={() => removeProduct(product)} />
+                            <Button text="X" variant="quaternary" buttonFunction={() => removeProduct(product)} />
                         </li>
                     }
                     )}
@@ -52,7 +52,7 @@ const OrderBlock = () => {
                     </> 
                 }
                 
-                <Button text="Zatvorit" variant="primary" buttonFunction={handleShowCalc} />
+                <Button text="Zatvorit" variant="quaternary" buttonFunction={handleShowCalc} />
             </div>
         </div>
     )

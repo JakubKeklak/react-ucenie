@@ -4,17 +4,13 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { links } from '../data/links';
 import { useContext } from 'react'
 import { ProductContext } from '../context/dataContext'
-import { ReactComponent as Kosik } from '../svg/kosik.svg';
-import { ReactComponent as Facebook } from '../svg/facebook.svg';
-import { ReactComponent as Mail } from '../svg/mail.svg';
-import { ReactComponent as Instagram } from '../svg/instagram.svg';
-
+import Icon from './parts/Icon';
 
 
 const Header = () => {
   const { productSummaries, handleShowCalc, closeCalc } = useContext(ProductContext);
 
-//Navbar
+  //Navbar
   const [showNavbar, setShowNavbar] = useState(false);
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
@@ -26,14 +22,14 @@ const Header = () => {
     }
   };
 
-// Header color
+  // Header color
   const [color, setColor] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   useEffect(() => {
     if (location.pathname === '/' || location.pathname === '/services') {
       setColor(false);
-      
+
     } else {
       setColor(true);
     }
@@ -74,7 +70,7 @@ const Header = () => {
                     className={({ isActive }) => `menuItem ${isActive ? "menuItem--active" : ""}`}
                     to={link.url}
                     exact
-                    
+
                     onClick={() => { closeNavbar(); closeCalc(); }}
                   >
                     <span>{link.name}</span>
@@ -83,21 +79,23 @@ const Header = () => {
               )
             })}
           </ul>
-          
+
         </nav>
         <div className="header__icons">
-          <div className={`shop__icon shop__icon-kosik ${productSummaries.length > 0 ? 'shop__icon-kosik--view' : ''}`} onClick={handleShowCalc}>
-            <Kosik />
-            <span className='shop__count'>{productSummaries.length}</span>
+          <div className={`icon icon-kosik ${productSummaries.length > 0 ? 'icon-kosik--view' : ''}`} onClick={handleShowCalc}>
+            <Icon icon="Shop" />
+            <span className='shop-count'>{productSummaries.length}</span>
           </div>
-          <a href="https://www.facebook.com/jakub.keklak?locale=sk_SK" target='blank' className="shop__icon">
-           <Facebook />
+          <a href="https://www.facebook.com/jakub.keklak?locale=sk_SK" target='blank' className="icon">
+
+            <Icon icon="Facebook" />
           </a>
-          <a href="https://www.facebook.com/jakub.keklak?locale=sk_SK" target='blank' className="shop__icon">
-           <Instagram />
+          <a href="https://www.facebook.com/jakub.keklak?locale=sk_SK" target='blank' className="icon">
+
+            <Icon icon="Instagram" />
           </a>
-          <NavLink to="/contact" className="shop__icon shop__icon-mail" onClick={closeCalc}>
-            <Mail />
+          <NavLink to="/contact" className="icon" onClick={closeCalc}>
+            <Icon icon="Mail" />
           </NavLink>
           <div className="navigation__toggle">
             <div

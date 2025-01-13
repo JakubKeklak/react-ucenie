@@ -140,6 +140,7 @@
     .services__card {
         width: 6rem;
         height: 6rem;
+        transform: translateY(-180%);
     }
 
     .services__title {
@@ -155,6 +156,7 @@
     .services__card {
         width: 5rem;
         height: 5rem;
+        transform: translateY(-160%);
     }
 
     

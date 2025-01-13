@@ -1,17 +1,12 @@
 import './BlogCard.css';
 import Image from './parts/Image';
 import Label from './parts/Label'
-import { motion } from "motion/react"
+
 
 const BlogCard = ({ blog, index }) => {
-    
+
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: .5, delay: index * 0.1 }}
-             
-            className='blogcard' key={index}>
+        <div className='blogcard' key={index}>
             <div className='P'>
                 <Image src={blog.image} alt={blog.title} />
             </div>
@@ -26,7 +21,7 @@ const BlogCard = ({ blog, index }) => {
             <div className="blogcard__label">
                 <Label>{blog.category}</Label>
             </div>
-        </motion.div>
+        </div>
     );
 }
 

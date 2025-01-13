@@ -11,7 +11,7 @@ const ServicesBlock = () => {
         /* Optional options */
         threshold: 1,
         delay: 500,
-        triggerOnce: false,
+        triggerOnce: true,
         
       });
     return (
@@ -34,7 +34,7 @@ const ServicesBlock = () => {
                             <HashLink className='services__card' key={index} href={service.buttonLink} to={service.buttonLink} smooth={true} style={{ transitionDelay: index * 0.1 + 's' }} >
                                 
                                 <span className='services__icon'>{Tag && <Tag />}</span>
-                                <span className='services__title'>{service.title}{index}</span>
+                                <span className='services__title'>{service.title}</span>
 
                                
                                 <div className='services__card-svg'>

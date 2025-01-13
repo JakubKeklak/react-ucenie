@@ -67,7 +67,7 @@
     display: flex;
     align-items: center;
     padding: 0 20px;
-    font-size: 12px;
+    font-size: clamp(0.75rem, 0.7247rem + 0.1266vw, 0.875rem);
 }
 
 .menuItem::before {
@@ -133,67 +133,53 @@
     max-width: max-content;
 }
 
-.shop__icon {
+.icon {
     position: relative;
     display: flex;
     align-items: center;
     transition: all 0.5s ease;
-    fill: var(--tertiary-color);
-    width: 25px;
+    color: var(--tertiary-color);
+    font-size: 1.5rem;
     z-index: 1;
     cursor: pointer;
 }
 
-.shop__icon:hover {
+.icon:hover {
     fill: var(--quaternary-color);
+    color: var(--quaternary-color);
 }
 
-.shop__icon a {
+.icon a {
     color: inherit;
     fill: inherit;
     text-decoration: none;
 }
 
-.shop__icon-kosik {
+.icon-kosik {
     opacity: 0;
     right: -100px;
-
 }
 
-.shop__icon-kosik svg {
+.icon-kosik svg{
     transform: rotateY(180deg);
 }
 
-.shop__icon-mail {
-    stroke: var(--tertiary-color);
-}
-
-.shop__icon-mail:hover {
-    stroke: var(--quaternary-color);
-}
-
-.shop__icon svg {
-    width: 100%;
-    height: 100%;
-}
-
-.shop__icon-kosik--view {
+.icon-kosik--view {
     opacity: 1;
     right: 0%;
     transition: all 0.5s ease;
 }
 
-.shop__count {
+.shop-count {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1rem;
-    height: 1rem;
+    width: 0.8rem;
+    height: 0.8rem;
     color: var(--primary-color);
     background-color: var(--quaternary-color);
-    border-radius: 50%;
-    font-size: 12px;
-    transform: translate(-0%, -50%);
+    font-size: 10px;
+    transform: translate(40%, -80%);
     position: absolute;
     z-index: -1;
 }
@@ -201,24 +187,22 @@
 @media (max-width: 850px) {
 
     .navigation__menuItems {
-        display: none;
-    }
-
-    .navigation__menuItems--show {
         display: flex;
         flex-direction: column;
         gap: 0px;
         position: absolute;
-        top: 0px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: var(--primary-color-09);
+        left: -50%;
+        background-color: var(--primary-color);
         padding: 60px 0;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
         height: 100vh;
+        width: 50%;
         z-index: -2;
+        transition: all 0.5s ease;
+    }
+
+    .navigation__menuItems--show {
+        left: 0;
+        transition: all 0.5s ease;
     }
 
     .navigation__menuItems--show li {

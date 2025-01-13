@@ -10,7 +10,7 @@ const BlogWrapper = ({ children, title, buttonText,buttonUrl  }) => {
                     <Heading tag="h2">{title}</Heading>
                 }
                 {buttonText &&
-                    <Button variant="primary" text={buttonText} url={buttonUrl}>View all</Button>
+                    <Button variant="secondary" text={buttonText} url={buttonUrl} icon='GrArticle'/>
                 }
             </div>
             <div className='blog-wrapper__cards'>

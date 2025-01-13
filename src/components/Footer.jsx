@@ -30,8 +30,8 @@ const Footer = () => {
               </ul>
             </div>
             <div className='footer__social'>
-              <Facebook className="icon"/>
-              <Button variant="secondary" text="Kontaktny formular" url="/contact"/>
+              
+              <Button variant="secondary" text="Kontaktný formulár" url="/contact"/>
             </div>
           </div>
           <hr className="footer__divider" />

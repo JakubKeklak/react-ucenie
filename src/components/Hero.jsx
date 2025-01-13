@@ -4,10 +4,8 @@ import Button from './button'
 import Image from './parts/Image'
 import { Link } from 'react-scroll';
 import { IoIosArrowDown } from "react-icons/io";
-import { GrPlayFill, GrStopFill } from "react-icons/gr";
 
-
-const Hero = ({ buttonVariant, icon, image, text, buttonUrl, title, video, scrollButton }) => {
+const Hero = ({ buttonVariant, image, text, buttonUrl, title, video, scrollButton }) => {
     const videoRef = useRef(null);
     const [play, setPlay] = useState(false);
 
@@ -45,12 +43,11 @@ const Hero = ({ buttonVariant, icon, image, text, buttonUrl, title, video, scrol
                             </p>
                             <div className='hero__content-buttons'>
                                 {buttonUrl &&
-                                    <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon={true} Iconka="FaAngleRight" />
+                                    <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon="FaAngleRight" />
                                 }
-                                <Button variant={buttonVariant} icon={true} Iconka={play === false ? "GrPlayFill" : 'GrStopFill'}  buttonFunction={() => setPlay(!play)}/>
+                                <Button variant={buttonVariant} icon={play === false ? "GrPlayFill" : 'GrStopFill'}  buttonFunction={() => setPlay(!play)}/>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 {scrollButton &&

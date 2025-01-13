@@ -8,6 +8,7 @@ import { slides } from '../data/slider'
 import AnimatedHero from '../components/AnimatedHero';
 import Text from '../components/text'
 import Video from '../assets/video.mp4'
+ 
 
 
 const services = () => {
@@ -16,11 +17,9 @@ const services = () => {
       <AnimatedHero
         data={slides}
         size="small"
-        image="https://www.akershustraktor.no/wp-content/uploads/2021/03/Plog_servo_45_04-scaled.jpg"
-        video={Video}
         title={
           <>
-          Váš partner pre <br></br> teplo, pozemky aj okolie.
+          Váš partner pre
           </>
         }
       />
