@@ -5,7 +5,7 @@ import Heading from '../components/typography/Heading';
 import BlogWrapper from '../components/BlogWrapper';
 import BlogCard from '../components/BlogCard';
 import Button from '../components/button';
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 const Blog = () => {
 
   const uniqueCategories = [...new Set(blogs.map(blog => blog.category))];
@@ -13,12 +13,7 @@ const Blog = () => {
   const filteredBlogs = selectedCategory === 'All' ? blogs : blogs.filter(blog => blog.category === selectedCategory);
 
   return (
-    <motion.div
-      initial={{ opacity: 0  }}
-      whileInView={{  opacity: 1 }}
-      transition={{ duration: .3 }}
-      viewport={{ once: true }}
-      className='blog container'>
+    <div className='blog container'>
       <Heading>Zaujimavosti</Heading>
       <div className='blog__category'>
         <Button text="Vsetky" buttonFunction={() => setSelectedCategory('All')} variant="secondary" activeButton={selectedCategory === 'All' ? 'active' : ''} />
@@ -31,7 +26,7 @@ const Blog = () => {
           <BlogCard blog={blog} index={index} />
         ))}
       </BlogWrapper>
-    </motion.div>
+    </div>
   );
 }
 

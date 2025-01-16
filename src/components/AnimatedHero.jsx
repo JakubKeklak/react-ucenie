@@ -1,10 +1,8 @@
 import './AnimatedHero.css'
 import { useState, useEffect, useRef } from 'react'
-import Button from './button'
+import { motion } from "motion/react"
 import Image from './parts/Image'
-import { Link } from 'react-scroll';
-import { IoIosArrowDown } from "react-icons/io";
-import { GrPlayFill, GrStopFill } from "react-icons/gr";
+
 
 const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl, title, video, scrollButton }) => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -55,9 +53,14 @@ const AnimatedHero = ({ data, buttonVariant, icon, size, image, text, buttonUrl,
                         <p className='animated-hero__content-text'>
                             {data.map((slide, index) => {
                                 return (
-                                    <span key={index} className={`animated-hero__text ${activeIndex === index ? 'animated-hero__text--active' : ''}`}>
+                                    <motion.span 
+                                    initial={{ opacity: 0, y: -20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: .3 }}
+                                
+                                key={index} className={`animated-hero__text ${activeIndex === index ? 'animated-hero__text--active' : ''}`}>
                                         {slide.title}
-                                    </span>
+                                    </motion.span>
                                 );
                             }
                             )}
