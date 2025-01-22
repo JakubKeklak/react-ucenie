@@ -42,9 +42,9 @@
     content: "";
     position: absolute;
     top:-20px;
-    bottom: -20px;
-    right: 10%;
-    left: 10%;
+    bottom: 20px;
+    right: -20px;
+    left: 20px;
    /* background-color: var(--primary-color);*/
     border: solid clamp(0.3125rem, 0.1989rem + 0.5682vw, 0.625rem) var(--primary-color);
     z-index: -1;

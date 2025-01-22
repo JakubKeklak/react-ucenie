@@ -47,7 +47,8 @@ const Cennik = () => {
                     })}
                     </div>
                     <Text >
-                        Doprava v rámci okresu Stará Ľubovňa: 0,65€ mimo okresu Stará Ľubovňa: dohodou
+                        Doprava v rámci okresu Stará Ľubovňa: 0,65€ <br/>
+                        Doprava mimo okresu Stará Ľubovňa: dohodou
                     </Text>
                 </div>
             </div>

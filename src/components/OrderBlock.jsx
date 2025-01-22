@@ -26,7 +26,7 @@ const OrderBlock = () => {
                             <div className='order-block__card-description'>
                                 <span className='order-block__card-name'>{product.name}</span>
                              
-                                <span >{product.description}</span>
+                                <span >{product.descriptionValue}</span>
                             </div>
                             <div className='order-block__card-buttons'>
                                 <Button text="-" variant="tertiary" buttonFunction={() => decrementProduct(product)} />

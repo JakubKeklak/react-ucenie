@@ -39,14 +39,17 @@ const Home = () => {
                 buttonUrl="/services"
                 scrollButton={true}
             />
-            <div className="home__content">
-                <ServicesBlock />
+            <div className="home__content" name="servicesBlock">
 
                 <ContentBlock />
 
-                <FaqsBlock />
+                <ServicesBlock />
 
                 <ContentBlock imageRight={true} />
+
+                <FaqsBlock />
+
+                <ContentBlock />
 
                 <Gallery variant="row" data={slides} />
 

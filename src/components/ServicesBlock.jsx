@@ -6,16 +6,17 @@ import Image from './parts/Image';
 import { GiWoodPile, GiFarmTractor, GiTowTruck } from "react-icons/gi";
 import { PiFarm } from "react-icons/pi";
 import { useInView } from "react-intersection-observer";
+
 const ServicesBlock = () => {
     const { ref, inView } = useInView({
         /* Optional options */
         threshold: 1,
         delay: 500,
         triggerOnce: true,
-        
-      });
+
+    });
     return (
-        <div className={`services-block ${inView ? 'services-block--inView' : ''} `} name="servicesBlock" ref={ref} >
+        <div className={`services-block ${inView ? 'services-block--inView' : ''} `} ref={ref} >
             <div className="container">
                 <ul className="services-block__wrapper">
                     {slides.map((service, index) => {
@@ -31,22 +32,25 @@ const ServicesBlock = () => {
                             }
                         })();
                         return (
-                            <HashLink className='services__card' key={index} href={service.buttonLink} to={service.buttonLink} smooth={true} style={{ transitionDelay: index * 0.1 + 's' }} >
-                                
-                                <span className='services__icon'>{Tag && <Tag />}</span>
-                                <span className='services__title'>{service.title}</span>
-
-                               
-                                <div className='services__card-svg'>
-                                    <svg viewBox="-2 -2 104 104" xmlns="http://www.w3.org/2000/svg">
-                                        <polygon points="30 0, 70 0, 100 30, 100 70, 70 100, 30 100, 0 70, 0 30"
-                                        />
-                                    </svg>
-                                </div>
-                            </HashLink>
+                            <li>
+                                <HashLink className='services__card' key={index} href={service.buttonLink} to={service.buttonLink} smooth={true}  >
+                                    <span className='services__icon'>{Tag && <Tag />}</span>
+                                    <span className='services__title' style={{ transitionDelay: index * 0.2 + 's' }} >{service.title}</span>
+                                    <div className='services__card-svg'>
+                                        <svg viewBox="-2 -2 104 104" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="30 0, 70 0, 100 30, 100 70, 70 100, 30 100, 0 70, 0 30"
+                                            />
+                                        </svg>
+                                    </div>
+                                </HashLink>
+                            </li>
                         );
                     })}
                 </ul>
+                <div className='services-block__button'>
+                    <Button variant='primary' url='/services' text='Prehľad služieb' icon="FaAngleRight"/>
+                    <Button variant='primary' url='/contact' text='Kontaktujte nás' icon="Mail" />
+                </div>
             </div>
         </div>
     );

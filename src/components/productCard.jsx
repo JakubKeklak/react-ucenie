@@ -12,20 +12,24 @@ const ProductCard = ({ product, pushProduct, disabled }) => {
             <div className="product__card__description">
                 <h2 className="product__card__name">{product.name}</h2>
                 <p className="product__card__box">
-                    <span className="product__card__left">Typ:</span>
-                    <span className="product__card__pright">{product.description}</span>
+                    <span className="product__card__left">{product.descriptionText}:</span>
+                    <span className="product__card__pright" >{ product.descriptionValue }</span>
                 </p>
+                {product.calorific &&
                 <p className="product__card__box">
                     <span className="product__card__left">Vyhrevnost:</span>
-                    <span className="product__card__pright">13,1 MJ/kg</span>
+                    <span className="product__card__pright">{product.calorific} MJ/kg</span>
                 </p>
+                }
             </div>
             <p className="product__card__box product__card__box--price">
                 <span className="product__card__price">{product.price}€</span>
-                <span >/prm</span>  
+                {product.calorific &&
+                    <span >/prm</span>  
+                }
             </p>
             <div className='product__card__button'>
-                <Button text="Pridat " variant="tertiary" buttonFunction={() => pushProduct(product)} disabledButton={disabled} />
+                <Button text="Pridat" variant="tertiary" buttonFunction={() => pushProduct(product)} disabledButton={disabled} />
             </div>
             <div className={`product__add ${disabled ? 'product__add--anim' : ''}`}>
                 <Label>Produkt pridany</Label>

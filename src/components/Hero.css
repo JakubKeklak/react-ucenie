@@ -3,7 +3,7 @@
     width: 100%;
     overflow: hidden;
     height: 100svh;
-
+    max-height: 1200px;
 }
 
 .hero__card {
@@ -23,7 +23,7 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
-    position: fixed;
+    position: absolute;
     top: 0px;
     bottom: 0px;
     right: 0%;
@@ -82,7 +82,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: calc(0.05 * 50vh);
+    gap: calc(0.15 * 50vh);
     height: max-content;
     position: relative;
     width: 100%;
@@ -156,19 +156,8 @@
 }
 
 
-@media screen and (max-height: 630px) {
-    .hero__card-content {
-        align-items: flex-start;
-        padding-top: 80px;
-
-    }
-
-}
-
 @media screen and (max-width: 620px) {
-    .hero__scroll-down {
-        bottom: 7rem;
-    }
+   
 
     .hero__content {
         display: flex;
@@ -187,12 +176,7 @@
     }
 }
 
-@media screen and (max-width: 400px) {
-    .hero__scroll-down {
-        bottom: 5.5rem;
 
-    }
-}
 
 @media screen and (max-width: 500px) {
 

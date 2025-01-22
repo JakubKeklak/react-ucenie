@@ -19,7 +19,11 @@
 .blogcard:hover {
     /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);*/
 }
-
+.P{
+    display: flex;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
 .blogcard__content {
     display: flex;
     flex-direction: column;
@@ -59,7 +63,7 @@
 
 .blogcard p {
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;

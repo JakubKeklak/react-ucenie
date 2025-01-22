@@ -14,7 +14,7 @@ const Button = ({ text, url, variant, icon, submit, buttonFunction, activeButton
   return (
     <Tag to={url} type={isSubmit ? "submit" : undefined} className={`button button--${classVariant} ${activeButton} ${icon ? 'button--icon' : ''}`} smooth={isHashLink ? true : undefined} onClick={buttonFunction} disabled={disabled} >
       {text &&
-        <span className="button__text">{text}</span>
+        <span className="button__text">{ text }</span>
       }
       {icon &&
         <span className="button__icon">
