@@ -16,9 +16,9 @@ const ServicesBlock = () => {
 
     });
     return (
-        <div className={`services-block ${inView ? 'services-block--inView' : ''} `} ref={ref} >
-            <div className="container">
-                <ul className="services-block__wrapper">
+        <section className={`services-block ${inView ? 'services-block--inView' : ''} `} ref={ref} >
+            <div className="container services-block__wrapper">
+                <ul className="services-block__list">
                     {slides.map((service, index) => {
                         const Tag = (() => {
                             if (service.icon === 'GiWoodPile') {
@@ -52,7 +52,7 @@ const ServicesBlock = () => {
                     <Button variant='primary' url='/contact' text='Kontaktujte nás' icon="Mail" />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

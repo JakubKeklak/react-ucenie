@@ -1,37 +1,58 @@
 import './FaqsBlock.css'
+import { motion } from "motion/react"
 
 const FaqsBlock = () => {
     return (
-        <div className="faqs-block">
-            <div className="container">
-                <div className="faqs-block__wrapper">
-                    <div className='faqs__card'>
+        <section className="faqs-block">
+            <div className="container faqs-block__wrapper">
+                <ul className="faqs-block__list">
+                    <li className='faqs__card'>
                         <span className='faqs__title'>1000ton</span>
-                        <p className='faqs__text'>
+                        <motion.p 
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: .5, delay: .2 }}
+                            viewport={{ once: true }}
+                        className='faqs__text'>
                             spracovaneho dreva
-                        </p>
-                    </div>
-                    <div className='faqs__card'>
+                        </motion.p>
+                    </li>
+                    <li className='faqs__card'>
                         <span className='faqs__title'>100ha</span>
-                        <p className='faqs__text'>
+                        <motion.p 
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: .5, delay: .4 }}
+                            viewport={{ once: true }}
+                        className='faqs__text'>
                             spracovanej ornej pody
-                        </p>
-                    </div>
-                    <div className='faqs__card'>
+                        </motion.p>
+                    </li>
+                    <li className='faqs__card'>
                         <span className='faqs__title'>200km</span>
-                        <p className='faqs__text'>
+                        <motion.p 
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: .5, delay: .6 }}
+                            viewport={{ once: true }}
+                        className='faqs__text'>
                             ocistenych cestnych komunikacii
-                        </p>
-                    </div>
-                    <div className='faqs__card'>
+                        </motion.p>
+                    </li>
+                    <li className='faqs__card'>
                         <span className='faqs__title'>500+</span>
-                        <p className='faqs__text'>
+                        <motion.p 
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: .5, delay: .8 }}
+                            viewport={{ once: true }}
+                        className='faqs__text'>
                             spokojnych zakaznikov
-                        </p>
-                    </div>
-                </div>
+                        </motion.p>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </section>
     );
 }
 

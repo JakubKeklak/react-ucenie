@@ -9,60 +9,65 @@ import BlogWrapper from '../components/BlogWrapper';
 import BlogCard from '../components/BlogCard';
 import ColoredWrapper from '../components/coloredWrapper';
 import Heading from '../components/typography/Heading';
+import SmallHero from '../components/SmallHero'
 
-import React, { useEffect } from 'react';
 
 const Cennik = () => {
-    useEffect(() => {
-        // Add the header--cennik class to the header
-        const header = document.querySelector('.header');
-        if (header) {
-            header.classList.add('header--secondary');
-        }
 
-        // Cleanup function to remove the class when the component unmounts
-        return () => {
-            if (header) {
-                header.classList.remove('header--secondary');
-            }
-        };
-    }, []);
+    const { productData, pushProduct, disabledButton } = useContext(ProductContext);
 
-    const {productData, pushProduct, disabledButton } = useContext(ProductContext);
-   
     return (
         <>
-        <div className="cennik__wrapper container">
-            <Heading>Cennik</Heading>
-            <div className="cennik__content">
-                <div className='cennik__products'>
-                    <Heading tag="h2" className='cennik__kalk__title'>Aktualna ponuka palivoveho dreva</Heading>
-                    <p>
-                        Uvedené ceny sú s DPH a platia pre jeden, voľne uložený priestorový meter (prm). 
-                    </p>
-                    <div className="cennik__products-list"> 
-                    {productData.map((product, index) => {
-                        return <ProductCard key={index} product={product} pushProduct={pushProduct} disabled={disabledButton(product)}/>
-                        
-                    })}
+            <SmallHero
+                title="Zima vás neprekvapí!"
+                text="Zabezpečte si teplo domova s naším kvalitným palivovým drevom! Ponúkame široký výber druhov dreva za výhodné ceny, ideálne na vykurovanie aj dlhé zimné večery. Naše drevo je starostlivo pripravené, ekologické a dostupné v rôznych baleniach podľa vašich potrieb. Objednajte si ešte dnes a užite si spoľahlivé teplo počas celej zimy!"
+                bgText="Cenník"
+            />
+            <section className="cennik__wrapper container">
+                {/* <Heading>Cennik</Heading>*/}
+                <div className="cennik__content">
+                    <div className='cennik__products'>
+                        <Heading tag="h3" className='cennik__kalk__title'>Aktualna ponuka palivoveho dreva</Heading>
+                        <Text>
+                            Vyberte si z našej ponuky palivového dreva a zaručte si útulné zimné večery.<br /><br />
+                            Uvedené ceny sú s DPH a platia pre jeden, voľne uložený priestorový meter (prm).
+                        </Text>
+                        <div className="cennik__products-list">
+                            {productData.filter(product => product.item === 'wood').map((product, index) => {
+                                return <ProductCard key={index} product={product} pushProduct={pushProduct} disabled={disabledButton(product)} />
+
+                            })}
+                        </div>
+
+                    </div>
+                    <div className='cennik__products'>
+                        <Heading tag="h3" className='cennik__kalk__title'>Prislusenstvo</Heading>
+                        <Text>
+                            Zjednodušte si prácu s našimi drevenými trieskami a klátmi na rúbanie – spoľahlivé, odolné a vždy k dispozícii!
+                        </Text>
+                        <div className="cennik__products-list">
+                            {productData.filter(product => product.item === 'other').map((product, index) => {
+                                return <ProductCard key={index} product={product} pushProduct={pushProduct} disabled={disabledButton(product)} />
+
+                            })}
+                        </div>
                     </div>
                     <Text >
-                        Doprava v rámci okresu Stará Ľubovňa: 0,65€ <br/>
+                        Doprava v rámci okresu Stará Ľubovňa: 0,65€ <br />
                         Doprava mimo okresu Stará Ľubovňa: dohodou
                     </Text>
                 </div>
-            </div>
-        </div>
+            </section>
             <ColoredWrapper color="quaternary">
                 <div className="container">
                     <BlogWrapper
-                                title="Zaujimavosti"
-                                buttonText="Všetky články"
-                                buttonUrl="/blog"
-                            >
-                                {blogs.filter(blog => blog.category === 'Drevo').slice(0, 4).map((blog, index) => (
-                                    <BlogCard key={index} blog={blog} />
-                                ))}
+                        title="Zaujimavosti"
+                        buttonText="Všetky články"
+                        buttonUrl="/blog"
+                    >
+                        {blogs.filter(blog => blog.category === 'Drevo').slice(0, 4).map((blog, index) => (
+                            <BlogCard key={index} blog={blog} />
+                        ))}
                     </BlogWrapper>
                 </div>
             </ColoredWrapper>

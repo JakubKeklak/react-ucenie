@@ -1,0 +1,34 @@
+.small-hero{
+    padding: 100px 0;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.small-hero__wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.small-hero__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+    color: var(--secondary-color);
+    font-size: clamp(4rem, 2.3797rem + 8.1013vw, 12rem);
+    font-weight: 900;
+    opacity: 0.5;
+
+}
+.small-hero__heading,
+.small-hero__text{
+    width: 70%;
+    color: var(--quaternary-color);
+    z-index: 1;
+}

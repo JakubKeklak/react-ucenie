@@ -5,14 +5,43 @@
     position: relative;
 }
 
-.services-block__wrapper {
+.services-block__wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    z-index: 1;
+    
+}
+
+.services-block__wrapper::after{
+    content: 'Služby';
+    font-size: clamp(4rem, 2.3797rem + 8.1013vw, 12rem);
+    font-weight: 900;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 10px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.3;
+    color: var(--secondary-color);
+}
+
+.services-block__list {
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: relative;
-    z-index: 3;
+    width: 100%;
+    z-index: 1;
+    
 }
-
 .services__card {
     display: flex;
     flex-direction: column;
@@ -42,7 +71,7 @@
     align-items: center;
     flex: 1;
     color: var(--tertiary-color);
-    font-size: 1rem;
+    font-size: clamp(1rem, 0.6545rem + 0.7273vw, 1.2rem);
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -78,11 +107,16 @@
 
 
 
-@media screen and (max-width: 650px) {
-    .services-block__wrapper {
+@media screen and (max-width: 700px) {
+    .services-block__list {
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        gap: 40px;
+    }
 
-        gap: 0;
-        column-gap: 0px;
+    .services-block__wrapper::after{
+        align-items: start;
+        top: -6rem;
     }
 }
 
@@ -108,21 +142,11 @@
 }
 
 .services-block__button{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 40px;
-    margin-top: 60px;
-}
-
-@media screen and (max-width: 850px) {
-   
-
-    .services__title {
-        font-size: 0.7rem;
-    }
-
-    .services__icon {
-        font-size: 2.5rem;
-    }
+    z-index: 2;
 }

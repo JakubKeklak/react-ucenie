@@ -2,11 +2,29 @@
     position:relative;
     z-index: 10;
     width: 100%;
-    padding: 80px 0;
+    padding: 100px 0;
     background-color: var(--primary-color);
 }
-
 .faqs-block__wrapper{
+    position: relative;
+}
+
+.faqs-block__wrapper::after{
+    content: 'Vysledky';
+    font-size: clamp(4rem, 2.3797rem + 8.1013vw, 12rem);
+    font-weight: 900;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 10px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.3;
+    color: var(--secondary-color);
+}
+.faqs-block__list{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -26,18 +44,24 @@
 }
 
 .faqs__title{
-    font-size: clamp(1.8rem, 0.9545rem + 2.7273vw, 3rem);
+    font-size: clamp(2.2rem, 1.9367rem + 1.3165vw, 3.5rem);
     font-weight: 700;
 }
 
 .faqs__text{
     font-size: clamp(1rem, 0.6545rem + 0.7273vw, 1.2rem);
     text-align: center;
+    text-transform: uppercase;
 }
 
-@media screen and (max-width: 500px){
-    .faqs-block__wrapper{
+@media screen and (max-width: 700px){
+    .faqs-block__list{
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .faqs-block__wrapper::after{
+        align-items: start;
+        top: -6rem;
     }
 }

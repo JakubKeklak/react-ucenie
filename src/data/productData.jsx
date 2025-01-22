@@ -7,7 +7,8 @@ export const productData = [
         descriptionValue: 'sypané mäkké drevo',
         calorific:13.1,
         image: 'https://stipanepalivovedrevo.cz/images/virtuemart/product/smrk-sttpane-drevo-mekke-sypane.jpg',
-        quantity:1
+        quantity:1,
+        item:'wood'
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ export const productData = [
         descriptionValue: 'ukladané mäkké drevo',
         calorific:13.1,
         image: 'https://www.krby-kotly.sk/fotky47530/fotos/Drewno-bukowe-BUK-OPAL-30-KG.jpg',
-        quantity:1
+        quantity:1,
+        item:'wood'
     },
     {
         id: 3,
@@ -27,7 +29,8 @@ export const productData = [
         descriptionValue: 'sypané mäkké drevo',
         calorific:13.1,
         image: 'https://stipanepalivovedrevo.cz/images/virtuemart/product/smrk-sttpane-drevo-mekke-sypane.jpg',
-        quantity:1
+        quantity:1,
+        item:'wood'
     },
     {
         id: 4,
@@ -37,7 +40,8 @@ export const productData = [
         descriptionValue: 'ukladané mäkké drevo',
         calorific:13.1,
         image: 'https://www.krby-kotly.sk/fotky47530/fotos/Drewno-bukowe-BUK-OPAL-30-KG.jpg',
-        quantity:1
+        quantity:1,
+        item:'wood'
     },
     {
         id: 5,
@@ -46,7 +50,8 @@ export const productData = [
         descriptionText: 'Typ',
         descriptionValue: 'zväzok triesok',
         image: 'https://domzahradapn.sk/prilohy/2542200011853_0.jpg',
-        quantity:1
+        quantity:1,
+        item:'other'
     },
     {
         id: 6,
@@ -55,7 +60,8 @@ export const productData = [
         descriptionText: 'Velkost',
         descriptionValue: 'výška 45-50 cm, priemer 20-24 cm',
         image: 'https://cdn.myshoptet.com/usr/www.cistedrevo.sk/user/shop/big/81098_spalek-nove-1.jpg?65e51138',
-        quantity:1
+        quantity:1,
+        item:'other'
     },
     {
         id: 7,
@@ -64,7 +70,8 @@ export const productData = [
         descriptionText: 'Velkost',
         descriptionValue: 'výška 70 cm, priemer 25-29 cm',
         image: 'https://cdn.myshoptet.com/usr/www.cistedrevo.sk/user/shop/big/81098_spalek-nove-1.jpg?65e51138',
-        quantity:1
+        quantity:1,
+        item:'other'
     }
     
 ]

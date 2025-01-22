@@ -7,8 +7,11 @@
     padding-bottom: 40px;
 }
 
+
 .cennik__content {
     display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 .cennik__products {

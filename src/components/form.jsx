@@ -39,7 +39,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
 
         if (type === 'product') {
             const emailBody = productSummaries.map(product =>
-                `Polozka: ${product.name} - ${product.description}, Mnozstvo: ${product.quantity}, Cena za polozku: ${product.price * product.quantity}€`
+                `Polozka: ${product.name} - ${product.descriptionValue}, Mnozstvo: ${product.quantity}, Cena za polozku: ${product.price * product.quantity}€`
             ).join('\n') + `\n\n Celkova suma: ${sum}€`;
 
             templateParams = {
