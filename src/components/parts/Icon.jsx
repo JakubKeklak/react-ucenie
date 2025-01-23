@@ -6,6 +6,8 @@ import { AiFillFacebook } from "react-icons/ai";
 import { TiSocialInstagram } from "react-icons/ti";
 import { IoMailOutline } from "react-icons/io5";
 import { GiShoppingCart } from "react-icons/gi";
+import { GiWoodPile, GiFarmTractor, GiTowTruck } from "react-icons/gi";
+import { PiFarm } from "react-icons/pi";
 
 const Icon = ({ icon }) => {
     const Icon = () => {
@@ -36,7 +38,20 @@ const Icon = ({ icon }) => {
         else if (icon === 'Shop') {
           return <GiShoppingCart />;
         }
+        else if (icon === 'GiWoodPile') {
+          return <GiWoodPile />;
+        }
+        else if (icon === 'GiFarmTractor') {
+          return <GiFarmTractor />;
+        }
+        else if (icon === 'GiTowTruck') {
+          return <GiTowTruck />;
+        }
+        else if (icon === 'PiFarm') {
+          return <PiFarm />
+        }
       }
+
     return (
         <Icon />
     );

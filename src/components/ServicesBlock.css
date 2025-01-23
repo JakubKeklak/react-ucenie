@@ -3,6 +3,7 @@
     padding: 100px 0;
     background-color: var(--primary-color);
     position: relative;
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
 }
 
 .services-block__wrapper{
@@ -54,9 +55,6 @@
     transition: all 1s ease;
 }
 
-.services__card-svg{
-    display: none;
-}
 
 .services__icon {
    display: flex;
@@ -77,26 +75,6 @@
     text-align: center;
     padding: 0;
     text-align: center;
-    opacity: 0;
-    transform: translateY(-50%);
-    transition: all 1s ease;
-
-}
-.services-block--inView .services__title {
-    opacity: 1;
-    transform: translateY(0%);
-}
-@keyframes title {
-    0% {
-        opacity: 0;
-        transform: translateY(0%);
-    }
-    20%,
-    100% {
-        opacity: 1;
-        transform: translateY(25%);
-    }
-
 }
 
 .services__card:hover .services__icon,
@@ -105,9 +83,23 @@
     transition: color 0.5s ease;
 }
 
+.services-block__button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    z-index: 2;
+}
 
 
 @media screen and (max-width: 700px) {
+    .services-block {
+        padding-top:150px;
+        clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
+    }
+
     .services-block__list {
         display: grid;
         grid-template-columns:1fr 1fr;
@@ -121,32 +113,3 @@
 }
 
 
-.services__card-svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left:0;
-    z-index: 0;
-  /*  animation: fadeout ease forwards;
-    animation-timeline: scroll();
-*/
-}
-.services-block--inView .services__card-svg{
-    opacity: 0;
-}
-.services__card-svg svg {
-    fill: var(--tertiary-color-03);
-    stroke: var(--tertiary-color);
-
-}
-
-.services-block__button{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    z-index: 2;
-}

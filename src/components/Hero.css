@@ -100,19 +100,19 @@
 }
 
 .hero__content-title {
-    font-size: clamp(1.9rem, 1.4747rem + 2.1266vw, 4rem);
+    font-size: clamp(2.5rem, 1.9937rem + 2.5316vw, 5rem);
     color: var(--tertiary-color);
     font-weight: 900;
     letter-spacing: 2px;
     line-height: 1.2;
     text-transform: uppercase;
+    width: 90%;
 }
 
 .hero__content-text {
-    font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
+    font-size: var(--font-size-3);
     letter-spacing: 1px;
     text-align: left;
-
     color: var(--quaternary-color);
 }
 
@@ -133,7 +133,7 @@
     align-items: center;
     z-index: 2;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 2.5rem;
     width: 3rem;
     height: 3rem;
     /*border: 1px solid var(--tertiary-color);*/

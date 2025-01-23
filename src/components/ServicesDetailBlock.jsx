@@ -2,6 +2,7 @@ import React from 'react';
 import './ServicesDetailBlock.css';
 import Heading from './typography/Heading';
 import Text from './text'
+import { motion } from "motion/react"
 
 const ServicesDetailBlock = ({ id, index, title, text, buttons, gallery, name }) => {
 
@@ -10,6 +11,12 @@ const ServicesDetailBlock = ({ id, index, title, text, buttons, gallery, name })
             <div className="services-detail-block__wrapper container" >
                 <div className="services-detail-block__content">
                     <div className="services-detail-block__title">
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: '50%' }}
+                            transition={{ duration: .5, delay: .5 }}
+                            className="services-detail-block__title-row">
+                        </motion.div>
                         <Heading tag="h2">
                             {title}
                         </Heading>

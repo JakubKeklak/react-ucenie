@@ -16,7 +16,7 @@ const ContentBlock = ({ children, imageRight }) => {
                             whileInView={{ height: '100%' }}
                             transition={{ duration: .5, delay: .5 }}
                             className='content-block__heading-line'></motion.div>
-                        <Heading level={2}>Title</Heading>
+                        <Heading tag="h2">Title</Heading>
                     </div>
                     <Text>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.

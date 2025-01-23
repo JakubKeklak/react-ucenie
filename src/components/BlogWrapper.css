@@ -12,7 +12,6 @@
 .blog-wrapper__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-   
     gap: 20px;
     padding: 40px 0;
 }
@@ -30,6 +29,11 @@
 }
 
 @media screen and (max-width: 400px){
+    .blog-wrapper__header{
+        gap:0;
+        justify-content: space-between;
+    }
+
     .blog-wrapper__cards {
         grid-template-columns:1fr;
         padding: 20px 0;

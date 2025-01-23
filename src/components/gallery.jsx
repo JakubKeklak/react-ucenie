@@ -5,7 +5,7 @@ import Image from './parts/Image';
 const Gallery = ({ data, variant }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-    const [visibleCards, setVisibleCards] = useState(new Array(data.length).fill(false));
+    
     const cardRefs = useRef([]);
 
     const handleImageClick = (index) => {
@@ -28,41 +28,13 @@ const Gallery = ({ data, variant }) => {
         setSelectedImageIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
     };
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = cardRefs.current.indexOf(entry.target);
-                        setVisibleCards((prevVisibleCards) => {
-                            const newVisibleCards = [...prevVisibleCards];
-                            newVisibleCards[index] = true;
-                            return newVisibleCards;
-                        });
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0 }
-        );
-
-        cardRefs.current.forEach((card) => {
-            if (card) {
-                observer.observe(card);
-            }
-        });
-
-        return () => {
-            observer.disconnect();
-        };
-    }, [data.length]);
 
     return (
         <div className={`gallery ${variant ? 'gallery--row' : 'gallery--grid'}`} >
             {data.map((image, index) => (
                 <div
                     key={index}
-                    className={`gallery__card ${visibleCards[index] ? 'visible' : ''}`}
+                    className="gallery__card"
                     ref={(el) => (cardRefs.current[index] = el)}
                     onClick={() => handleImageClick(index)}
                 >

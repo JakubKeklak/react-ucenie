@@ -23,12 +23,14 @@ const Blog = () => {
         bgText="Rady a tipy"
       />
     <section className='blog container'>
+      {/*
       <div className='blog__category'>
         <Button text="Vsetky" buttonFunction={() => setSelectedCategory('All')} variant="secondary" activeButton={selectedCategory === 'All' ? 'active' : ''} />
         {uniqueCategories.map((category, index) => (
           <Button text={category} buttonFunction={() => setSelectedCategory(category)} variant="secondary" key={index} activeButton={selectedCategory === category ? 'active' : ''} />
         ))}
       </div>
+      */}
       <BlogWrapper>
         {filteredBlogs.map((blog, index) => (
           <BlogCard blog={blog} index={index} />

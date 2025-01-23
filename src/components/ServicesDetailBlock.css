@@ -1,29 +1,14 @@
 .services-detail-block {
     position: relative;
     width: 100%;
-    scroll-margin-top: 50px;
     display: flex;
     justify-content: center;
     background-color: var(--quaternary-color);
-    transform-origin: center left;
 }
 
 .services-detail-block:nth-child(odd) {
     background-color: var(--secondary-color-02);
 }
-/*
-.services-detail-block::before{
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    background-color: black;
-    top: 25%;
-    left: -25%;
-    animation: rotate linear forwards;
-    animation-timeline: view();
-}
-    */
 
 .services-detail-block:last-child{
     scroll-margin-top: 20px;
@@ -33,71 +18,12 @@
     position: relative;
     width: 100%;
     height: 100%;
-    /* max-width: 2000px;*/
     display: grid;
-    /* justify-content: center;
-    align-items: center;*/
-    /* grid-template-columns:minmax(40px, 1fr)  minmax(25%, 560px) minmax(25%, 560px) minmax(40px, 1fr);*/
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     padding: 100px 0;
-
-
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(-270deg);
-    }
-
-    10% {
-        transform: rotate(-360deg);
-    }
-
-    90%,
-    100% {
-        transform: rotate(-450deg);
-
-    }
-}
-/*
-.services-detail-block__wrapper::before {
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 100%;
-    top: 0%;
-    background-color: var(--primary-color);
-    z-index: 0;
-    overflow: hidden;
-}
-
-.services-detail-block__wrapper::after {
-    content: "";
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    height: 60px;
-    bottom: -30px;
-    left: 20%;
-    right: 20%;
-    background-color: var(--primary-color);
-    z-index: 0;
-    overflow: hidden;
-}
-
-.services-detail-block:last-child .services-detail-block__wrapper::after {
-    display: none;
-}
-
-.services-detail-block:nth-child(even) .services-detail-block__wrapper::before {
-    left: 20%;
-}
-
-.services-detail-block:nth-child(odd) .services-detail-block__wrapper::before {
-    right: 20%;
-}
-*/
 .services-detail-block__content {
     display: flex;
     flex-direction: column;
@@ -114,18 +40,15 @@
     position: relative;
 }
 
-.services-detail-block__title::before {
-    content: '';
+.services-detail-block__title-row {
     position: absolute;
     width: 50%;
     height:clamp(0.125rem, 0.0568rem + 0.3409vw, 0.3125rem);
-    
     bottom: -20px;
     left: 0;
     background-color: var(--primary-color);
+    z-index: 1;
 }
-
-
 
 .services-detail-block__buttons {
     display: flex;
@@ -136,27 +59,18 @@
 .services-detail-block__gallery {
     display: flex;
     justify-content: center;
-    /* align-items: center;*/
-    /*max-height:600px;*/
-    /* grid-column: 2/5;*/
-    /*background-color:var(--secondary-color);*/
-
     order: 1;
     position: relative;
-    /*border-radius: 10px;*/
     overflow: hidden;
 }
 
 .services-detail-block:nth-child(odd) .services-detail-block__content {
     order: 1;
-
 }
 
 .services-detail-block:nth-child(odd) .services-detail-block__gallery {
     order: 2;
-
 }
-
 
 .services-detail-block__divider {
     position: absolute;
@@ -164,7 +78,6 @@
     height: 30%;
     left: 0;
     bottom: 10%;
-    /* background-color: var(--secondary-color);*/
     opacity: 1;
     z-index: -2;
 }
@@ -172,7 +85,6 @@
 @media screen and (max-width: 900px) {
     .services-detail-block__wrapper {
         grid-template-columns: 1fr;
-        /* grid-template-rows: 1fr 1fr;*/
         padding: 50px 0;
     }
 
@@ -207,29 +119,5 @@
 
     .services-detail-block:nth-child(odd) .services-detail-block__wrapper::before {
         left: 0px;
-    }
-
-    .services-detail-block__wrapper::before {
-        display: none;
-    }
-
-    .services-detail-block__wrapper::after {
-        content: "";
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        height: 100px;
-        bottom: 0px;
-        left: 0%;
-        right: 0%;
-        background-color: var(--primary-color);
-        z-index: 0;
-        overflow: hidden;
-    }
-}
-
-@media screen and (max-width: 670px) {
-    .services-detail-block {
-        scroll-margin-top: 100px;
     }
 }
