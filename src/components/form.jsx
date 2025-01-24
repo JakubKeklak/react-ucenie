@@ -193,7 +193,7 @@ const ContactForm = ({ productSummaries, sum, type }) => {
                     </label>
                 </div>
 
-                <Button text="Odoslat" variant="secondary" submit={true} icon="GrSend" />
+                <Button text="Odoslat" variant="secondary" icon="GrSend" submit={true}/>
             </form>
 
             {modalVisible && (

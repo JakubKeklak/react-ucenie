@@ -24,14 +24,18 @@ const Cennik = () => {
                 bgText="Cenník"
             />
             <section className="cennik__wrapper container">
-                {/* <Heading>Cennik</Heading>*/}
+                
                 <div className="cennik__content">
                     <div className='cennik__products'>
-                        <Heading tag="h3" className='cennik__kalk__title'>Aktualna ponuka palivoveho dreva</Heading>
-                        <Text>
-                            Vyberte si z našej ponuky palivového dreva a zaručte si útulné zimné večery.<br /><br />
-                            Uvedené ceny sú s DPH a platia pre jeden, voľne uložený priestorový meter (prm).
-                        </Text>
+                        <Heading tag="h3" className='cennik__title'>Aktualna ponuka palivoveho dreva</Heading>
+                        <div className='cennik__text'>
+                            <Text>
+                                Vyberte si z našej ponuky palivového dreva a zaručte si útulné zimné večery.
+                            </Text>
+                            <Text>
+                                Uvedené ceny sú s DPH a platia pre jeden, voľne uložený priestorový meter (prm).
+                            </Text>
+                        </div>
                         <div className="cennik__products-list">
                             {productData.filter(product => product.item === 'wood').map((product, index) => {
                                 return <ProductCard key={index} product={product} pushProduct={pushProduct} disabled={disabledButton(product)} />
@@ -41,10 +45,12 @@ const Cennik = () => {
 
                     </div>
                     <div className='cennik__products'>
-                        <Heading tag="h3" className='cennik__kalk__title'>Prislusenstvo</Heading>
-                        <Text>
-                            Zjednodušte si prácu s našimi drevenými trieskami a klátmi na rúbanie – spoľahlivé, odolné a vždy k dispozícii!
-                        </Text>
+                        <Heading tag="h3" className='cennik__title'>Prislusenstvo</Heading>
+                        <div className='cennik__text'>
+                            <Text>
+                                Zjednodušte si prácu s našimi drevenými trieskami a klátmi na rúbanie – spoľahlivé, odolné a vždy k dispozícii!
+                            </Text>
+                        </div>
                         <div className="cennik__products-list">
                             {productData.filter(product => product.item === 'other').map((product, index) => {
                                 return <ProductCard key={index} product={product} pushProduct={pushProduct} disabled={disabledButton(product)} />
@@ -57,7 +63,7 @@ const Cennik = () => {
                         Doprava mimo okresu Stará Ľubovňa: dohodou
                     </Text>
                 </div>
-            </section>
+            </section >
             <ColoredWrapper color="quaternary">
                 <div className="container">
                     <BlogWrapper

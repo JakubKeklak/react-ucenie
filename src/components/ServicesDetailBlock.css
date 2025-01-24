@@ -4,14 +4,11 @@
     display: flex;
     justify-content: center;
     background-color: var(--quaternary-color);
+    padding: var(--space-4) 0;
 }
 
 .services-detail-block:nth-child(odd) {
     background-color: var(--secondary-color-02);
-}
-
-.services-detail-block:last-child{
-    scroll-margin-top: 20px;
 }
 
 .services-detail-block__wrapper {
@@ -21,7 +18,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    padding: 100px 0;
+    
 }
 
 .services-detail-block__content {
@@ -85,7 +82,6 @@
 @media screen and (max-width: 900px) {
     .services-detail-block__wrapper {
         grid-template-columns: 1fr;
-        padding: 50px 0;
     }
 
     .services-detail-block__wrapper::before {

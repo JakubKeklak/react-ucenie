@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 40px 0;
+    padding: var(--space-1) 0;
 }
 
 @media screen and (max-width: 900px){
@@ -36,6 +36,6 @@
 
     .blog-wrapper__cards {
         grid-template-columns:1fr;
-        padding: 20px 0;
+        
     }
 }

@@ -8,6 +8,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { GiShoppingCart } from "react-icons/gi";
 import { GiWoodPile, GiFarmTractor, GiTowTruck } from "react-icons/gi";
 import { PiFarm } from "react-icons/pi";
+import { MdOutlineClose } from "react-icons/md";
 
 const Icon = ({ icon }) => {
     const Icon = () => {
@@ -49,6 +50,9 @@ const Icon = ({ icon }) => {
         }
         else if (icon === 'PiFarm') {
           return <PiFarm />
+        }
+        else if (icon === 'Close') {
+          return <MdOutlineClose />
         }
       }
 

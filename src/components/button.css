@@ -11,23 +11,19 @@
 }
 
 .button__text {
-  padding: 10px 10px;
-  font-size: var(--font-size-2);
-}
-
-.button--icon .button__text {
-  padding: 0 10px;
+  display: flex;
+  align-items: center!important;
+  padding: 7px 10px;
+  font-size: var(--font-size-3);
 }
 
 .button__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(1rem, 0.8987rem + 0.5063vw, 1.5rem);
-  height: clamp(1.5rem, 1.3987rem + 0.5063vw, 2.5rem);
-  width: clamp(1.5rem, 1.3987rem + 0.5063vw, 2.5rem);
-  
+  font-size: clamp(1.5rem, 1.4595rem + 0.2025vw, 1.7rem);
   aspect-ratio: 1/1;
+  height: clamp(2.2rem, 2.1392rem + 0.3038vw, 2.5rem);
 }
 
 .button--primary {

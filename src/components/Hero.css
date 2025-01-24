@@ -82,7 +82,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: calc(0.15 * 50vh);
+    gap: var(--space-1);
     height: max-content;
     position: relative;
     width: 100%;
@@ -126,7 +126,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 20px;
+    bottom: 5%;
     left: 50%;
     display: flex;
     flex-direction: column;
@@ -136,7 +136,6 @@
     font-size: 2.5rem;
     width: 3rem;
     height: 3rem;
-    /*border: 1px solid var(--tertiary-color);*/
     color: var(--tertiary-color);
     animation: arrowSrcoll 1.5s infinite;
 }
@@ -186,4 +185,20 @@
         padding: 0px;
     }
 
+}
+@media screen and (max-height: 640px) {
+
+    .hero__content-title {
+        font-size: 2rem;
+        color: var(--tertiary-color);
+        font-weight: 900;
+        letter-spacing: 2px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        width: 90%;
+    }
+    
+    .hero__scroll-down {
+        bottom: 3%;
+    }
 }

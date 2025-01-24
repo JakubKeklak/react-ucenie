@@ -59,9 +59,10 @@ const Hero = ({ buttonVariant, image, text, buttonUrl, title, video, scrollButto
                                 viewport={{ once: true }}  
                                 className='hero__content-buttons'>
                                 {buttonUrl &&
-                                    <Button text='Viac informacii' url={buttonUrl} variant={buttonVariant} icon="FaAngleRight" />
+                                    <Button text='služby' url={buttonUrl}  icon="FaAngleRight" />
                                 }
-                                <Button variant={buttonVariant} icon={play === false ? "GrPlayFill" : 'GrStopFill'} buttonFunction={() => setPlay(!play)} />
+                                <Button variant="tertiary" icon={play === false ? "GrPlayFill" : 'GrStopFill'} buttonFunction={() => setPlay(!play)} />
+                                
                             </motion.div>
                         </div>
                     </div>

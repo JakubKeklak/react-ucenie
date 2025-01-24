@@ -1,7 +1,7 @@
 .small-hero{
     padding: clamp(3.75rem, 3.2437rem + 2.5316vw, 6.25rem) 0;
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-095);
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
 }
 
