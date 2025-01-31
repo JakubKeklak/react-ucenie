@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-ucenie/static/css/main.5d4b666d.css",
-    "main.js": "/react-ucenie/static/js/main.ece3577b.js",
+    "main.js": "/react-ucenie/static/js/main.b237cf54.js",
     "static/css/957.14a798f9.chunk.css": "/react-ucenie/static/css/957.14a798f9.chunk.css",
     "static/js/957.499751f9.chunk.js": "/react-ucenie/static/js/957.499751f9.chunk.js",
     "static/css/372.cb50e9f6.chunk.css": "/react-ucenie/static/css/372.cb50e9f6.chunk.css",
@@ -18,8 +18,8 @@
     "static/js/442.1d2dcccc.chunk.js": "/react-ucenie/static/js/442.1d2dcccc.chunk.js",
     "static/css/369.269ddf9d.chunk.css": "/react-ucenie/static/css/369.269ddf9d.chunk.css",
     "static/js/369.33419650.chunk.js": "/react-ucenie/static/js/369.33419650.chunk.js",
-    "static/css/967.bd308bf4.chunk.css": "/react-ucenie/static/css/967.bd308bf4.chunk.css",
-    "static/js/967.7571d9d3.chunk.js": "/react-ucenie/static/js/967.7571d9d3.chunk.js",
+    "static/css/967.30d26fa3.chunk.css": "/react-ucenie/static/css/967.30d26fa3.chunk.css",
+    "static/js/967.aaae44b1.chunk.js": "/react-ucenie/static/js/967.aaae44b1.chunk.js",
     "static/css/152.d9589791.chunk.css": "/react-ucenie/static/css/152.d9589791.chunk.css",
     "static/js/152.0c2925b6.chunk.js": "/react-ucenie/static/js/152.0c2925b6.chunk.js",
     "static/js/453.ecbd0785.chunk.js": "/react-ucenie/static/js/453.ecbd0785.chunk.js",
@@ -31,7 +31,7 @@
     "index.html": "/react-ucenie/index.html",
     "static/media/facebook.svg": "/react-ucenie/static/media/facebook.1e72883c6f9747ada0727cbf06a6dca6.svg",
     "main.5d4b666d.css.map": "/react-ucenie/static/css/main.5d4b666d.css.map",
-    "main.ece3577b.js.map": "/react-ucenie/static/js/main.ece3577b.js.map",
+    "main.b237cf54.js.map": "/react-ucenie/static/js/main.b237cf54.js.map",
     "957.14a798f9.chunk.css.map": "/react-ucenie/static/css/957.14a798f9.chunk.css.map",
     "957.499751f9.chunk.js.map": "/react-ucenie/static/js/957.499751f9.chunk.js.map",
     "372.cb50e9f6.chunk.css.map": "/react-ucenie/static/css/372.cb50e9f6.chunk.css.map",
@@ -48,8 +48,8 @@
     "442.1d2dcccc.chunk.js.map": "/react-ucenie/static/js/442.1d2dcccc.chunk.js.map",
     "369.269ddf9d.chunk.css.map": "/react-ucenie/static/css/369.269ddf9d.chunk.css.map",
     "369.33419650.chunk.js.map": "/react-ucenie/static/js/369.33419650.chunk.js.map",
-    "967.bd308bf4.chunk.css.map": "/react-ucenie/static/css/967.bd308bf4.chunk.css.map",
-    "967.7571d9d3.chunk.js.map": "/react-ucenie/static/js/967.7571d9d3.chunk.js.map",
+    "967.30d26fa3.chunk.css.map": "/react-ucenie/static/css/967.30d26fa3.chunk.css.map",
+    "967.aaae44b1.chunk.js.map": "/react-ucenie/static/js/967.aaae44b1.chunk.js.map",
     "152.d9589791.chunk.css.map": "/react-ucenie/static/css/152.d9589791.chunk.css.map",
     "152.0c2925b6.chunk.js.map": "/react-ucenie/static/js/152.0c2925b6.chunk.js.map",
     "453.ecbd0785.chunk.js.map": "/react-ucenie/static/js/453.ecbd0785.chunk.js.map",
@@ -58,6 +58,6 @@
   },
   "entrypoints": [
     "static/css/main.5d4b666d.css",
-    "static/js/main.ece3577b.js"
+    "static/js/main.b237cf54.js"
   ]
 }
